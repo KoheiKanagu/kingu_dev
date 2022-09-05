@@ -65,8 +65,9 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ThemeData.from(
-      colorScheme: const ColorScheme.light(),
+      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF00A5BF)),
       textTheme: Typography.material2021().black,
+      useMaterial3: true,
     );
 
     return MaterialApp.router(
