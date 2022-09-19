@@ -6,7 +6,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 const email = 'kanagu@kingu.dev';
 const sourceUrl = 'https://github.com/KoheiKanagu/kingu_dev';
-const workUrl = 'https://github.com/KoheiKanagu/kingu_dev/main/assets/work.md';
+const workUrl =
+    'https://github.com/KoheiKanagu/kingu_dev/blob/main/assets/work.md';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({
