@@ -34,4 +34,5 @@ jobs:
       ### Deploy ###
       - name: deploy
         run: |
+          cd firebase
           firebase deploy
