@@ -10,7 +10,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
-  firebase_analytics: ^9.3.3
+  firebase_analytics: ^9.3.5
   firebase_app_check: ^0.0.7
   firebase_auth: ^3.7.0
   firebase_core: ^1.22.0
