@@ -34,5 +34,6 @@ jobs:
       ### Deploy ###
       - name: deploy
         run: |
+          mv build/web firebase/web
           cd firebase
           firebase deploy
