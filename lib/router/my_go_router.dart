@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kingu_dev/firebase.dart';
+import 'package:kingu_dev/provider_logger.dart';
 
 import 'home_router.dart' as home_router;
 
@@ -13,10 +14,11 @@ final myGoRouter = Provider.autoDispose(
       ...home_router.$appRoutes,
     ],
     errorBuilder: (context, state) {
-      ref.watch(firebaseCrashlytics).recordError(
-            state.error,
-            StackTrace.current,
-          );
+      logger.e(
+        'router error',
+        state,
+        StackTrace.current,
+      );
       return const Text('error');
     },
     observers: [

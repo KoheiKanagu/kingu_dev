@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:kingu_dev/firebase.dart';
 import 'package:kingu_dev/firebase_options.dart';
 import 'package:kingu_dev/provider_logger.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
@@ -34,15 +33,20 @@ Future<void> main() async {
 
   Intl.defaultLocale = 'ja_JP';
 
-  FlutterError.onError =
-      container.read(firebaseCrashlytics).recordFlutterFatalError;
+  FlutterError.onError = (details) {
+    logger.e(
+      'Flutter Error',
+      details.exception,
+      details.stack,
+    );
+  };
 
   PlatformDispatcher.instance.onError = (error, stack) {
-    container.read(firebaseCrashlytics).recordError(
-          error,
-          stack,
-          fatal: true,
-        );
+    logger.e(
+      'Error',
+      error,
+      stack,
+    );
     return true;
   };
 
