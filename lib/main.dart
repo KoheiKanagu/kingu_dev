@@ -51,6 +51,8 @@ Future<void> main() async {
     UncontrolledProviderScope(
       container: container,
       child: DevicePreview(
+        // ignore: avoid_redundant_argument_values
+        enabled: kDebugMode,
         builder: (context) => const MyApp(),
       ),
     ),
