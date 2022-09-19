@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -50,11 +49,7 @@ Future<void> main() async {
   runApp(
     UncontrolledProviderScope(
       container: container,
-      child: DevicePreview(
-        // ignore: avoid_redundant_argument_values
-        enabled: kDebugMode,
-        builder: (context) => const MyApp(),
-      ),
+      child: const MyApp(),
     ),
   );
 }
@@ -74,8 +69,6 @@ class MyApp extends HookConsumerWidget {
 
     return MaterialApp.router(
       useInheritedMediaQuery: true,
-      builder: DevicePreview.appBuilder,
-      locale: DevicePreview.locale(context),
       theme: theme,
       routeInformationProvider: ref.watch(myGoRouter).routeInformationProvider,
       routeInformationParser: ref.watch(myGoRouter).routeInformationParser,
