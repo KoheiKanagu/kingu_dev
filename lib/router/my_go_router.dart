@@ -28,7 +28,6 @@ final myGoRouter = Provider.autoDispose(
     ],
     debugLogDiagnostics: kDebugMode,
     initialLocation: '/',
-    urlPathStrategy: UrlPathStrategy.path,
   ),
   name: 'myGoRouter',
 );
