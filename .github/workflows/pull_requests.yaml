@@ -6,7 +6,7 @@ on:
       - "firebase/**"
 
 env:
-  FLUTTER_VERSION: "3.3.0" # FIXME
+  FLUTTER_VERSION: "3.3.2" # FIXME
 
 jobs:
   build:
