@@ -13,7 +13,7 @@ dependencies:
   firebase_analytics: ^9.3.6
   firebase_app_check: ^0.0.7
   firebase_auth: ^3.10.0
-  firebase_core: ^1.22.0
+  firebase_core: ^1.23.0
   firebase_performance: ^0.8.3
   flutter:
     sdk: flutter
