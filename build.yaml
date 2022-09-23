@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - type=lint
+      freezed:
+        generate_for:
+          include:
+            - lib/models/**/*.dart
+            - lib/**/*_state.dart
+      json_serializable:
+        generate_for:
+          include:
+            - lib/models/**/*.dart
+        options:
+          checked: true
+          explicit_to_json: true
