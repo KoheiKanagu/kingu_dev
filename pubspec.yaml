@@ -43,6 +43,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: M PLUS 1p
+      fonts:
+        - asset: assets/fonts/MPLUS1p-Regular.ttf
 
 assets:
   - assets/
