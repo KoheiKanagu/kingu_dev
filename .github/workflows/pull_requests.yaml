@@ -5,6 +5,10 @@ on:
     paths-ignore:
       - "firebase/**"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   FLUTTER_VERSION: "3.3.2" # FIXME
 
