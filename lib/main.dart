@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:kingu_dev/firebase.dart';
 import 'package:kingu_dev/firebase_options.dart';
 import 'package:kingu_dev/provider_logger.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
@@ -33,7 +34,10 @@ Future<void> main() async {
       if (kReleaseMode)
         FirebaseAppCheck.instance.activate(
           webRecaptchaSiteKey: '6LdDb5kcAAAAAE33uZXkDZFRXbvJ2g52rHWxxikG',
-        )
+        ),
+      container
+          .read(firebaseAnalytics)
+          .setAnalyticsCollectionEnabled(kReleaseMode),
     ],
   );
 
