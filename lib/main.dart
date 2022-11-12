@@ -78,7 +78,7 @@ class MyApp extends HookConsumerWidget {
     final theme = ThemeData.from(
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF00A5BF)),
       textTheme: Typography.material2021().black.apply(
-            fontFamily: 'M PLUS 1p',
+            fontFamily: 'Noto Sans JP',
           ),
       useMaterial3: true,
     );
