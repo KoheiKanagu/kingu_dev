@@ -1,14 +1,27 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/firebase.dart';
-import 'package:kingu_dev/widgets/simple_card_tile.dart';
+import 'package:kingu_dev/gen/assets.gen.dart';
+import 'package:kingu_dev/theme/digital_agency_colors.dart';
+import 'package:kingu_dev/widgets/digital_agency_layout_widget.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 const email = 'kanagu@kingu.dev';
 const sourceUrl = 'https://github.com/KoheiKanagu/kingu_dev';
 const workUrl =
     'https://github.com/KoheiKanagu/kingu_dev/blob/main/assets/work.md';
+
+const githubUrl = 'https://github.com/KoheiKanagu';
+const twitterUrl = 'https://twitter.com/i_am_kingu_pub';
+const facebookUrl = 'https://www.facebook.com/k.g.kohei';
+const steamUrl = 'https://steamcommunity.com/id/i_am_kingu';
+const zennUrl = 'https://zenn.dev/kingu';
+const appStoreUrl = 'https://apps.apple.com/am/developer/id1530720615';
+const googlePlayUrl =
+    'https://play.google.com/store/apps/developer?id=Kohei+Kanagu';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({
@@ -18,142 +31,235 @@ class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
+      body: DigitalAgencyLayoutWidget(
         children: [
-          SimpleCardTile(
-            title: 'Kohei Kanagu',
-            subtitle: '金具浩平',
-            leadingIcon: const Icon(Icons.tag_faces),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'nyan',
-                  );
-              launchUrlString('https://youtu.be/QH2-TGUlwu4');
-            },
+          const Gap(64),
+          SelectableText(
+            '金具浩平',
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
-          SimpleCardTile(
-            title: 'email',
-            subtitle: email,
-            leadingIcon: const Icon(Icons.mail),
-            trailing: const Icon(Icons.send),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'email',
-                  );
-              launchUrlString('mailto:$email');
-            },
-          ),
-          SimpleCardTile(
-            title: 'このサイト',
-            subtitle: sourceUrl,
-            leadingIcon: const Icon(Icons.code),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'source',
-                  );
-              launchUrlString(sourceUrl);
-            },
-          ),
-          SimpleCardTile(
-            title: 'お仕事について',
-            leadingIcon: const Icon(Icons.work),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'work',
-                  );
-
-              launchUrlString(workUrl);
-            },
-          ),
-          const Divider(),
-          SimpleCardTile(
-            title: 'GitHub',
-            leadingIcon: const Icon(FontAwesomeIcons.github),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'github',
-                  );
-              launchUrlString('https://github.com/KoheiKanagu');
-            },
-          ),
-          SimpleCardTile(
-            title: 'Twitter',
-            leadingIcon: const Icon(FontAwesomeIcons.twitter),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'twitter',
-                  );
-              launchUrlString('https://twitter.com/i_am_kingu_pub');
-            },
-          ),
-          SimpleCardTile(
-            title: 'Facebook',
-            leadingIcon: const Icon(FontAwesomeIcons.facebook),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'facebook',
-                  );
-
-              launchUrlString('https://www.facebook.com/k.g.kohei');
-            },
-          ),
-          SimpleCardTile(
-            title: 'Steam',
-            leadingIcon: const Icon(FontAwesomeIcons.steam),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'steam',
-                  );
-              launchUrlString('https://steamcommunity.com/id/i_am_kingu');
-            },
-          ),
-          SimpleCardTile(
-            title: 'Zenn',
-            leadingIcon: const Icon(FontAwesomeIcons.solidCircleQuestion),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'zenn',
-                  );
-              launchUrlString('https://zenn.dev/kingu');
-            },
-          ),
-          const Divider(),
-          SimpleCardTile(
-            title: 'App Store',
-            leadingIcon: const Icon(FontAwesomeIcons.appStoreIos),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'appStore',
-                  );
-              launchUrlString(
-                'https://apps.apple.com/am/developer/id1530720615',
-              );
-            },
-          ),
-          SimpleCardTile(
-            title: 'Google Play',
-            leadingIcon: const Icon(FontAwesomeIcons.googlePlay),
-            trailing: const Icon(Icons.open_in_new),
-            onTap: () {
-              ref.read(firebaseAnalytics).logEvent(
-                    name: 'googlePlay',
-                  );
-              launchUrlString(
-                'https://play.google.com/store/apps/developer?id=Kohei+Kanagu',
-              );
-            },
+          const Gap(24),
+          ...[
+            _SimpleText(
+              leadingEmoji: '🐱',
+              text: 'Kohei Kanagu',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'nyan',
+                    );
+                launchUrlString('https://youtu.be/QH2-TGUlwu4');
+              },
+              isLink: false,
+              newWindow: false,
+            ),
+            _SimpleText(
+              leadingEmoji: '📧',
+              text: email,
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'email',
+                    );
+                launchUrlString('mailto:$email');
+              },
+            ),
+            _SimpleText(
+              leadingEmoji: '💼',
+              text: 'お仕事について',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'work',
+                    );
+                launchUrlString(workUrl);
+              },
+            ),
+            _SimpleText(
+              leadingEmoji: '🛠️',
+              text: 'このサイト',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'source',
+                    );
+                launchUrlString(sourceUrl);
+              },
+            ),
+            const Gap(48),
+            _SimpleText(
+              leading: Assets.icons.github.image(
+                height: 32,
+              ),
+              text: githubUrl,
+              headline: 'GitHub',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'github',
+                    );
+                launchUrlString(githubUrl);
+              },
+            ),
+            _SimpleText(
+              leading: Assets.icons.twitter.image(
+                height: 32,
+              ),
+              text: twitterUrl,
+              headline: 'Twitter',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'twitter',
+                    );
+                launchUrlString(twitterUrl);
+              },
+            ),
+            _SimpleText(
+              leading: Assets.icons.facebook.image(
+                height: 32,
+              ),
+              text: facebookUrl,
+              headline: 'Facebook',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'facebook',
+                    );
+                launchUrlString(facebookUrl);
+              },
+            ),
+            _SimpleText(
+              leading: Assets.icons.steam.image(
+                height: 32,
+              ),
+              text: steamUrl,
+              headline: 'Steam',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'steam',
+                    );
+                launchUrlString(steamUrl);
+              },
+            ),
+            _SimpleText(
+              leading: Assets.icons.zenn.image(
+                height: 32,
+              ),
+              text: zennUrl,
+              headline: 'Zenn',
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'zenn',
+                    );
+                launchUrlString(zennUrl);
+              },
+            ),
+            const Gap(48),
+            _StoreButton(
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'appStore',
+                    );
+                launchUrlString(appStoreUrl);
+              },
+              assetGenImage: Assets.icons.appStore,
+            ),
+            _StoreButton(
+              onTap: () {
+                ref.read(firebaseAnalytics).logEvent(
+                      name: 'googlePlay',
+                    );
+                launchUrlString(googlePlayUrl);
+              },
+              assetGenImage: Assets.icons.googlePlay,
+            ),
+          ].intersperse(
+            const Gap(8),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _StoreButton extends HookConsumerWidget {
+  const _StoreButton({
+    required this.onTap,
+    required this.assetGenImage,
+  });
+
+  final VoidCallback onTap;
+
+  final AssetGenImage assetGenImage;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
+        backgroundColor: Colors.transparent,
+      ),
+      onPressed: onTap,
+      child: assetGenImage.image(
+        height: 40,
+      ),
+    );
+  }
+}
+
+class _SimpleText extends HookConsumerWidget {
+  const _SimpleText({
+    this.isLink = true,
+    this.leadingEmoji,
+    this.leading,
+    this.headline = '',
+    required this.text,
+    required this.onTap,
+    this.newWindow = true,
+  });
+
+  final bool isLink;
+
+  final String? leadingEmoji;
+
+  final Widget? leading;
+
+  final String text;
+
+  final String headline;
+
+  final VoidCallback onTap;
+
+  final bool newWindow;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        leading ?? Text(leadingEmoji ?? ''),
+        const SizedBox(
+          width: 4,
+        ),
+        Text(headline),
+        const SizedBox(
+          width: 4,
+        ),
+        Text.rich(
+          TextSpan(
+            text: text,
+            recognizer: TapGestureRecognizer()..onTap = onTap,
+            style: isLink
+                ? Theme.of(context).textTheme.bodyMedium?.apply(
+                      color: DigitalAgencyColors.sea.shade600,
+                      decoration: TextDecoration.underline,
+                    )
+                : Theme.of(context).textTheme.bodyMedium,
+          ),
+        ),
+        const SizedBox(
+          width: 4,
+        ),
+        if (newWindow)
+          const Icon(
+            Icons.open_in_new,
+            size: 16,
+          ),
+      ],
     );
   }
 }
