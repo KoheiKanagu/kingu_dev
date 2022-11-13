@@ -38,7 +38,7 @@ Future<void> main() async {
           webRecaptchaSiteKey: '6LdDb5kcAAAAAE33uZXkDZFRXbvJ2g52rHWxxikG',
         ),
       container
-          .read(firebaseAnalytics)
+          .read(firebaseAnalyticsProvider)
           .setAnalyticsCollectionEnabled(kReleaseMode),
     ],
   );
@@ -108,9 +108,11 @@ class MyApp extends HookConsumerWidget {
     return MaterialApp.router(
       useInheritedMediaQuery: true,
       theme: theme,
-      routeInformationProvider: ref.watch(myGoRouter).routeInformationProvider,
-      routeInformationParser: ref.watch(myGoRouter).routeInformationParser,
-      routerDelegate: ref.watch(myGoRouter).routerDelegate,
+      routeInformationProvider:
+          ref.watch(myGoRouterProvider).routeInformationProvider,
+      routeInformationParser:
+          ref.watch(myGoRouterProvider).routeInformationParser,
+      routerDelegate: ref.watch(myGoRouterProvider).routerDelegate,
       supportedLocales: const [
         Locale('ja', 'JP'),
       ],

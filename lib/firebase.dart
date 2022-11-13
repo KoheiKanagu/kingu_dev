@@ -1,7 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final firebaseAnalytics = Provider.autoDispose(
-  (ref) => FirebaseAnalytics.instance,
-  name: 'firebaseAnalytics',
-);
+part 'firebase.g.dart';
+
+@riverpod
+FirebaseAnalytics firebaseAnalytics(FirebaseAnalyticsRef ref) =>
+    FirebaseAnalytics.instance;

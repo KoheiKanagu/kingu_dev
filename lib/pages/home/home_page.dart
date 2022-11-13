@@ -46,7 +46,7 @@ class HomePage extends HookConsumerWidget {
               leadingEmoji: '🐱',
               text: 'Kohei Kanagu',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'nyan',
                     );
                 launchUrlString('https://youtu.be/QH2-TGUlwu4');
@@ -58,7 +58,7 @@ class HomePage extends HookConsumerWidget {
               leadingEmoji: '📧',
               text: email,
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'email',
                     );
                 launchUrlString('mailto:$email');
@@ -68,7 +68,7 @@ class HomePage extends HookConsumerWidget {
               leadingEmoji: '💼',
               text: 'お仕事について',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'work',
                     );
                 launchUrlString(workUrl);
@@ -78,7 +78,7 @@ class HomePage extends HookConsumerWidget {
               leadingEmoji: '🛠️',
               text: 'このサイト',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'source',
                     );
                 launchUrlString(sourceUrl);
@@ -92,7 +92,7 @@ class HomePage extends HookConsumerWidget {
               text: githubUrl,
               headline: 'GitHub',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'github',
                     );
                 launchUrlString(githubUrl);
@@ -105,7 +105,7 @@ class HomePage extends HookConsumerWidget {
               text: twitterUrl,
               headline: 'Twitter',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'twitter',
                     );
                 launchUrlString(twitterUrl);
@@ -118,7 +118,7 @@ class HomePage extends HookConsumerWidget {
               text: facebookUrl,
               headline: 'Facebook',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'facebook',
                     );
                 launchUrlString(facebookUrl);
@@ -131,7 +131,7 @@ class HomePage extends HookConsumerWidget {
               text: steamUrl,
               headline: 'Steam',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'steam',
                     );
                 launchUrlString(steamUrl);
@@ -144,7 +144,7 @@ class HomePage extends HookConsumerWidget {
               text: zennUrl,
               headline: 'Zenn',
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'zenn',
                     );
                 launchUrlString(zennUrl);
@@ -153,7 +153,7 @@ class HomePage extends HookConsumerWidget {
             const Gap(48),
             _StoreButton(
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'appStore',
                     );
                 launchUrlString(appStoreUrl);
@@ -162,7 +162,7 @@ class HomePage extends HookConsumerWidget {
             ),
             _StoreButton(
               onTap: () {
-                ref.read(firebaseAnalytics).logEvent(
+                ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'googlePlay',
                     );
                 launchUrlString(googlePlayUrl);
