@@ -11,6 +11,7 @@ import 'package:kingu_dev/firebase.dart';
 import 'package:kingu_dev/firebase_options.dart';
 import 'package:kingu_dev/provider_logger.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
+import 'package:kingu_dev/theme/digital_agency_colors.dart';
 
 Future<void> main() async {
   if (kIsWeb) {
@@ -75,12 +76,32 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ThemeData.from(
-      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF00A5BF)),
-      textTheme: Typography.material2021().black.apply(
-            fontFamily: 'Noto Sans JP',
+    final theme = ThemeData(
+      textTheme: Typography.material2021()
+          .black
+          .apply(
+            displayColor: DigitalAgencyColors.sumi.shade900,
+            bodyColor: DigitalAgencyColors.sumi.shade900,
+            decorationColor: DigitalAgencyColors.sumi.shade700,
+          )
+          .merge(
+            const TextTheme(
+              headlineLarge: TextStyle(
+                fontSize: 42,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.5,
+              ),
+              bodyMedium: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 1.75,
+              ),
+            ),
           ),
-      useMaterial3: true,
+      fontFamily: 'Noto Sans JP',
+      iconTheme: IconThemeData(
+        color: DigitalAgencyColors.sea.shade600,
+      ),
     );
 
     return MaterialApp.router(
