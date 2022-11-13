@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:kingu_dev/firebase.dart';
 import 'package:kingu_dev/firebase_options.dart';
+import 'package:kingu_dev/gen/fonts.gen.dart';
 import 'package:kingu_dev/provider_logger.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
 import 'package:kingu_dev/theme/digital_agency_colors.dart';
@@ -83,6 +84,7 @@ class MyApp extends HookConsumerWidget {
             displayColor: DigitalAgencyColors.sumi.shade900,
             bodyColor: DigitalAgencyColors.sumi.shade900,
             decorationColor: DigitalAgencyColors.sumi.shade700,
+            fontFamily: FontFamily.notoSansJP,
           )
           .merge(
             const TextTheme(
@@ -98,7 +100,6 @@ class MyApp extends HookConsumerWidget {
               ),
             ),
           ),
-      fontFamily: 'Noto Sans JP',
       iconTheme: IconThemeData(
         color: DigitalAgencyColors.sea.shade600,
       ),
