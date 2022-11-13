@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kingu_dev/router/home_router.dart';
+import 'package:kingu_dev/widgets/digital_agency_layout_widget.dart';
+import 'package:kingu_dev/widgets/digital_agency_navigate_button.dart';
 
 class ErrorPage extends HookConsumerWidget {
   const ErrorPage({
@@ -12,21 +15,21 @@ class ErrorPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('エラー'),
-            ElevatedButton.icon(
-              onPressed: () {
-                const HomePageRoute().go(context);
-              },
-              icon: const Icon(Icons.home),
-              label: const Text('Home'),
-            ),
-          ],
-        ),
+      body: DigitalAgencyLayoutWidget(
+        children: [
+          const Gap(64),
+          Text(
+            'エラー',
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          const Gap(24),
+          DigitalAgencyNavigateButton(
+            text: 'ホーム',
+            onPressed: () {
+              const HomePageRoute().go(context);
+            },
+          ),
+        ],
       ),
     );
   }
