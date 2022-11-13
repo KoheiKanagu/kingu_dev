@@ -5,8 +5,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/firebase.dart';
 import 'package:kingu_dev/gen/assets.gen.dart';
+import 'package:kingu_dev/router/error_router.dart';
 import 'package:kingu_dev/theme/digital_agency_colors.dart';
 import 'package:kingu_dev/widgets/digital_agency_layout_widget.dart';
+import 'package:kingu_dev/widgets/digital_agency_navigate_button.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 const email = 'kanagu@kingu.dev';
@@ -169,6 +171,18 @@ class HomePage extends HookConsumerWidget {
             ),
           ].intersperse(
             const Gap(8),
+          ),
+          const Gap(64),
+          SelectableText(
+            'その他',
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          const Gap(24),
+          DigitalAgencyNavigateButton(
+            text: '次へ',
+            onPressed: () {
+              const ErrorPageRoute().go(context);
+            },
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:kingu_dev/extensions/media_query_data_extension.dart';
 
 class DigitalAgencyLayoutWidget extends StatelessWidget {
   const DigitalAgencyLayoutWidget({
@@ -10,31 +11,27 @@ class DigitalAgencyLayoutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double padding;
-        if (constraints.maxWidth <= 520) {
-          padding = 16;
-        } else if (constraints.maxWidth <= 960) {
-          padding = 40;
-        } else {
-          padding = 40;
-        }
+    final data = MediaQuery.of(context);
 
-        return Align(
-          alignment: Alignment.topCenter,
-          child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: padding),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 760),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: children,
-              ),
-            ),
+    final double padding;
+    if (data.isSmallScreen) {
+      padding = 16;
+    } else {
+      padding = 40;
+    }
+
+    return Align(
+      alignment: Alignment.topCenter,
+      child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: padding),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 760),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: children,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

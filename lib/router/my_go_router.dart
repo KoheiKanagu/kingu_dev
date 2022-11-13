@@ -14,9 +14,6 @@ final myGoRouter = Provider.autoDispose(
       ...home_router.$appRoutes,
       ...error_router.$appRoutes,
     ],
-    redirect: (_, state) {
-      return state.subloc != '/' ? '/' : null;
-    },
     errorBuilder: (context, state) {
       logger.e(
         [
