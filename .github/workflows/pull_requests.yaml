@@ -4,6 +4,7 @@ on:
   pull_request:
     paths-ignore:
       - "firebase/**"
+      - ".devcontainer/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
