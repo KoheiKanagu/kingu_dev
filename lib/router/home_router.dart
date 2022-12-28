@@ -13,7 +13,7 @@ class HomePageRoute extends GoRouteData {
   static const path = '/';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, GoRouterState state) {
     return const HomePage();
   }
 }

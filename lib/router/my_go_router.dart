@@ -29,7 +29,7 @@ GoRouter myGoRouter(MyGoRouterRef ref) => GoRouter(
           state.error,
           StackTrace.current,
         );
-        return const error_router.ErrorPageRoute().build(context);
+        return const error_router.ErrorPageRoute().build(context, state);
       },
       observers: [
         FirebaseAnalyticsObserver(
