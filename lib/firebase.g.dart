@@ -31,7 +31,7 @@ class _SystemHash {
   }
 }
 
-String $firebaseAnalyticsHash() => r'8c6d8a28c036bcaf976ae82ec4fc34ebaed14bce';
+String _$firebaseAnalyticsHash() => r'8c6d8a28c036bcaf976ae82ec4fc34ebaed14bce';
 
 /// See also [firebaseAnalytics].
 final firebaseAnalyticsProvider = AutoDisposeProvider<FirebaseAnalytics>(
@@ -39,6 +39,6 @@ final firebaseAnalyticsProvider = AutoDisposeProvider<FirebaseAnalytics>(
   name: r'firebaseAnalyticsProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $firebaseAnalyticsHash,
+      : _$firebaseAnalyticsHash,
 );
 typedef FirebaseAnalyticsRef = AutoDisposeProviderRef<FirebaseAnalytics>;

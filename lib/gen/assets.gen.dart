@@ -41,10 +41,22 @@ class $AssetsIconsGen {
       [appStore, facebook, github, googlePlay, steam, twitter, zenn];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/steam_replay_2022.webp
+  AssetGenImage get steamReplay2022 =>
+      const AssetGenImage('assets/images/steam_replay_2022.webp');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [steamReplay2022];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {

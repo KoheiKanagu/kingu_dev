@@ -56,6 +56,7 @@ flutter:
           weight: 700
   assets:
     - assets/icons/
+    - assets/images/
 
 flutter_gen:
   integrations:
