@@ -24,6 +24,7 @@ const zennUrl = 'https://zenn.dev/kingu';
 const appStoreUrl = 'https://apps.apple.com/am/developer/id1530720615';
 const googlePlayUrl =
     'https://play.google.com/store/apps/developer?id=Kohei+Kanagu';
+const steamReplay2022Url = 'https://s.team/y22/dngcjfm';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({
@@ -151,27 +152,37 @@ class HomePage extends HookConsumerWidget {
               },
             ),
             const Gap(48),
-            _StoreButton(
+            _ImageButton(
               onTap: () {
                 ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'appStore',
                     );
                 launchUrlString(appStoreUrl);
               },
-              assetGenImage: Assets.icons.appStore,
+              image: Assets.icons.appStore.image(height: 40),
             ),
-            _StoreButton(
+            _ImageButton(
               onTap: () {
                 ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'googlePlay',
                     );
                 launchUrlString(googlePlayUrl);
               },
-              assetGenImage: Assets.icons.googlePlay,
+              image: Assets.icons.googlePlay.image(height: 40),
             ),
           ].intersperse(
             const Gap(8),
           ),
+          const Gap(64),
+          _ImageButton(
+            onTap: () {
+              launchUrlString(steamReplay2022Url);
+            },
+            image: Assets.images.steamReplay2022.image(
+              width: 512,
+            ),
+          ),
+          const Divider(),
           const Gap(64),
           SelectableText(
             'その他',
@@ -190,15 +201,15 @@ class HomePage extends HookConsumerWidget {
   }
 }
 
-class _StoreButton extends HookConsumerWidget {
-  const _StoreButton({
+class _ImageButton extends HookConsumerWidget {
+  const _ImageButton({
     required this.onTap,
-    required this.assetGenImage,
+    required this.image,
   });
 
   final VoidCallback onTap;
 
-  final AssetGenImage assetGenImage;
+  final Image image;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -208,9 +219,7 @@ class _StoreButton extends HookConsumerWidget {
         backgroundColor: Colors.transparent,
       ),
       onPressed: onTap,
-      child: assetGenImage.image(
-        height: 40,
-      ),
+      child: image,
     );
   }
 }
