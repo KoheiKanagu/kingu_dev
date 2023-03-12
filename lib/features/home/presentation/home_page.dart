@@ -1,12 +1,12 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/common_widgets/digital_agency_layout_widget.dart';
 import 'package:kingu_dev/common_widgets/digital_agency_navigate_button.dart';
-import 'package:kingu_dev/constants/digital_agency_colors.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
+import 'package:kingu_dev/features/home/presentation/widgets/home_page_image_button.dart';
+import 'package:kingu_dev/features/home/presentation/widgets/home_page_simple_text.dart';
 import 'package:kingu_dev/gen/assets.gen.dart';
 import 'package:kingu_dev/routing/error_router.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -43,7 +43,7 @@ class HomePage extends HookConsumerWidget {
           ),
           const Gap(24),
           ...[
-            _SimpleText(
+            HomePageSimpleText(
               leadingEmoji: '🐱',
               text: 'Kohei Kanagu',
               onTap: () {
@@ -55,7 +55,7 @@ class HomePage extends HookConsumerWidget {
               isLink: false,
               newWindow: false,
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leadingEmoji: '📧',
               text: email,
               onTap: () {
@@ -65,7 +65,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString('mailto:$email');
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leadingEmoji: '💼',
               text: 'お仕事について',
               onTap: () {
@@ -75,7 +75,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString(workUrl);
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leadingEmoji: '🛠️',
               text: 'このサイト',
               onTap: () {
@@ -86,7 +86,7 @@ class HomePage extends HookConsumerWidget {
               },
             ),
             const Gap(48),
-            _SimpleText(
+            HomePageSimpleText(
               leading: Assets.icons.github.image(
                 height: 32,
               ),
@@ -99,7 +99,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString(githubUrl);
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leading: Assets.icons.twitter.image(
                 height: 32,
               ),
@@ -112,7 +112,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString(twitterUrl);
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leading: Assets.icons.facebook.image(
                 height: 32,
               ),
@@ -125,7 +125,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString(facebookUrl);
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leading: Assets.icons.steam.image(
                 height: 32,
               ),
@@ -138,7 +138,7 @@ class HomePage extends HookConsumerWidget {
                 launchUrlString(steamUrl);
               },
             ),
-            _SimpleText(
+            HomePageSimpleText(
               leading: Assets.icons.zenn.image(
                 height: 32,
               ),
@@ -152,7 +152,7 @@ class HomePage extends HookConsumerWidget {
               },
             ),
             const Gap(48),
-            _ImageButton(
+            HomePageImageButton(
               onTap: () {
                 ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'appStore',
@@ -161,7 +161,7 @@ class HomePage extends HookConsumerWidget {
               },
               image: Assets.icons.appStore.image(height: 40),
             ),
-            _ImageButton(
+            HomePageImageButton(
               onTap: () {
                 ref.read(firebaseAnalyticsProvider).logEvent(
                       name: 'googlePlay',
@@ -174,7 +174,7 @@ class HomePage extends HookConsumerWidget {
             const Gap(8),
           ),
           const Gap(64),
-          _ImageButton(
+          HomePageImageButton(
             onTap: () {
               launchUrlString(steamReplay2022Url);
             },
@@ -197,92 +197,6 @@ class HomePage extends HookConsumerWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _ImageButton extends HookConsumerWidget {
-  const _ImageButton({
-    required this.onTap,
-    required this.image,
-  });
-
-  final VoidCallback onTap;
-
-  final Image image;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        backgroundColor: Colors.transparent,
-      ),
-      onPressed: onTap,
-      child: image,
-    );
-  }
-}
-
-class _SimpleText extends HookConsumerWidget {
-  const _SimpleText({
-    this.isLink = true,
-    this.leadingEmoji,
-    this.leading,
-    this.headline = '',
-    required this.text,
-    required this.onTap,
-    this.newWindow = true,
-  });
-
-  final bool isLink;
-
-  final String? leadingEmoji;
-
-  final Widget? leading;
-
-  final String text;
-
-  final String headline;
-
-  final VoidCallback onTap;
-
-  final bool newWindow;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Wrap(
-      crossAxisAlignment: WrapCrossAlignment.center,
-      children: [
-        leading ?? Text(leadingEmoji ?? ''),
-        const SizedBox(
-          width: 4,
-        ),
-        Text(headline),
-        const SizedBox(
-          width: 4,
-        ),
-        Text.rich(
-          TextSpan(
-            text: text,
-            recognizer: TapGestureRecognizer()..onTap = onTap,
-            style: isLink
-                ? Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: DigitalAgencyColors.sea.shade600,
-                      decoration: TextDecoration.underline,
-                    )
-                : Theme.of(context).textTheme.bodyMedium,
-          ),
-        ),
-        const SizedBox(
-          width: 4,
-        ),
-        if (newWindow)
-          const Icon(
-            Icons.open_in_new,
-            size: 16,
-          ),
-      ],
     );
   }
 }
