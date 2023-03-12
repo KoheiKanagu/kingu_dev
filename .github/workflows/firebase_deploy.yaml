@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FLUTTER_VERSION: "3.3.8" # FIXME
+  FLUTTER_VERSION: "3.7.7" # FIXME
   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
 jobs:
