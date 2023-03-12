@@ -8,34 +8,34 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'error_router.dart' as error_router;
 import 'home_router.dart' as home_router;
 
-part 'my_go_router.g.dart';
-
-@riverpod
-GoRouter myGoRouter(MyGoRouterRef ref) => GoRouter(
-      routes: [
-        ...home_router.$appRoutes,
-        ...error_router.$appRoutes,
-      ],
-      errorBuilder: (context, state) {
-        logger.e(
-          [
-            'router error',
-            'name: ${state.name}',
-            'fullpath: ${state.fullpath}',
-            'params: ${state.params}',
-            'location: ${state.location}',
-            'namqueryParametersAlle: ${state.queryParametersAll}',
-          ],
-          state.error,
-          StackTrace.current,
-        );
-        return const error_router.ErrorPageRoute().build(context, state);
-      },
-      observers: [
-        FirebaseAnalyticsObserver(
-          analytics: ref.watch(firebaseAnalyticsProvider),
-        ),
-      ],
-      debugLogDiagnostics: kDebugMode,
-      initialLocation: '/',
-    );
+final myGoRouterProvider = Provider.autoDispose(
+  (ref) => GoRouter(
+    routes: [
+      ...home_router.$appRoutes,
+      ...error_router.$appRoutes,
+    ],
+    errorBuilder: (context, state) {
+      logger.e(
+        [
+          'router error',
+          'name: ${state.name}',
+          'fullpath: ${state.fullpath}',
+          'params: ${state.params}',
+          'location: ${state.location}',
+          'namqueryParametersAlle: ${state.queryParametersAll}',
+        ],
+        state.error,
+        StackTrace.current,
+      );
+      return const error_router.ErrorPageRoute().build(context, state);
+    },
+    observers: [
+      FirebaseAnalyticsObserver(
+        analytics: ref.watch(firebaseAnalyticsProvider),
+      ),
+    ],
+    debugLogDiagnostics: kDebugMode,
+    initialLocation: '/',
+  ),
+  name: 'myGoRouterProvier',
+);
