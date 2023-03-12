@@ -2,7 +2,7 @@
 
 // ignore_for_file: type=lint
 
-part of 'firebase.dart';
+part of 'firebase_providers.dart';
 
 // **************************************************************************
 // RiverpodGenerator

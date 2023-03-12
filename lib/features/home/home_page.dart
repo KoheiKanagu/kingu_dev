@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intersperse/intersperse.dart';
-import 'package:kingu_dev/firebase.dart';
+import 'package:kingu_dev/common_widgets/digital_agency_layout_widget.dart';
+import 'package:kingu_dev/common_widgets/digital_agency_navigate_button.dart';
+import 'package:kingu_dev/constants/digital_agency_colors.dart';
+import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/gen/assets.gen.dart';
-import 'package:kingu_dev/router/error_router.dart';
-import 'package:kingu_dev/theme/digital_agency_colors.dart';
-import 'package:kingu_dev/widgets/digital_agency_layout_widget.dart';
-import 'package:kingu_dev/widgets/digital_agency_navigate_button.dart';
+import 'package:kingu_dev/routing/error_router.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 const email = 'kanagu@kingu.dev';

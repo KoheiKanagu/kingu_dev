@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kingu_dev/pages/error/error_page.dart';
+import 'package:kingu_dev/features/error/presentation/error_page.dart';
 
 part 'error_router.g.dart';
 
