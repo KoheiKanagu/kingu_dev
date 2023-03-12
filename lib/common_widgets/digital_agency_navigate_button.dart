@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kingu_dev/constants/digital_agency_colors.dart';
 import 'package:kingu_dev/extensions/media_query_data_extension.dart';
-import 'package:kingu_dev/theme/digital_agency_colors.dart';
 
 class DigitalAgencyNavigateButton extends StatelessWidget {
   const DigitalAgencyNavigateButton({

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kingu_dev/pages/home/home_page.dart';
+import 'package:kingu_dev/features/home/presentation/home_page.dart';
 
 part 'home_router.g.dart';
 

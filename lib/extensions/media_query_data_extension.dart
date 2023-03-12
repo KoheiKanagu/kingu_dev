@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:kingu_dev/theme/digital_agency_layout.dart';
+import 'package:kingu_dev/constants/digital_agency_layout.dart';
 
 extension MediaQueryDataExtension on MediaQueryData {
   bool get isLarseScreen {

@@ -7,12 +7,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:kingu_dev/firebase.dart';
-import 'package:kingu_dev/firebase_options.dart';
+import 'package:kingu_dev/constants/digital_agency_colors.dart';
+import 'package:kingu_dev/constants/firebase_options.dart';
+import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/gen/fonts.gen.dart';
-import 'package:kingu_dev/provider_logger.dart';
-import 'package:kingu_dev/router/my_go_router.dart';
-import 'package:kingu_dev/theme/digital_agency_colors.dart';
+import 'package:kingu_dev/routing/my_go_router.dart';
+import 'package:kingu_dev/utils/provider_logger.dart';
 
 Future<void> main() async {
   if (kIsWeb) {

@@ -1,8 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kingu_dev/firebase.dart';
-import 'package:kingu_dev/provider_logger.dart';
+import 'package:kingu_dev/constants/firebase_providers.dart';
+import 'package:kingu_dev/utils/provider_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'error_router.dart' as error_router;

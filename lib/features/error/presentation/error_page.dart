@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kingu_dev/router/home_router.dart';
-import 'package:kingu_dev/widgets/digital_agency_layout_widget.dart';
-import 'package:kingu_dev/widgets/digital_agency_navigate_button.dart';
+import 'package:kingu_dev/common_widgets/digital_agency_layout_widget.dart';
+import 'package:kingu_dev/common_widgets/digital_agency_navigate_button.dart';
+import 'package:kingu_dev/routing/home_router.dart';
 
 class ErrorPage extends HookConsumerWidget {
   const ErrorPage({
