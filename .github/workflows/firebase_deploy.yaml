@@ -11,14 +11,20 @@ concurrency:
 
 env:
   FLUTTER_VERSION: "3.7.7" # FIXME
-  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      ### Setup ###
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1.0.0
+        with:
+          workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
+          service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
+
       - uses: actions/checkout@v3
 
       - name: Install Firebase CLI
