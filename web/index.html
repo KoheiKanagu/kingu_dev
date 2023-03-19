@@ -38,19 +38,51 @@
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
+    <style>
+      #loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: #003ee5;
+        opacity: 0;
+        animation: fade-in-out 2s ease-in-out infinite;
+      }
+
+      @keyframes fade-in-out {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="loading">Loading...</div>
     <script>
       window.addEventListener("load", function (ev) {
+        var loading = document.querySelector("#loading");
+        loading.textContent = "ロード中...";
+
         // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
             serviceWorkerVersion: serviceWorkerVersion,
           },
-          onEntrypointLoaded: function (engineInitializer) {
-            engineInitializer.initializeEngine().then(function (appRunner) {
-              appRunner.runApp();
-            });
+          onEntrypointLoaded: async function (engineInitializer) {
+            loading.textContent = "エンジン初期化中...";
+
+            let appRunner = await engineInitializer.initializeEngine();
+            loading.textContent = "起動しています...";
+
+            await appRunner.runApp();
           },
         });
       });
