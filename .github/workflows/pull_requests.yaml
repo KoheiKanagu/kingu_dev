@@ -24,8 +24,12 @@ jobs:
       - name: "Install Flutter"
         run: ./.github/workflows/scripts/install-flutter.sh $FLUTTER_VERSION
 
+      - run: |
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
+          git diff --exit-code
+
       ### Build ###
       - name: Build
         run: |
-          flutter pub get
           flutter build web
