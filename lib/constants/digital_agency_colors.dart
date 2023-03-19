@@ -3,6 +3,22 @@ import 'package:flutter/material.dart';
 class DigitalAgencyColors {
   static const white = Color(0xFFFFFFFF);
 
+  static const hibiki = MaterialColor(
+    0xFF00a6bf,
+    {
+      900: Color(0xFF005B62),
+      800: Color(0xFF007D8D),
+      700: Color(0xFF0091A5),
+      600: Color(0xFF00A6BF), // primary
+      500: Color(0xFF01B5D2),
+      400: Color(0xFF24C0D9),
+      300: Color(0xFF4BCBE1),
+      200: Color(0xFF7EDAEA),
+      100: Color(0xFFB1E9F3),
+      50: Color(0xFFE0F6FA),
+    },
+  );
+
   static const sea = MaterialColor(
     0xFF003EE5,
     {

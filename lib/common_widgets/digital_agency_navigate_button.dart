@@ -35,7 +35,7 @@ class DigitalAgencyNavigateButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
-              backgroundColor: DigitalAgencyColors.sea.shade600,
+              backgroundColor: DigitalAgencyColors.hibiki.shade600,
               padding: const EdgeInsets.all(16),
               minimumSize: const Size.fromHeight(56),
             ),
