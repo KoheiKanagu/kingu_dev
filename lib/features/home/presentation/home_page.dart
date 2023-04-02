@@ -181,6 +181,7 @@ class HomePage extends HookConsumerWidget {
               const ErrorPageRoute().go(context);
             },
           ),
+          const Gap(64),
         ],
       ),
     );
