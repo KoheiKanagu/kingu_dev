@@ -2,27 +2,27 @@
 
 // ignore_for_file: type=lint
 
-part of 'error_router.dart';
+part of 'settings_page_route.dart';
 
 // **************************************************************************
 // GoRouterGenerator
 // **************************************************************************
 
-List<GoRoute> get $appRoutes => [
-      $errorPageRoute,
+List<RouteBase> get $appRoutes => [
+      $settingsPageRoute,
     ];
 
-GoRoute get $errorPageRoute => GoRouteData.$route(
-      path: '/error',
-      factory: $ErrorPageRouteExtension._fromState,
+RouteBase get $settingsPageRoute => GoRouteData.$route(
+      path: '/settings',
+      factory: $SettingsPageRouteExtension._fromState,
     );
 
-extension $ErrorPageRouteExtension on ErrorPageRoute {
-  static ErrorPageRoute _fromState(GoRouterState state) =>
-      const ErrorPageRoute();
+extension $SettingsPageRouteExtension on SettingsPageRoute {
+  static SettingsPageRoute _fromState(GoRouterState state) =>
+      const SettingsPageRoute();
 
   String get location => GoRouteData.$location(
-        '/error',
+        '/settings',
       );
 
   void go(BuildContext context) => context.go(location);

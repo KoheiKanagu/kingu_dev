@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kingu_dev/features/error/presentation/error_page.dart';
 
-part 'error_router.g.dart';
+part 'error_page_route.g.dart';
 
 @TypedGoRoute<ErrorPageRoute>(
   path: ErrorPageRoute.path,

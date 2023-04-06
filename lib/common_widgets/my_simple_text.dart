@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kingu_dev/constants/digital_agency_colors.dart';
 
-class HomePageSimpleText extends StatelessWidget {
-  const HomePageSimpleText({
+class MySimpleTest extends StatelessWidget {
+  const MySimpleTest({
     super.key,
     this.isLink = true,
     this.leadingEmoji,
@@ -35,11 +35,11 @@ class HomePageSimpleText extends StatelessWidget {
       children: [
         leading ?? Text(leadingEmoji ?? ''),
         const SizedBox(
-          width: 4,
+          width: 8,
         ),
         Text(headline),
         const SizedBox(
-          width: 4,
+          width: 8,
         ),
         Text.rich(
           TextSpan(
