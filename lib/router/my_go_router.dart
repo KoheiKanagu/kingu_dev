@@ -101,16 +101,10 @@ class RootPageRoute extends ShellRouteData {
         indexToGo(p0, context);
       },
       body: (context) {
-        return Padding(
-          padding: const EdgeInsets.only(left: 40),
-          child: child,
-        );
+        return child;
       },
       smallBody: (context) {
-        return Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: child,
-        );
+        return child;
       },
     );
   }
