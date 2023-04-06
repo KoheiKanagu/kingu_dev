@@ -1,19 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:kingu_dev/router/my_go_router.dart';
 
 class ErrorPage extends HookConsumerWidget {
   const ErrorPage({
     super.key,
   });
 
-  static const path = '/error';
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Text(
-        'エラー',
-        style: Theme.of(context).textTheme.headlineLarge,
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'エラー',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            const Gap(64),
+            ElevatedButton(
+              onPressed: () {
+                const ProfilePageRoute().go(context);
+              },
+              child: const Text(
+                'トップへ',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
