@@ -75,6 +75,11 @@ class RootPageRoute extends ShellRouteData {
 
   @override
   Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
+    final child = (((navigator as HeroControllerScope).child as Navigator)
+            .pages
+            .last as MaterialPage)
+        .child;
+
     return AdaptiveScaffold(
       key: const GlobalObjectKey('AdaptiveScaffold'),
       selectedIndex: locationToIndex(state.location),
@@ -98,13 +103,13 @@ class RootPageRoute extends ShellRouteData {
       body: (context) {
         return Padding(
           padding: const EdgeInsets.only(left: 40),
-          child: navigator,
+          child: child,
         );
       },
       smallBody: (context) {
         return Padding(
           padding: const EdgeInsets.only(left: 16),
-          child: navigator,
+          child: child,
         );
       },
     );
