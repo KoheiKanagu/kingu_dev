@@ -154,23 +154,17 @@ class ProfileBody extends HookConsumerWidget {
           const Gap(8),
         ),
         const Gap(64),
-        // HomePageImageButton(
-        //   onTap: () {
-        //     ref.read(firebaseAnalyticsProvider).logEvent(
-        //           name: 'steamReplay2022',
-        //         );
-        //     launchUrlString(MyProfile.steamReplay2022Url);
-        //   },
-        //   image: Assets.images.steamReplay2022.image(
-        //     width: 512,
-        //   ),
-        // ),
         Align(
           alignment: Alignment.centerLeft,
           child: SizedBox(
             height: 512,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                ref.read(firebaseAnalyticsProvider).logEvent(
+                      name: 'steamReplay2022',
+                    );
+                launchUrlString(MyProfile.steamReplay2022Url);
+              },
               child: Assets.images.steamReplay2022.image(),
             ),
           ),
