@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DigitalAgencyColors {
+class MyColors {
   static const white = Color(0xFFFFFFFF);
 
   static const hibiki = MaterialColor(

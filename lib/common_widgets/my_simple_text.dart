@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:kingu_dev/constants/digital_agency_colors.dart';
+import 'package:kingu_dev/constants/my_colors.dart';
 
-class HomePageSimpleText extends StatelessWidget {
-  const HomePageSimpleText({
+class MySimpleTest extends StatelessWidget {
+  const MySimpleTest({
     super.key,
     this.isLink = true,
     this.leadingEmoji,
@@ -33,13 +33,28 @@ class HomePageSimpleText extends StatelessWidget {
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        leading ?? Text(leadingEmoji ?? ''),
+        leadingEmoji == null
+            ? const SizedBox.shrink()
+            : Text(leadingEmoji ?? ''),
+        leading == null
+            ? const SizedBox.shrink()
+            : Container(
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? MyColors.sumi.shade100
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: leading,
+              ),
+        // leading ?? Text(leadingEmoji ?? ''),
         const SizedBox(
-          width: 4,
+          width: 8,
         ),
         Text(headline),
         const SizedBox(
-          width: 4,
+          width: 8,
         ),
         Text.rich(
           TextSpan(
@@ -47,7 +62,9 @@ class HomePageSimpleText extends StatelessWidget {
             recognizer: TapGestureRecognizer()..onTap = onTap,
             style: isLink
                 ? Theme.of(context).textTheme.bodyMedium?.apply(
-                      color: DigitalAgencyColors.sea.shade600,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? MyColors.sea.shade100
+                          : MyColors.sea.shade600,
                       decoration: TextDecoration.underline,
                     )
                 : Theme.of(context).textTheme.bodyMedium,
