@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kingu_dev/router/my_go_router.dart';
+import 'package:kingu_dev/constants/my_theme.dart';
+import 'package:kingu_dev/features/settings/application/settings_providers.dart';
 
 class SettingsPage extends HookConsumerWidget {
   const SettingsPage({
@@ -10,14 +11,18 @@ class SettingsPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Column(
+      appBar: AppBar(),
+      body: ListView(
+        padding: MyTheme.adaptiveBodyWidgetPadding(context),
         children: [
-          const Text('SettingsPageRoute'),
-          ElevatedButton(
-            onPressed: () {
-              const ErrorPageRoute().go(context);
+          SwitchListTile(
+            value: ref.watch(darkModeControllerProvider),
+            onChanged: (value) {
+              ref
+                  .read(darkModeControllerProvider.notifier)
+                  .switchDarkMode(value);
             },
-            child: const Text('Go to Profile'),
+            title: const Text('Dark Mode'),
           ),
         ],
       ),

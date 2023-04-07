@@ -7,10 +7,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:kingu_dev/constants/digital_agency_colors.dart';
 import 'package:kingu_dev/constants/firebase_options.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
-import 'package:kingu_dev/gen/fonts.gen.dart';
+import 'package:kingu_dev/constants/my_theme.dart';
+import 'package:kingu_dev/features/settings/application/settings_providers.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
 import 'package:kingu_dev/utils/provider_logger.dart';
 
@@ -77,39 +77,13 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ThemeData(
-      useMaterial3: true,
-      colorSchemeSeed: DigitalAgencyColors.hibiki.shade600,
-      textTheme: Typography.material2021()
-          .black
-          .apply(
-            displayColor: DigitalAgencyColors.sumi.shade900,
-            bodyColor: DigitalAgencyColors.sumi.shade900,
-            decorationColor: DigitalAgencyColors.sumi.shade700,
-            fontFamily: FontFamily.notoSansJP,
-          )
-          .merge(
-            const TextTheme(
-              headlineLarge: TextStyle(
-                fontSize: 42,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
-              ),
-              bodyMedium: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                letterSpacing: 1.75,
-              ),
-            ),
-          ),
-      iconTheme: IconThemeData(
-        color: DigitalAgencyColors.hibiki.shade600,
-      ),
-    );
-
     return MaterialApp.router(
       useInheritedMediaQuery: true,
-      theme: theme,
+      theme: MyTheme.theme,
+      themeMode: ref.watch(darkModeControllerProvider)
+          ? ThemeMode.dark
+          : ThemeMode.light,
+      darkTheme: MyTheme.darkTheme,
       routeInformationProvider:
           ref.watch(myGoRouterProvider).routeInformationProvider,
       routeInformationParser:

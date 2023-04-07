@@ -5,6 +5,7 @@ import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/common_widgets/my_simple_text.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/constants/my_profile.dart';
+import 'package:kingu_dev/constants/my_theme.dart';
 import 'package:kingu_dev/gen/assets.gen.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -16,9 +17,7 @@ class ProfileBody extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ListView(
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.1,
-      ),
+      padding: MyTheme.adaptiveBodyWidgetPadding(context),
       children: [
         SelectableText(
           '金具浩平',
