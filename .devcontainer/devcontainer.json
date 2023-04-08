@@ -15,7 +15,5 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers-contrib/features/firebase-cli:1": {}
-  },
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
-  "workspaceFolder": "/workspaces"
+  }
 }
