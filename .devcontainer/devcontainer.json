@@ -16,7 +16,7 @@
   },
   "postCreateCommand": "bash .devcontainer/bootstrap.sh",
   "containerEnv": {
-    "FLUTTER_HOME": "${localWorkspaceFolder}/_flutter/bin",
+    "FLUTTER_HOME": "${localWorkspaceFolder}/._flutter/bin",
     "PUB_CACHE": "~/.pub-cache/bin"
   },
   "remoteEnv": {
