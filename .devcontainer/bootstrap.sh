@@ -4,7 +4,7 @@ set -euxo pipefail
 if [ -d "$FLUTTER_HOME" ]; then
     (cd "$FLUTTER_HOME" && git pull)
 else
-    git clone https://github.com/flutter/flutter.git --depth 1 -b "stable" "{{path/to/flutter}}"
+    git clone https://github.com/flutter/flutter.git --depth 1 -b "stable" "._flutter"
 fi
 
 flutter --version
