@@ -11,3 +11,5 @@ flutter --version
 
 flutter pub global activate melos
 flutter pub global activate grinder
+
+flutter pub get
