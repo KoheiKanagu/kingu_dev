@@ -11,7 +11,16 @@
         "foxundermoon.shell-format",
         "timonwong.shellcheck",
         "redhat.vscode-yaml"
-      ]
+      ],
+      "settings": {
+        "dart.flutterSdkPath": "${containerEnv:FLUTTER_HOME}",
+        "search.exclude": {
+          "._flutter/**": true
+        },
+        "files.watcherExclude": {
+          "._flutter/**": true
+        }
+      }
     }
   },
   "postCreateCommand": "bash .devcontainer/bootstrap.sh",
@@ -20,15 +29,6 @@
   },
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerEnv:FLUTTER_HOME}:/home/vscode/.pub-cache/bin"
-  },
-  "settings": {
-    "dart.flutterSdkPath": "${containerEnv:FLUTTER_HOME}",
-    "search.exclude": {
-      "._flutter/**": true
-    },
-    "files.watcherExclude": {
-      "._flutter/**": true
-    }
   },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
