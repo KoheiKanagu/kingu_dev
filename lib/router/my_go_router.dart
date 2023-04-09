@@ -5,6 +5,7 @@ import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/features/error/presentation/error_page.dart';
+import 'package:kingu_dev/features/pong/presentation/pong_page.dart';
 import 'package:kingu_dev/features/profile/presentation/profile_page.dart';
 import 'package:kingu_dev/features/settings/presentation/settings_page.dart';
 import 'package:kingu_dev/utils/provider_logger.dart';
@@ -66,6 +67,9 @@ final myGoRouterProvider = Provider.autoDispose(
     TypedGoRoute<ProfilePageRoute>(
       path: ProfilePageRoute.path,
     ),
+    TypedGoRoute<PongPageRoute>(
+      path: PongPageRoute.path,
+    ),
   ],
 )
 class RootPageRoute extends ShellRouteData {
@@ -92,6 +96,11 @@ class RootPageRoute extends ShellRouteData {
           label: 'Profile',
         ),
         NavigationDestination(
+          icon: Icon(Icons.games_outlined),
+          selectedIcon: Icon(Icons.games),
+          label: 'Games',
+        ),
+        NavigationDestination(
           icon: Icon(Icons.settings_applications_outlined),
           selectedIcon: Icon(Icons.settings_applications),
           label: 'Settings',
@@ -114,9 +123,14 @@ class RootPageRoute extends ShellRouteData {
       return 0;
     }
 
-    if (location.startsWith(SettingsPageRoute.path)) {
+    if (location.startsWith(PongPageRoute.path)) {
       return 1;
     }
+
+    if (location.startsWith(SettingsPageRoute.path)) {
+      return 2;
+    }
+
     return 0;
   }
 
@@ -126,6 +140,9 @@ class RootPageRoute extends ShellRouteData {
         const ProfilePageRoute().go(context);
         break;
       case 1:
+        const PongPageRoute().go(context);
+        break;
+      case 2:
         const SettingsPageRoute().go(context);
         break;
     }
@@ -162,5 +179,16 @@ class ErrorPageRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const ErrorPage();
+  }
+}
+
+class PongPageRoute extends GoRouteData {
+  const PongPageRoute();
+
+  static const path = '/games/pong';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const PongPage();
   }
 }
