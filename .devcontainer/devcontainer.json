@@ -25,7 +25,7 @@
   },
   "postCreateCommand": "bash .devcontainer/bootstrap.sh",
   "containerEnv": {
-    "FLUTTER_HOME": "${localWorkspaceFolder}/._flutter/bin"
+    "FLUTTER_HOME": "${containerWorkspaceFolder}/._flutter/bin"
   },
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerEnv:FLUTTER_HOME}:/home/vscode/.pub-cache/bin"
