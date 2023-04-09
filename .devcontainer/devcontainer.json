@@ -20,6 +20,9 @@
     "PUB_CACHE": "$HOME/.pub-cache/bin",
     "PATH": "$PATH:$FLUTTER_HOME:$PUB_CACHE"
   },
+  "settings":{
+    "dart.flutterSdkPath": "$FLUTTER_HOME",
+  },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers-contrib/features/firebase-cli:1": {}
