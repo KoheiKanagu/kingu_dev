@@ -19,6 +19,9 @@
         },
         "files.watcherExclude": {
           "._flutter/**": true
+        },
+        "files.exclude": {
+          "._flutter": true
         }
       }
     }
