@@ -17,11 +17,19 @@
   "postCreateCommand": "bash .devcontainer/bootstrap.sh",
   "containerEnv": {
     "FLUTTER_HOME": "${localWorkspaceFolder}/_flutter/bin",
-    "PUB_CACHE": "$HOME/.pub-cache/bin",
-    "PATH": "$PATH:$FLUTTER_HOME:$PUB_CACHE"
+    "PUB_CACHE": "~/.pub-cache/bin"
   },
-  "settings":{
-    "dart.flutterSdkPath": "$FLUTTER_HOME",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerEnv:FLUTTER_HOME}:${containerEnv:PUB_CACHE}"
+  },
+  "settings": {
+    "dart.flutterSdkPath": "${containerEnv:FLUTTER_HOME}",
+    "search.exclude": {
+      "_flutter/**": true
+    },
+    "files.watcherExclude": {
+      "_flutter/**": true
+    }
   },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
