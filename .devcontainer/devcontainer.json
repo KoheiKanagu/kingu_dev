@@ -15,20 +15,20 @@
       "settings": {
         "dart.flutterSdkPath": "${containerEnv:FLUTTER_HOME}",
         "search.exclude": {
-          "._flutter/**": true
+          "_flutter/**": true
         },
         "files.watcherExclude": {
-          "._flutter/**": true
+          "_flutter/**": true
         },
         "files.exclude": {
-          "._flutter": true
+          "_flutter": true
         }
       }
     }
   },
   "postCreateCommand": "bash .devcontainer/bootstrap.sh",
   "containerEnv": {
-    "FLUTTER_HOME": "${containerWorkspaceFolder}/._flutter/bin"
+    "FLUTTER_HOME": "${containerWorkspaceFolder}/_flutter/bin"
   },
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerEnv:FLUTTER_HOME}:/home/vscode/.pub-cache/bin"
