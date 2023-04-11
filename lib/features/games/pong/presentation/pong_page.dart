@@ -10,7 +10,9 @@ class PongPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(),
+      body: Container(
+        child: const Text('Pong'),
+      ),
     );
   }
 }
