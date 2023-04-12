@@ -28,6 +28,16 @@ RouteBase get $rootPageRoute => ShellRouteData.$route(
           path: '/profile',
           factory: $ProfilePageRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: '/games',
+          factory: $GamePageRouteExtension._fromState,
+          routes: [
+            GoRouteData.$route(
+              path: 'pong',
+              factory: $PongPageRouteExtension._fromState,
+            ),
+          ],
+        ),
       ],
     );
 
@@ -73,6 +83,36 @@ extension $ProfilePageRouteExtension on ProfilePageRoute {
 
   String get location => GoRouteData.$location(
         '/profile',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+extension $GamePageRouteExtension on GamePageRoute {
+  static GamePageRoute _fromState(GoRouterState state) => const GamePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/games',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+extension $PongPageRouteExtension on PongPageRoute {
+  static PongPageRoute _fromState(GoRouterState state) => const PongPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/games/pong',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -1,0 +1,5 @@
+enum PaddlePosition {
+  left,
+  right,
+  ;
+}
