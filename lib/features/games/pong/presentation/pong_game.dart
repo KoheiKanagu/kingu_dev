@@ -12,7 +12,6 @@ class PongGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
   late final Paddle leftPaddle;
   late final Paddle rightPaddle;
-  late final Ball ball;
 
   int leftScore = 0;
   int rightScore = 0;
@@ -37,20 +36,13 @@ class PongGame extends FlameGame
       paddlePosition: PaddlePosition.right,
     );
 
-    ball = Ball();
-
     add(leftPaddle);
     add(rightPaddle);
-    add(ball);
+    add(Ball());
 
     add(CenterLine());
 
     add(Scoreboard(PaddlePosition.left));
     add(Scoreboard(PaddlePosition.right));
   }
-
-  // @override
-  // void update(double dt) {
-  //   super.update(dt);
-  // }
 }
