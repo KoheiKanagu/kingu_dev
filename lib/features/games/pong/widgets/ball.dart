@@ -31,7 +31,7 @@ class Ball extends CircleComponent
 
   @override
   Future<void> onLoad() {
-    radius = game.size.x * 0.01;
+    radius = game.size.x * 0.02;
     reset();
     add(CircleHitbox());
 
