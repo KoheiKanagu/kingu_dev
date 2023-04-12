@@ -11,7 +11,10 @@ class CenterLine extends Component with HasGameRef {
     List.generate(dotCount.ceil(), (index) {
       return RectangleComponent.square(
         size: dotSize,
-        position: Vector2(gameRef.size.x / 2, index * dotSize * 3),
+        position: Vector2(
+          gameRef.size.x / 2,
+          index * dotSize * 3,
+        ),
       );
     }).forEach(add);
   }

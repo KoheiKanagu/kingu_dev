@@ -6,12 +6,16 @@ import 'package:kingu_dev/features/games/pong/constants/paddle_position.dart';
 import 'package:kingu_dev/features/games/pong/widgets/ball.dart';
 import 'package:kingu_dev/features/games/pong/widgets/center_line.dart';
 import 'package:kingu_dev/features/games/pong/widgets/paddle.dart';
+import 'package:kingu_dev/features/games/pong/widgets/scoreboard.dart';
 
 class PongGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
   late final Paddle leftPaddle;
   late final Paddle rightPaddle;
   late final Ball ball;
+
+  int leftScore = 0;
+  int rightScore = 0;
 
   @override
   FutureOr<void> onLoad() {
@@ -33,16 +37,16 @@ class PongGame extends FlameGame
       paddlePosition: PaddlePosition.right,
     );
 
-    ball = Ball(
-      radius: size.x * 0.02,
-      position: Vector2(size.x / 2, size.y / 2),
-    );
+    ball = Ball();
 
     add(leftPaddle);
     add(rightPaddle);
     add(ball);
 
     add(CenterLine());
+
+    add(Scoreboard(PaddlePosition.left));
+    add(Scoreboard(PaddlePosition.right));
   }
 
   // @override
