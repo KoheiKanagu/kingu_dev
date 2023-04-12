@@ -48,7 +48,7 @@ class Paddle extends RectangleComponent with HasGameRef, KeyboardHandler {
         break;
     }
 
-    // anchorはcenter。画面からはみ出ないようにする
+    // 画面からはみ出ないようにする
     if (position.y - size.y / 2 < 0) {
       position.y = size.y / 2;
     } else if (position.y + size.y / 2 > gameRef.size.y) {
