@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-flutter-
 
       - name: Install Flutter
-        run: .github/workflows/scripts/install-flutter.sh $FLUTTER_VERSION
+        run: .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
 
       ### Build ###
       - name: Build
