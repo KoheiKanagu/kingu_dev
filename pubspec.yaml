@@ -15,7 +15,7 @@ dependencies:
   firebase_auth: ^4.4.0
   firebase_core: ^2.9.0
   firebase_performance: ^0.9.1
-  flame: ^1.7.2
+  flame: ^1.7.3
   flutter:
     sdk: flutter
   flutter_adaptive_scaffold: ^0.1.2
