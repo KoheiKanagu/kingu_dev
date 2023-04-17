@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FLUTTER_VERSION: "3.7.10" # FIXME
+  FLUTTER_VERSION: "3.7.11" # FIXME
 
 jobs:
   deploy:
