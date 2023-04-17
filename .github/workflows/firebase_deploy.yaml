@@ -31,8 +31,15 @@ jobs:
           curl -sL https://firebase.tools | bash
           firebase --version
 
+      - uses: actions/cache@v3
+        with:
+          path: _flutter
+          key: ${{ runner.os }}-flutter-${{ env.FLUTTER_VERSION }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
+
       - name: Install Flutter
-        run: ./.github/workflows/scripts/install-flutter.sh $FLUTTER_VERSION
+        run: .github/workflows/scripts/install-flutter.sh $FLUTTER_VERSION
 
       ### Build ###
       - name: Build
