@@ -1,6 +1,11 @@
 name: Pull Requests
 
 on:
+  workflow_run:
+    workflows:
+      - pub_get
+    types:
+      - completed
   pull_request:
     paths-ignore:
       - "firebase/**"
@@ -21,8 +26,15 @@ jobs:
       ### Set up ###
       - uses: actions/checkout@v3
 
+      - uses: actions/cache@v3
+        with:
+          path: _flutter
+          key: ${{ runner.os }}-flutter-${{ env.FLUTTER_VERSION }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
+
       - name: "Install Flutter"
-        run: ./.github/workflows/scripts/install-flutter.sh $FLUTTER_VERSION
+        run: .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
 
       - run: |
           flutter pub get
