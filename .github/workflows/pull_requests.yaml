@@ -1,6 +1,11 @@
 name: Pull Requests
 
 on:
+  workflow_run:
+    workflows:
+      - pub_get
+    types:
+      - completed
   pull_request:
     paths-ignore:
       - "firebase/**"
