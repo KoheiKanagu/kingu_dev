@@ -15,7 +15,7 @@ env:
 
 jobs:
   pub_get:
-    if: github.event.label.name == 'pub_get'
+    if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'dart')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
