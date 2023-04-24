@@ -44,6 +44,6 @@ jobs:
           git remote set-url origin https://github-actions:${GENERATE_TOKEN}@github.com/${GITHUB_REPOSITORY}
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add packages/*/pubspec.lock
+          git add pubspec.lock
           git commit -m "fix: pubspec.lock" || true
           git push
