@@ -35,7 +35,8 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
-    "ghcr.io/devcontainers-contrib/features/firebase-cli:1": {}
+    "ghcr.io/devcontainers-contrib/features/firebase-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "remoteUser": "vscode"
 }
