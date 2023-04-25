@@ -5,5 +5,6 @@ analyzer:
     implicit-dynamic: true
   exclude:
     - "lib/constants/firebase_options.dart"
+    - "_flutter/**"
   plugins:
     - custom_lint
