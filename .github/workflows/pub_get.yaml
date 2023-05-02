@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FLUTTER_VERSION: "3.7.11" # FIXME
+  FLUTTER_VERSION: "beta" # FIXME
 
 jobs:
   pub_get:
@@ -34,8 +34,6 @@ jobs:
         with:
           path: _flutter
           key: ${{ runner.os }}-flutter-${{ env.FLUTTER_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-flutter-
 
       - name: Install Flutter
         run: .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
