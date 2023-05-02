@@ -35,11 +35,11 @@ jobs:
             ${{ runner.os }}-flutter-
 
       - name: "Install Flutter"
-        run: |
-          .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
-          flutter --version
+        run: .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
 
       - run: |
+          flutter --version
+
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
           git diff --exit-code
