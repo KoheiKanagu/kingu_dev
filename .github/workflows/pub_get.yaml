@@ -2,6 +2,9 @@ name: pub get
 
 on:
   pull_request:
+    paths:
+      - packages/**/pubspec.yaml
+      - packages/**/pubspec.lock
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,7 +15,7 @@ env:
 
 jobs:
   pub_get:
-    if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'dart')
+    if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: GitHub App token
