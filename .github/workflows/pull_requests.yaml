@@ -31,8 +31,6 @@ jobs:
         with:
           path: _flutter
           key: ${{ runner.os }}-flutter-${{ env.FLUTTER_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-flutter-
 
       - name: "Install Flutter"
         run: .github/workflows/scripts/install_flutter.sh $FLUTTER_VERSION
