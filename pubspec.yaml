@@ -44,7 +44,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^2.3.2
   go_router_builder: ^1.2.2
-  grinder: ^0.9.0
+  grinder: ^0.9.4
   json_serializable: ^6.6.1
   pedantic_mono: ^1.21.1
   riverpod_generator: ^2.2.1
