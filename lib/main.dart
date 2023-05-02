@@ -78,7 +78,6 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      useInheritedMediaQuery: true,
       theme: MyTheme.theme,
       themeMode: ref.watch(darkModeControllerProvider)
           ? ThemeMode.dark
