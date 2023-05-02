@@ -3,8 +3,8 @@ name: pub get
 on:
   pull_request:
     paths:
-      - packages/**/pubspec.yaml
-      - packages/**/pubspec.lock
+      - pubspec.yaml
+      - pubspec.lock
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
