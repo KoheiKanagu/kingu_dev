@@ -33,13 +33,11 @@ class Scoreboard extends TextComponent with HasGameRef<PongGame> {
           game.size.x / 2 - game.size.x * 0.01 - fontSize / 2,
           game.size.y * 0.01 + fontSize / 2,
         );
-        break;
       case PaddlePosition.right:
         position = Vector2(
           game.size.x / 2 + game.size.x * 0.01 + fontSize / 2,
           game.size.y * 0.01 + fontSize / 2,
         );
-        break;
     }
   }
 
@@ -50,10 +48,8 @@ class Scoreboard extends TextComponent with HasGameRef<PongGame> {
     switch (paddlePosition) {
       case PaddlePosition.left:
         text = game.leftScore.toString();
-        break;
       case PaddlePosition.right:
         text = game.rightScore.toString();
-        break;
     }
   }
 }

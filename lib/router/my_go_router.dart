@@ -145,13 +145,10 @@ class RootPageRoute extends ShellRouteData {
     switch (index) {
       case 0:
         const ProfilePageRoute().go(context);
-        break;
       case 1:
         const GamePageRoute().go(context);
-        break;
       case 2:
         const SettingsPageRoute().go(context);
-        break;
     }
   }
 }
