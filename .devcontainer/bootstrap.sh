@@ -1,11 +1,13 @@
 #!/bin/bash
 set -euxo pipefail
 
+LATEST_BETA=$(gh api repos/flutter/flutter/git/refs/tags --paginate | jq -r '.[].ref' | grep '\.pre$' | sort -V | tail -n1 | sed 's/refs\/tags\///')
+
 # Install Flutter
 if [ -d "$FLUTTER_HOME" ]; then
-    (cd "$FLUTTER_HOME" && git pull)
+    git -C "$FLUTTER_HOME" checkout "$LATEST_BETA"
 else
-    git clone https://github.com/flutter/flutter.git --depth 1 -b "beta" "_flutter"
+    git clone https://github.com/flutter/flutter.git --depth 1 --branch "$LATEST_BETA" "$HOME/flutter"
 fi
 
 flutter --version
