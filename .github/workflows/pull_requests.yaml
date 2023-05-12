@@ -21,7 +21,8 @@ jobs:
       ### Set up ###
       - uses: actions/checkout@v3
 
-      - uses: actions/cache@v3
+      - uses: actions/cache/restore@v3
+        id: restore-cache
         with:
           path: _flutter
           key: ${{ runner.os }}-flutter-${{ env.FLUTTER_VERSION }}
@@ -40,3 +41,9 @@ jobs:
       - name: Build
         run: |
           flutter build web
+
+      ### Cache ###
+      - uses: actions/cache/save@v3
+        with:
+          path: _flutter
+          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
