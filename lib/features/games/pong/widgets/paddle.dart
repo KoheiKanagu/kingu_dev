@@ -38,14 +38,12 @@ class Paddle extends RectangleComponent with HasGameRef, KeyboardHandler {
           position.y += dt * movementSpeed;
         }
 
-        break;
       case PaddlePosition.right:
         if (movement == PaddleMovement.up) {
           position.y -= dt * movementSpeed;
         } else if (movement == PaddleMovement.down) {
           position.y += dt * movementSpeed;
         }
-        break;
     }
 
     // 画面からはみ出ないようにする
@@ -70,7 +68,6 @@ class Paddle extends RectangleComponent with HasGameRef, KeyboardHandler {
         } else {
           movement = PaddleMovement.idol;
         }
-        break;
 
       case PaddlePosition.right:
         if (event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
@@ -80,7 +77,6 @@ class Paddle extends RectangleComponent with HasGameRef, KeyboardHandler {
         } else {
           movement = PaddleMovement.idol;
         }
-        break;
     }
 
     return super.onKeyEvent(event, keysPressed);

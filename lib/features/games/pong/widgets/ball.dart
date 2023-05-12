@@ -69,11 +69,9 @@ class Ball extends CircleComponent
         case PaddlePosition.left:
           movement.x *= -1;
           movementSpeed *= 1.05;
-          break;
         case PaddlePosition.right:
           movement.x *= -1;
           movementSpeed *= 1.05;
-          break;
       }
     }
 
