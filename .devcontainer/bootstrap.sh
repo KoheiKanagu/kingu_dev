@@ -1,13 +1,26 @@
 #!/bin/bash
 set -euxo pipefail
 
-LATEST_BETA=$(gh api repos/flutter/flutter/git/refs/tags --paginate | jq -r '.[].ref' | grep '\.pre$' | sort -V | tail -n1 | sed 's/refs\/tags\///')
+# Flutter
+CHANNEL="beta" # or "stable"
 
-# Install Flutter
-if [ -d "$FLUTTER_HOME" ]; then
-    git -C "$FLUTTER_HOME" checkout "$LATEST_BETA"
+TAGS=$(gh api repos/flutter/flutter/git/refs/tags --paginate | jq -r '.[].ref' | sed 's/refs\/tags\///' | grep '^[0-9].*')
+
+## Search latest tag
+if [ "$CHANNEL" = "beta" ]; then
+    TARGET_TAG=$(echo "$TAGS" | grep '\.pre$' | sort -V | tail -n 1)
+elif [ "$CHANNEL" = "stable" ]; then
+    TARGET_TAG=$(echo "$TAGS" | grep -v '\.pre$' | sort -V | tail -n 1)
 else
-    git clone https://github.com/flutter/flutter.git --depth 1 --branch "$LATEST_BETA" "$HOME/flutter"
+    echo "CHANNEL is invalid."
+    exit 1
+fi
+
+## Install Flutter
+if [ -d "$FLUTTER_HOME" ]; then
+    git -C "$FLUTTER_HOME" checkout "$TARGET_TAG"
+else
+    git clone https://github.com/flutter/flutter.git --depth 1 --branch "$TARGET_TAG" "$HOME/flutter"
 fi
 
 flutter --version
@@ -15,8 +28,10 @@ flutter --version
 flutter pub global activate melos
 flutter pub global activate grinder
 
-flutter pub get
-
 # gh extension
 
 gh extension install seachicken/gh-poi
+
+# Firebase CLI
+
+curl -sL https://firebase.tools | bash
