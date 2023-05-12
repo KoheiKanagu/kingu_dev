@@ -3,6 +3,7 @@
 echo "$GITHUB_WORKSPACE/_flutter/bin" >>"$GITHUB_PATH"
 
 if [ -d "$GITHUB_WORKSPACE/_flutter" ]; then
+    "$GITHUB_WORKSPACE"/_flutter/bin/flutter upgrade
     exit 0
 fi
 
