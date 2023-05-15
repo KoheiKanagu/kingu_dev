@@ -41,7 +41,7 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.3
+  freezed: ^2.3.4
   go_router_builder: ^2.0.1
   grinder: ^0.9.4
   json_serializable: ^6.6.2
