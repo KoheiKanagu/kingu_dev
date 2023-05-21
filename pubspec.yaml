@@ -6,8 +6,8 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.10.0"
+  sdk: ^3.1.0-0
+  flutter: ^3.11.0-1.0
 
 dependencies:
   firebase_analytics: ^10.4.0
