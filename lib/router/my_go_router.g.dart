@@ -59,6 +59,8 @@ extension $ErrorPageRouteExtension on ErrorPageRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $SettingsPageRouteExtension on SettingsPageRoute {
@@ -75,6 +77,8 @@ extension $SettingsPageRouteExtension on SettingsPageRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $ProfilePageRouteExtension on ProfilePageRoute {
@@ -91,6 +95,8 @@ extension $ProfilePageRouteExtension on ProfilePageRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $GamePageRouteExtension on GamePageRoute {
@@ -106,6 +112,8 @@ extension $GamePageRouteExtension on GamePageRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $PongPageRouteExtension on PongPageRoute {
@@ -121,4 +129,6 @@ extension $PongPageRouteExtension on PongPageRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
