@@ -23,6 +23,10 @@ updates:
         patterns:
           - "hooks_riverpod"
           - "riverpod_*"
+      go_router:
+        patterns:
+          - "go_router"
+          - "go_router_builder"
 
   - package-ecosystem: "github-actions"
     directory: "/"
