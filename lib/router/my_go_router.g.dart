@@ -13,8 +13,8 @@ List<RouteBase> get $appRoutes => [
     ];
 
 RouteBase get $rootPageRoute => ShellRouteData.$route(
-      factory: $RootPageRouteExtension._fromState,
       navigatorKey: RootPageRoute.$navigatorKey,
+      factory: $RootPageRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
           path: '/error',
