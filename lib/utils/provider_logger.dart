@@ -13,7 +13,7 @@ class ProviderLogger extends ProviderObserver {
       {
         'name': provider.name,
         'runtimeType': provider.runtimeType,
-        'newValue': newValue
+        'newValue': newValue,
       },
     );
   }

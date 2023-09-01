@@ -171,7 +171,7 @@ class ProfileBody extends HookConsumerWidget {
             ),
           ),
         ],
-      )
+      ),
     ];
 
     return ListView.builder(

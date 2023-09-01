@@ -29,7 +29,7 @@ class PongPage extends HookConsumerWidget {
                 Uri.parse('https://www.youtube.com/watch?v=3KpOyfxyPes'),
               );
             },
-          )
+          ),
         ],
       ),
     );
