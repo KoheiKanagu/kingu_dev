@@ -31,9 +31,9 @@ final myGoRouterProvider = Provider.autoDispose(
           'name: ${state.name}',
           'fullPath: ${state.fullPath}',
           'pathParameters: ${state.pathParameters}',
-          'queryParameters: ${state.queryParameters}',
-          'location: ${state.location}',
-          'queryParametersAll: ${state.queryParametersAll}',
+          'queryParameters: ${state.uri.queryParameters}',
+          'location: ${state.uri}',
+          'queryParametersAll: ${state.uri.queryParametersAll}',
         ],
         state.error,
         StackTrace.current,
@@ -49,7 +49,7 @@ final myGoRouterProvider = Provider.autoDispose(
     debugLogDiagnostics: kDebugMode,
     initialLocation: '/profile',
     redirect: (context, state) {
-      if (state.location.isEmpty) {
+      if (state.uri.toString().isEmpty) {
         return ProfilePageRoute.path;
       }
       return null;
@@ -93,7 +93,7 @@ class RootPageRoute extends ShellRouteData {
 
     return AdaptiveScaffold(
       key: const GlobalObjectKey('AdaptiveScaffold'),
-      selectedIndex: locationToIndex(state.location),
+      selectedIndex: locationToIndex(state.uri.toString()),
       useDrawer: false,
       internalAnimations: false,
       destinations: const [
