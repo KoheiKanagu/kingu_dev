@@ -21,7 +21,7 @@ class PongPage extends HookConsumerWidget {
               game: PongGame(),
             ),
           ),
-          MySimpleTest(
+          MySimpleText(
             text:
                 "inspired by 'Observable Flutter: Speed coding Pong - YouTube'",
             onTap: () {

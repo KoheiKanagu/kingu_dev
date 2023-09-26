@@ -24,7 +24,7 @@ class ProfileBody extends HookConsumerWidget {
       ),
       const Gap(24),
       ...[
-        MySimpleTest(
+        MySimpleText(
           leadingEmoji: '🐱',
           text: 'Kohei Kanagu',
           onTap: () {
@@ -36,7 +36,7 @@ class ProfileBody extends HookConsumerWidget {
           isLink: false,
           newWindow: false,
         ),
-        MySimpleTest(
+        MySimpleText(
           leadingEmoji: '📧',
           text: MyProfile.email,
           onTap: () {
@@ -46,7 +46,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString('mailto:${MyProfile.email}');
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leadingEmoji: '💼',
           text: 'お仕事について',
           onTap: () {
@@ -56,7 +56,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString(MyProfile.workUrl);
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leadingEmoji: '🛠️',
           text: 'このサイト',
           onTap: () {
@@ -67,7 +67,7 @@ class ProfileBody extends HookConsumerWidget {
           },
         ),
         const Gap(48),
-        MySimpleTest(
+        MySimpleText(
           leading: Assets.icons.github.image(
             height: 32,
           ),
@@ -80,7 +80,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString(MyProfile.githubUrl);
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leading: Assets.icons.twitter.image(
             height: 32,
           ),
@@ -93,7 +93,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString(MyProfile.twitterUrl);
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leading: Assets.icons.facebook.image(
             height: 32,
           ),
@@ -106,7 +106,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString(MyProfile.facebookUrl);
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leading: Assets.icons.steam.image(
             height: 32,
           ),
@@ -119,7 +119,7 @@ class ProfileBody extends HookConsumerWidget {
             launchUrlString(MyProfile.steamUrl);
           },
         ),
-        MySimpleTest(
+        MySimpleText(
           leading: Assets.icons.zenn.image(
             height: 32,
           ),
