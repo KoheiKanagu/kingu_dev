@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kingu_dev/constants/my_colors.dart';
 
-class MySimpleTest extends StatelessWidget {
-  const MySimpleTest({
+class MySimpleText extends StatelessWidget {
+  const MySimpleText({
     super.key,
     this.isLink = true,
     this.leadingEmoji,
