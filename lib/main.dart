@@ -35,7 +35,9 @@ Future<void> main() async {
     [
       if (kReleaseMode)
         FirebaseAppCheck.instance.activate(
-          webRecaptchaSiteKey: '6LdDb5kcAAAAAE33uZXkDZFRXbvJ2g52rHWxxikG',
+          webProvider: ReCaptchaV3Provider(
+            '6LdDb5kcAAAAAE33uZXkDZFRXbvJ2g52rHWxxikG',
+          ),
         ),
       container
           .read(firebaseAnalyticsProvider)
