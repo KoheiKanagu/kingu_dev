@@ -203,6 +203,19 @@ class ProfileBody extends HookConsumerWidget {
       ),
       const Gap(8),
       SelectableText(
+        '国際学会',
+        style: Theme.of(context).textTheme.headlineSmall,
+      ),
+      ...[
+        'Takumi Otsuki, Kohei Kanagu, Kota Tsubouchi, Nobuhiko Nishio, "Daily action dead reckoning using smartphone sensors", 10th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2019), Italy, Oct, 2019'
+      ].map<Widget>(
+        (e) => SelectableText(
+          e,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ),
+      const Gap(8),
+      SelectableText(
         '国内研究会・シンポジウム等',
         style: Theme.of(context).textTheme.headlineSmall,
       ),
