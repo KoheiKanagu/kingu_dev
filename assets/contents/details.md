@@ -13,7 +13,13 @@
 
 - Steam <https://steamcommunity.com/id/i_am_kingu>
 
-[![steam_replay_2022](../images/steam_replay_2022.webp)](https://s.team/y22/dngcjfm)
+<a href="https://s.team/y22/dngcjfm">
+  <img
+    src="../images/steam_replay_2022.webp"
+    width="420px"
+    alt="steam replay 2022"
+  />
+</a>
 
 ## 執筆
 
