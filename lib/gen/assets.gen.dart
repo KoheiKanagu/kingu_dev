@@ -9,38 +9,6 @@
 
 import 'package:flutter/widgets.dart';
 
-class $AssetsIconsGen {
-  const $AssetsIconsGen();
-
-  /// File path: assets/icons/appStore.webp
-  AssetGenImage get appStore =>
-      const AssetGenImage('assets/icons/appStore.webp');
-
-  /// File path: assets/icons/facebook.webp
-  AssetGenImage get facebook =>
-      const AssetGenImage('assets/icons/facebook.webp');
-
-  /// File path: assets/icons/github.webp
-  AssetGenImage get github => const AssetGenImage('assets/icons/github.webp');
-
-  /// File path: assets/icons/googlePlay.webp
-  AssetGenImage get googlePlay =>
-      const AssetGenImage('assets/icons/googlePlay.webp');
-
-  /// File path: assets/icons/steam.webp
-  AssetGenImage get steam => const AssetGenImage('assets/icons/steam.webp');
-
-  /// File path: assets/icons/twitter.webp
-  AssetGenImage get twitter => const AssetGenImage('assets/icons/twitter.webp');
-
-  /// File path: assets/icons/zenn.webp
-  AssetGenImage get zenn => const AssetGenImage('assets/icons/zenn.webp');
-
-  /// List of all assets
-  List<AssetGenImage> get values =>
-      [appStore, facebook, github, googlePlay, steam, twitter, zenn];
-}
-
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -55,7 +23,6 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
-  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
