@@ -1,13 +1,20 @@
 # 金具 浩平
 
 - GitHub <https://github.com/KoheiKanagu>
-- X <https://twitter.com/i_am_kingu_pub>
-- FaceBook <https://www.facebook.com/k.g.kohei>
 
-## 公開中のアプリ
+## SNS
+
+- X <https://twitter.com/i_am_kingu_pub>
+- Facebook <https://www.facebook.com/k.g.kohei>
+
+## アプリ
 
 - App Store <https://apps.apple.com/am/developer/id1530720615>
 - Google Play <https://play.google.com/store/apps/developer?id=Kohei+Kanagu>
+
+## パッケージ
+
+- pub.dev <https://pub.dev/publishers/kingu.dev/packages>
 
 ## ゲーム
 
