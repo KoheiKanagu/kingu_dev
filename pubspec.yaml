@@ -31,7 +31,7 @@ dependencies:
   intl: any
   json_annotation: ^4.8.1
   riverpod_annotation: ^2.2.0
-  roggle: ^0.3.2
+  roggle: ^0.4.2+1
   url_launcher: ^6.1.14
 
 dev_dependencies:

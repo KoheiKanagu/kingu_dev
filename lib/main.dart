@@ -50,16 +50,16 @@ Future<void> main() async {
   FlutterError.onError = (details) {
     logger.e(
       'Flutter Error',
-      details.exception,
-      details.stack,
+      error: details.exception,
+      stackTrace: details.stack,
     );
   };
 
   PlatformDispatcher.instance.onError = (error, stack) {
     logger.e(
       'Error',
-      error,
-      stack,
+      error: error,
+      stackTrace: stack,
     );
     return true;
   };
