@@ -497,10 +497,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: e156bc1b2088eb5ece9351bccd48c3e1719a4858eacbd44e59162e98a68205d1
+      sha256: "5098760d7478aabfe682a462bf121d61bc5dbe5df5aac8dad733564a0aee33bc"
       url: "https://pub.dev"
     source: hosted
-    version: "12.0.1"
+    version: "12.1.0"
   go_router_builder:
     dependency: "direct dev"
     description:
@@ -1014,10 +1014,10 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: "14f1f70c51119012600c5f1f60ca68efda5a9b6077748163c6af2893ec5df8fc"
+      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.1-beta"
+    version: "0.3.0"
   web_socket_channel:
     dependency: transitive
     description:
