@@ -7,8 +7,6 @@ import 'package:kingu_dev/features/error/presentation/error_page.dart';
 import 'package:kingu_dev/features/profile/application/profile_route.dart'
     as profile_route;
 import 'package:kingu_dev/features/profile/application/profile_route.dart';
-import 'package:kingu_dev/features/settings/application/settings_route.dart'
-    as settings_route;
 import 'package:kingu_dev/utils/provider_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -22,7 +20,6 @@ Raw<GoRouter> myGoRouter(
       navigatorKey: rootNavigatorStateKey,
       routes: [
         ...profile_route.$appRoutes,
-        ...settings_route.$appRoutes,
       ],
       errorBuilder: (context, state) {
         logger.e(
