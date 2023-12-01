@@ -47,12 +47,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  fonts:
-    - family: Noto Sans JP
-      fonts:
-        - asset: assets/fonts/NotoSansJP-Regular.otf
-          weight: 400
-        - asset: assets/fonts/NotoSansJP-Bold.otf
-          weight: 700
-  assets:
-    - assets/images/
