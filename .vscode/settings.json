@@ -13,5 +13,13 @@
     ".fvm": true,
     "build": true,
     ".flutter-": true
-  }
+  },
+  "cSpell.words": [
+    "Cupertino",
+    "kingu",
+    "Noto",
+    "pubspec",
+    "riverpod",
+    "roggle"
+  ]
 }

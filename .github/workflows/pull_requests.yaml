@@ -27,12 +27,11 @@ jobs:
           cache: true
           cache-key: "flutter-:channel:-:version:-:hash:"
 
-      - run: flutter --version
-
       - run: |
-          flutter pub get
-          flutter pub run build_runner build --delete-conflicting-outputs
-          git diff --exit-code
+          dart pub get
+          dart pub run build_runner build --delete-conflicting-outputs
+          dart format --set-exit-if-changed .
+          dart analyze . --fatal-infos
 
       ### Build ###
       - name: Build
