@@ -6,9 +6,7 @@ import 'package:kingu_dev/constants/my_colors.dart';
 import 'package:kingu_dev/gen/fonts.gen.dart';
 
 class MyTheme {
-  static final theme = ThemeData.light(
-    useMaterial3: true,
-  ).copyWith(
+  static final theme = ThemeData.light().copyWith(
     colorScheme: ColorScheme.fromSeed(
       seedColor: MyColors.hibiki,
     ),
@@ -25,9 +23,7 @@ class MyTheme {
     ),
   );
 
-  static final darkTheme = ThemeData.dark(
-    useMaterial3: true,
-  ).copyWith(
+  static final darkTheme = ThemeData.dark().copyWith(
     colorScheme: ColorScheme.fromSeed(
       seedColor: MyColors.hibiki,
       brightness: Brightness.dark,
