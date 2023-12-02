@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kingu_dev/router/my_go_router.dart';
+import 'package:kingu_dev/features/profile/application/profile_route.dart';
 
 class ErrorPage extends HookConsumerWidget {
   const ErrorPage({

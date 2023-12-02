@@ -8,7 +8,6 @@ import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/common_widgets/my_simple_text.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/constants/my_profile.dart';
-import 'package:kingu_dev/constants/my_theme.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ProfileBody extends HookConsumerWidget {
@@ -82,7 +81,6 @@ class ProfileBody extends HookConsumerWidget {
         .toList();
 
     return ListView.builder(
-      padding: MyTheme.adaptiveBodyWidgetPadding(context),
       itemCount: children.length,
       itemBuilder: (context, index) {
         return Animate(

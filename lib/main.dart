@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:kingu_dev/constants/firebase_options.dart';
 import 'package:kingu_dev/constants/firebase_providers.dart';
+import 'package:kingu_dev/constants/global_keys.dart';
 import 'package:kingu_dev/constants/my_theme.dart';
 import 'package:kingu_dev/features/settings/application/settings_providers.dart';
 import 'package:kingu_dev/router/my_go_router.dart';
@@ -80,16 +81,13 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
       theme: MyTheme.theme,
       themeMode: ref.watch(darkModeControllerProvider)
           ? ThemeMode.dark
           : ThemeMode.light,
       darkTheme: MyTheme.darkTheme,
-      routeInformationProvider:
-          ref.watch(myGoRouterProvider).routeInformationProvider,
-      routeInformationParser:
-          ref.watch(myGoRouterProvider).routeInformationParser,
-      routerDelegate: ref.watch(myGoRouterProvider).routerDelegate,
+      routerConfig: ref.watch(myGoRouterProvider),
       supportedLocales: const [
         Locale('ja', 'JP'),
       ],
