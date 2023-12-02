@@ -7,7 +7,7 @@ part of 'settings_providers.dart';
 // **************************************************************************
 
 String _$darkModeControllerHash() =>
-    r'55f5705047564691e162c99a7383ddf13c672432';
+    r'0d42453c58874dd5d9becdea3bac6ffbb9a4aed2';
 
 /// See also [DarkModeController].
 @ProviderFor(DarkModeController)

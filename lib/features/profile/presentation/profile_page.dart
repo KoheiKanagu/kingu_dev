@@ -12,27 +12,27 @@ class ProfilePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Padding(
-        padding: MyTheme.adaptiveBodyWidgetPadding(context).add(
-          const EdgeInsets.symmetric(
-            vertical: 42,
+      body: Container(
+        alignment: Alignment.center,
+        padding: MyTheme.adaptiveBodyWidgetPadding(context),
+        child: FractionallySizedBox(
+          widthFactor: 0.8,
+          child: Column(
+            children: [
+              const Expanded(
+                child: ProfileBody(),
+              ),
+              SwitchListTile(
+                value: ref.watch(darkModeControllerProvider),
+                onChanged: (value) {
+                  ref
+                      .read(darkModeControllerProvider.notifier)
+                      .toggleDarkMode();
+                },
+                title: const Text('Dark Mode'),
+              ),
+            ],
           ),
-        ),
-        child: Column(
-          children: [
-            const Expanded(
-              child: ProfileBody(),
-            ),
-            SwitchListTile(
-              value: ref.watch(darkModeControllerProvider),
-              onChanged: (value) {
-                ref
-                    .read(darkModeControllerProvider.notifier)
-                    .switchDarkMode(value);
-              },
-              title: const Text('Dark Mode'),
-            ),
-          ],
         ),
       ),
     );
