@@ -37,7 +37,8 @@ class MyTheme {
 
   static EdgeInsetsGeometry adaptiveBodyWidgetPadding(BuildContext context) {
     return EdgeInsets.symmetric(
-      horizontal: MediaQuery.of(context).size.width * 0.1,
+      horizontal: MediaQuery.of(context).size.width * 0.05,
+      vertical: MediaQuery.of(context).size.height * 0.05,
     );
   }
 }

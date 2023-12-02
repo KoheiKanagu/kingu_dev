@@ -9,8 +9,7 @@ class DarkModeController extends _$DarkModeController {
     return false;
   }
 
-  // ignore: avoid_positional_boolean_parameters, use_setters_to_change_properties
-  void switchDarkMode(bool value) {
-    state = value;
+  void toggleDarkMode() {
+    state = !state;
   }
 }
