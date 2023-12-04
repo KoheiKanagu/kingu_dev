@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v1.2.0
+        uses: google-github-actions/auth@v2.0.0
         with:
           workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
           service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
