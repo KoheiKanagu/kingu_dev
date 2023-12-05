@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v1
+        with:
+          comment_on_pr: false
 
       - uses: actions/checkout@v4
       - name: Authenticate to Google Cloud
