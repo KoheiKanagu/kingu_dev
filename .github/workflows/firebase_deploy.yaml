@@ -19,6 +19,9 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - name: Collect Workflow Telemetry
+        uses: catchpoint/workflow-telemetry-action@v1
+
       - uses: actions/checkout@v4
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2.0.0
