@@ -25,22 +25,11 @@ jobs:
         with:
           comment_on_pr: false
 
-      - uses: actions/checkout@v4
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2.0.0
+      - name: Setup Firebase CLI Dev
+        uses: KoheiKanagu/composite-actions/setup-firebase-cli@main
         with:
           workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
           service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.0.0
-        with:
-          node-version: 20
-
-      - name: Install Firebase CLI
-        run: |
-          npm install -g firebase-tools
-          firebase --version
 
       - uses: subosito/flutter-action@v2.12.0
         with:
