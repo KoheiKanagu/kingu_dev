@@ -31,6 +31,11 @@ jobs:
           workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
           service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 20
+
       - name: Install Firebase CLI
         run: |
           curl -sL https://firebase.tools | bash
