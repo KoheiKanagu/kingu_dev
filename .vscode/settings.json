@@ -6,12 +6,6 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
-  "files.exclude": {
-    ".dart_tool": true,
-    ".fvm": true,
-    "build": true,
-    ".flutter-": true
-  },
   "cSpell.words": [
     "Cupertino",
     "hibiki",
