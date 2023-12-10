@@ -8,7 +8,7 @@ environment:
   flutter: ^3.17.0-0
 
 dependencies:
-  firebase_analytics: ^10.7.2
+  firebase_analytics: ^10.7.4
   firebase_app_check: ^0.2.1+6
   firebase_core: ^2.24.0
   firebase_performance: ^0.9.3+6
