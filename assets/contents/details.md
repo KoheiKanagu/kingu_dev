@@ -28,6 +28,14 @@
   />
 </a>
 
+<a href="https://s.team/y23/dngcjfm">
+  <img
+    src="../images/steam_replay_2023.webp"
+    width="420px"
+    alt="steam replay 2023"
+  />
+</a>
+
 ## 執筆
 
 - Zenn <https://zenn.dev/kingu>
