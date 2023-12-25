@@ -16,8 +16,12 @@ class $AssetsImagesGen {
   AssetGenImage get steamReplay2022 =>
       const AssetGenImage('assets/images/steam_replay_2022.webp');
 
+  /// File path: assets/images/steam_replay_2023.webp
+  AssetGenImage get steamReplay2023 =>
+      const AssetGenImage('assets/images/steam_replay_2023.webp');
+
   /// List of all assets
-  List<AssetGenImage> get values => [steamReplay2022];
+  List<AssetGenImage> get values => [steamReplay2022, steamReplay2023];
 }
 
 class Assets {
