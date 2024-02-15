@@ -9,7 +9,7 @@
 
 ## アプリ
 
-- App Store <https://apps.apple.com/am/developer/id1530720615>
+- App Store <https://apps.apple.com/developer/id1530720615>
 - Google Play <https://play.google.com/store/apps/developer?id=Kohei+Kanagu>
 
 ## パッケージ
