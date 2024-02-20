@@ -8,11 +8,11 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:kingu_dev/constants/firebase_options.dart';
-import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/constants/global_keys.dart';
 import 'package:kingu_dev/constants/my_theme.dart';
+import 'package:kingu_dev/features/firebase/application/firebase_providers.dart';
+import 'package:kingu_dev/features/routing/application/my_go_router.dart';
 import 'package:kingu_dev/features/settings/application/settings_providers.dart';
-import 'package:kingu_dev/router/my_go_router.dart';
 import 'package:kingu_dev/utils/provider_logger.dart';
 
 Future<void> main() async {

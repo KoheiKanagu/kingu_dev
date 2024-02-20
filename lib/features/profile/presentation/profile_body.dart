@@ -6,8 +6,9 @@ import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:kingu_dev/common_widgets/my_simple_text.dart';
-import 'package:kingu_dev/constants/firebase_providers.dart';
 import 'package:kingu_dev/constants/my_profile.dart';
+import 'package:kingu_dev/features/firebase/application/firebase_providers.dart';
+import 'package:kingu_dev/features/routing/application/my_go_router.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ProfileBody extends HookConsumerWidget {
@@ -73,6 +74,15 @@ class ProfileBody extends HookConsumerWidget {
               );
           launchUrlString(MyProfile.sourceUrl);
         },
+      ),
+      const Divider(),
+      MySimpleText(
+        leadingEmoji: '🐹',
+        text: 'モル旅',
+        onTap: () {
+          const MolTripPageRoute().go(context);
+        },
+        newWindow: false,
       ),
     ]
         .intersperse(
