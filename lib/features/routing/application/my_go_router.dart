@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:kingu_dev/constants/global_keys.dart';
 import 'package:kingu_dev/features/error/presentation/error_page.dart';
 import 'package:kingu_dev/features/firebase/application/firebase_providers.dart';
-import 'package:kingu_dev/features/mol_trip/presentation/mol_trip_page.dart';
 import 'package:kingu_dev/features/profile/presentation/profile_page.dart';
 import 'package:kingu_dev/utils/provider_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -52,11 +51,6 @@ Raw<GoRouter> myGoRouter(
 
 @TypedGoRoute<ProfilePageRoute>(
   path: ProfilePageRoute.path,
-  routes: [
-    TypedGoRoute<MolTripPageRoute>(
-      path: MolTripPageRoute.path,
-    ),
-  ],
 )
 class ProfilePageRoute extends GoRouteData {
   const ProfilePageRoute();
@@ -66,16 +60,5 @@ class ProfilePageRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const ProfilePage();
-  }
-}
-
-class MolTripPageRoute extends GoRouteData {
-  const MolTripPageRoute();
-
-  static const path = 'mol-trip';
-
-  @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return const MolTripPage();
   }
 }
