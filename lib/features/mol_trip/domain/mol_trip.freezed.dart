@@ -21,7 +21,7 @@ MolTrip _$MolTripFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MolTrip {
   String get title => throw _privateConstructorUsedError;
-  List<String> get memory => throw _privateConstructorUsedError;
+  String get timeline => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $MolTripCopyWith<$Res> {
   factory $MolTripCopyWith(MolTrip value, $Res Function(MolTrip) then) =
       _$MolTripCopyWithImpl<$Res, MolTrip>;
   @useResult
-  $Res call({String title, List<String> memory});
+  $Res call({String title, String timeline});
 }
 
 /// @nodoc
@@ -50,17 +50,17 @@ class _$MolTripCopyWithImpl<$Res, $Val extends MolTrip>
   @override
   $Res call({
     Object? title = null,
-    Object? memory = null,
+    Object? timeline = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      memory: null == memory
-          ? _value.memory
-          : memory // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      timeline: null == timeline
+          ? _value.timeline
+          : timeline // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$MolTripImplCopyWith<$Res> implements $MolTripCopyWith<$Res> {
       __$$MolTripImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, List<String> memory});
+  $Res call({String title, String timeline});
 }
 
 /// @nodoc
@@ -87,17 +87,17 @@ class __$$MolTripImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = null,
-    Object? memory = null,
+    Object? timeline = null,
   }) {
     return _then(_$MolTripImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      memory: null == memory
-          ? _value._memory
-          : memory // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      timeline: null == timeline
+          ? _value.timeline
+          : timeline // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -105,25 +105,19 @@ class __$$MolTripImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MolTripImpl implements _MolTrip {
-  const _$MolTripImpl({required this.title, required final List<String> memory})
-      : _memory = memory;
+  const _$MolTripImpl({required this.title, required this.timeline});
 
   factory _$MolTripImpl.fromJson(Map<String, dynamic> json) =>
       _$$MolTripImplFromJson(json);
 
   @override
   final String title;
-  final List<String> _memory;
   @override
-  List<String> get memory {
-    if (_memory is EqualUnmodifiableListView) return _memory;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_memory);
-  }
+  final String timeline;
 
   @override
   String toString() {
-    return 'MolTrip(title: $title, memory: $memory)';
+    return 'MolTrip(title: $title, timeline: $timeline)';
   }
 
   @override
@@ -132,13 +126,13 @@ class _$MolTripImpl implements _MolTrip {
         (other.runtimeType == runtimeType &&
             other is _$MolTripImpl &&
             (identical(other.title, title) || other.title == title) &&
-            const DeepCollectionEquality().equals(other._memory, _memory));
+            (identical(other.timeline, timeline) ||
+                other.timeline == timeline));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, title, const DeepCollectionEquality().hash(_memory));
+  int get hashCode => Object.hash(runtimeType, title, timeline);
 
   @JsonKey(ignore: true)
   @override
@@ -157,14 +151,14 @@ class _$MolTripImpl implements _MolTrip {
 abstract class _MolTrip implements MolTrip {
   const factory _MolTrip(
       {required final String title,
-      required final List<String> memory}) = _$MolTripImpl;
+      required final String timeline}) = _$MolTripImpl;
 
   factory _MolTrip.fromJson(Map<String, dynamic> json) = _$MolTripImpl.fromJson;
 
   @override
   String get title;
   @override
-  List<String> get memory;
+  String get timeline;
   @override
   @JsonKey(ignore: true)
   _$$MolTripImplCopyWith<_$MolTripImpl> get copyWith =>

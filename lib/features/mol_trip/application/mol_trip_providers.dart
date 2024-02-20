@@ -23,26 +23,3 @@ Future<List<MolTrip>> molTrips(
       .map(MolTrip.fromJson)
       .toList();
 }
-
-@riverpod
-Future<String> molTripEmbedHtml(
-  MolTripEmbedHtmlRef ref, {
-  required String uri,
-}) async {
-  final result = await dio
-      .get<String>('https://publish.twitter.com/oembed?align=center&url=$uri');
-
-  final data = json.decode(result.data!) as Map<String, dynamic>;
-  return data['html'] as String;
-}
-
-@riverpod
-Future<List<String>> molTripEmbedHtmlList(
-  MolTripEmbedHtmlListRef ref,
-  List<String> uris,
-) =>
-    Future.wait(
-      uris.map(
-        (e) => ref.read(molTripEmbedHtmlProvider(uri: e).future),
-      ),
-    );

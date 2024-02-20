@@ -15,8 +15,7 @@ _$MolTripImpl _$$MolTripImplFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         final val = _$MolTripImpl(
           title: $checkedConvert('title', (v) => v as String),
-          memory: $checkedConvert('memory',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          timeline: $checkedConvert('timeline', (v) => v as String),
         );
         return val;
       },
@@ -25,5 +24,5 @@ _$MolTripImpl _$$MolTripImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$MolTripImplToJson(_$MolTripImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'memory': instance.memory,
+      'timeline': instance.timeline,
     };
