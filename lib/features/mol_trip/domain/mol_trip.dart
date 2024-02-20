@@ -7,7 +7,7 @@ part 'mol_trip.g.dart';
 class MolTrip with _$MolTrip {
   const factory MolTrip({
     required String title,
-    required List<String> memory,
+    required String timeline,
   }) = _MolTrip;
 
   factory MolTrip.fromJson(Map<String, dynamic> json) =>

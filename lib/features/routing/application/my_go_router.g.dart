@@ -15,12 +15,6 @@ List<RouteBase> get $appRoutes => [
 RouteBase get $profilePageRoute => GoRouteData.$route(
       path: '/',
       factory: $ProfilePageRouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: 'mol-trip',
-          factory: $MolTripPageRouteExtension._fromState,
-        ),
-      ],
     );
 
 extension $ProfilePageRouteExtension on ProfilePageRoute {
@@ -29,24 +23,6 @@ extension $ProfilePageRouteExtension on ProfilePageRoute {
 
   String get location => GoRouteData.$location(
         '/',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-extension $MolTripPageRouteExtension on MolTripPageRoute {
-  static MolTripPageRoute _fromState(GoRouterState state) =>
-      const MolTripPageRoute();
-
-  String get location => GoRouteData.$location(
-        '/mol-trip',
       );
 
   void go(BuildContext context) => context.go(location);
