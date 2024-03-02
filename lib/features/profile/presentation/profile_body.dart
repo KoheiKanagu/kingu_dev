@@ -30,7 +30,7 @@ class ProfileBody extends HookConsumerWidget {
           ref.read(firebaseAnalyticsProvider).logEvent(
                 name: 'nyan',
               );
-          launchUrlString('https://youtu.be/QH2-TGUlwu4');
+          launchUrlString('https://www.nyan.cat');
         },
         isLink: false,
         newWindow: false,
