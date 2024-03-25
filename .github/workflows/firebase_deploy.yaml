@@ -33,7 +33,7 @@ jobs:
           workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
           service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
 
-      - uses: subosito/flutter-action@v2.13.0
+      - uses: subosito/flutter-action@v2.14.0
         with:
           channel: ${{ env.FLUTTER_VERSION }}
           cache: true
