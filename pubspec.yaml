@@ -8,7 +8,7 @@ environment:
   flutter: ^3.20.0-0
 
 dependencies:
-  dio: ^5.4.1
+  dio: ^5.4.2+1
   firebase_analytics: ^10.9.0
   firebase_app_check: ^0.2.1+6
   firebase_core: ^2.24.0
