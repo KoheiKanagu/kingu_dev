@@ -38,7 +38,7 @@ dev_dependencies:
   flutter_gen_runner: ^5.4.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.4.7
+  freezed: ^2.5.0
   go_router_builder: ^2.4.1
   grinder: ^0.9.5
   json_serializable: ^6.7.1
