@@ -9,10 +9,10 @@ environment:
 
 dependencies:
   dio: ^5.4.2+1
-  firebase_analytics: ^10.9.0
-  firebase_app_check: ^0.2.1+6
+  firebase_analytics: ^10.10.0
+  firebase_app_check: ^0.2.2
   firebase_core: ^2.24.0
-  firebase_performance: ^0.9.3+6
+  firebase_performance: ^0.9.4
   flutter:
     sdk: flutter
   flutter_animate: ^4.5.0
