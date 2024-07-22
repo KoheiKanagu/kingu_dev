@@ -42,6 +42,7 @@
   - Colaboratory
   - Flutter
     - Riverpod
+    - go_router
   - Firebase
     - App Check
     - Cloud Firestore
@@ -59,6 +60,7 @@
 - 立命館大学にて、Wi-Fi・BLE ビーコン・位置情報などのセンサデータ収集システムと Android 向けクライアントアプリケーション開発に従事
   - Flutter
     - Riverpod
+    - go_router
   - Firebase Authentication
   - Kotlin
   - AltBeacon
