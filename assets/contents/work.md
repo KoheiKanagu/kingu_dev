@@ -38,6 +38,8 @@
   - Object Detection
     - YOLOX
     - ncnn
+  - Python
+  - Colaboratory
   - Flutter
     - Riverpod
   - Firebase
