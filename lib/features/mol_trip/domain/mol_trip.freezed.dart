@@ -23,8 +23,12 @@ mixin _$MolTrip {
   String get title => throw _privateConstructorUsedError;
   String get timeline => throw _privateConstructorUsedError;
 
+  /// Serializes this MolTrip to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MolTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MolTripCopyWith<MolTrip> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -46,6 +50,8 @@ class _$MolTripCopyWithImpl<$Res, $Val extends MolTrip>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MolTrip
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +89,8 @@ class __$$MolTripImplCopyWithImpl<$Res>
       _$MolTripImpl _value, $Res Function(_$MolTripImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MolTrip
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,11 +138,13 @@ class _$MolTripImpl implements _MolTrip {
                 other.timeline == timeline));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, title, timeline);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MolTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MolTripImplCopyWith<_$MolTripImpl> get copyWith =>
@@ -159,8 +169,11 @@ abstract class _MolTrip implements MolTrip {
   String get title;
   @override
   String get timeline;
+
+  /// Create a copy of MolTrip
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MolTripImplCopyWith<_$MolTripImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
