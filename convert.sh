@@ -1,15 +1,16 @@
 #!/bin/bash
 set -euxo pipefail
 
-for file in assets/contents/*.md; do
+for file in md/*.md; do
     name=$(basename "$file")
 
     pandoc --standalone \
         --from markdown \
         --to html \
-        --template=.pandoc/templates/uikit.html \
+        --template .pandoc/templates/uikit.html \
+        --css ../.pandoc/templates/styles.css \
         --toc \
-        --toc-depth=2 \
+        --toc-depth=3 \
         --shift-heading-level-by=-1 \
         --fail-if-warnings \
         --metadata title="kingu.dev" \

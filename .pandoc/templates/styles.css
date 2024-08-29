@@ -1,0 +1,36 @@
+#app_icon {
+  width: 128px;
+  height: 128px;
+  border-radius: 22%;
+}
+#app_store_badge {
+  display: inline-block;
+  overflow: hidden;
+  height: 42px;
+}
+#google_play_badge {
+  display: inline-block;
+  overflow: hidden;
+  height: 42px;
+}
+
+#about_developer {
+  display: block;
+  text-align: center;
+  background: #039be5;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+#other_apps {
+  display: block;
+  text-align: center;
+  background: #4caf50;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
