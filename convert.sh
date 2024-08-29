@@ -1,8 +1,11 @@
 #!/bin/bash
 set -euxo pipefail
 
-for file in md/*.md; do
-    name=$(basename "$file")
+find md -name "*.md" | while IFS= read -r file; do
+    path=${file#md/}
+
+    outFile="public/${path%.md}.html"
+    mkdir -p "$(dirname "$outFile")"
 
     pandoc --standalone \
         --from markdown \
@@ -14,5 +17,5 @@ for file in md/*.md; do
         --shift-heading-level-by=-1 \
         --fail-if-warnings \
         --metadata title="kingu.dev" \
-        "$file" >"public/${name%.md}.html"
+        "$file" >"$outFile"
 done

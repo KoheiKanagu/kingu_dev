@@ -67,4 +67,4 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
-public/*.html
+public/**/*.html
