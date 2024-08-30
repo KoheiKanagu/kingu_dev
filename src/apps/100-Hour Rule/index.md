@@ -1,13 +1,7 @@
-# 100 時間の法則 / 100-Hour Rule
-
-<img id="app_icon_big"
-src="../../images/apps/100-Hour Rule.webp"
-alt="100 時間の法則 / 100-Hour Rule"
-/>
-
-<a href="https://apps.apple.com/us/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200">
-  <img id="app_store_badge_big"
-    src="../../images/app_store.svg"
-    alt="App Store"
-  />
-</a>
+---
+title: 100 時間の法則 / 100-Hour Rule
+og_url: https://kingu.dev/apps/100-Hour%20Rule
+og_image: https://kingu.dev/images/apps/100-Hour%20Rule.webp
+app_icon: https://kingu.dev/images/apps/100-Hour%20Rule.webp
+app_store_url: https://apps.apple.com/us/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200
+---

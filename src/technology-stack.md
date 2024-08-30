@@ -1,3 +1,8 @@
+---
+og_url: https://kingu.dev
+og_image: https://kingu.dev/images/ogp.webp
+---
+
 # 技術スタック
 
 お仕事のご相談は `kanagu@kingu.dev` までご連絡ください。

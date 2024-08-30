@@ -4,6 +4,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="$if(title)$$title$$endif$" />
+        <meta property="og:title" content="$if(title)$$title$$endif$" />
+        <meta property="og:description" content="$if(title)$$title$$endif$" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="$og_image$"/>
+        <meta property="og:url" content="$og_url$" />
+
         <title>$if(title)$$title$$endif$</title>
         <link rel="shortcut icon" href="../../images/favicon.webp" type="image/x-icon">
         <link rel="apple-touch-icon-precomposed" href="../../images/apple-touch-icon.png">
@@ -80,7 +87,22 @@ $endif$
                         $abstract$
                     $endif$
 
-$body$
+                <p>
+                    <img id="app_icon_big" src="$app_icon$" alt="$title$" />
+                </p>
+                <p>
+                    $if(app_store_url)$
+                    <a href="$app_store_url$">
+                        <img id="app_store_badge_big" src="https://kingu.dev/images/app_store.svg" alt="App Store" />
+                    </a>
+                    $endif$
+                    $if(google_play_url)$
+                    <a href="$google_play_url$">
+                        <img id="google_play_badge_big" src="https://kingu.dev/images/google_play.webp" alt="Google Play" />
+                    </a>
+                    $endif$
+                </p>
+
                 </div>
             </div>
         </div>

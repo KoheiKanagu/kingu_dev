@@ -1,3 +1,8 @@
+---
+og_url: https://kingu.dev
+og_image: https://kingu.dev/images/ogp.webp
+---
+
 # 金具 浩平 (KANAGU Kohei)
 
 ## お仕事について
