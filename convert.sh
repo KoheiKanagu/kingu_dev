@@ -38,6 +38,15 @@ for file in src/apps/**/*.md; do
         "$file" >"$outFile"
 done
 
+for file in src/apps/*.md; do
+    outFile="public/apps/$(basename "$file" .md).html"
+
+    pandoc --standalone \
+        --from markdown \
+        --to html \
+        "$file" >"$outFile"
+done
+
 rm -rf public/images
 cp -R src/images public/
 
