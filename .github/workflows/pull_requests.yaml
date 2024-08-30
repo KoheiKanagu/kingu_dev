@@ -9,9 +9,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  FLUTTER_VERSION: "beta" # FIXME
-
 jobs:
   build:
     runs-on: ubuntu-latest

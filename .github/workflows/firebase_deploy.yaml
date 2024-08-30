@@ -10,22 +10,24 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  FLUTTER_VERSION: "beta" # FIXME
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    steps:
-      - name: Collect Workflow Telemetry
-        uses: catchpoint/workflow-telemetry-action@v2
-        with:
-          comment_on_pr: false
 
+    steps:
+      ### Set up ###
       - uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        uses: pandoc/actions/setup@main
+        with:
+          version: 3.3
+
+      - name: Run pandoc
+        run: pandoc --version
 
       - name: Setup Firebase CLI Dev
         uses: KoheiKanagu/composite-actions/setup-firebase-cli@main
@@ -33,21 +35,12 @@ jobs:
           workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
           service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
 
-      - uses: subosito/flutter-action@v2.16.0
-        with:
-          channel: ${{ env.FLUTTER_VERSION }}
-          cache: true
-          cache-key: "flutter-:channel:-:version:-:hash:"
-
       ### Build ###
       - name: Build
         run: |
-          flutter pub get
-          flutter build web
+          ./convert.sh
 
       ### Deploy ###
-      - name: deploy
+      - name: Test
         run: |
-          mv build/web firebase/web
-          cd firebase
           firebase deploy
