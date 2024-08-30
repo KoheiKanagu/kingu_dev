@@ -11,7 +11,7 @@ for file in src/*.md; do
         --from markdown \
         --to html \
         --template .pandoc/templates/uikit.html \
-        --css ../.pandoc/templates/styles.css \
+        --css css/styles.css \
         --toc \
         --toc-depth=3 \
         --shift-heading-level-by=-1 \
@@ -30,7 +30,7 @@ for file in src/apps/**/*.md; do
         --from markdown \
         --to html \
         --template .pandoc/templates/uikit_apps.html \
-        --css ../../../.pandoc/templates/styles.css \
+        --css ../../css/styles.css \
         --toc \
         --toc-depth=3 \
         --shift-heading-level-by=-1 \
@@ -41,3 +41,6 @@ done
 
 rm -rf public/images
 cp -R src/images public/
+
+rm -rf public/css
+cp -R src/css public/

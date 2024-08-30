@@ -16,7 +16,7 @@
 
 - pub.dev <https://pub.dev/publishers/kingu.dev/packages>
 
-### アプリ
+### 個人開発のアプリ
 
 #### [アクスタ / AcrylicStand](./apps/AcrylicStand/index.html)
 
