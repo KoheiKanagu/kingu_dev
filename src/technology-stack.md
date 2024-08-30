@@ -23,6 +23,7 @@ Apple Vision Pro ならではのアプリケーションとして、地図上に
 - GSMap
 - Firebase
   - Cloud Functions
+- Xcode Cloud
 
 ### MolcarTracking
 
@@ -48,16 +49,22 @@ Apple Vision Pro ならではのアプリケーションとして、アクリル
 - CloudKit
 - RealityKit
 - VisionKit
+- Xcode Cloud
 
 ### [100 時間の法則 / 100-Hour Rule](./apps/100-Hour%20Rule/index.html)
+
+経過時間を記録するアプリケーションを開発しました。
 
 SwiftUI を用いたアプリケーションとして、iOS、iPadOS、watchOS、macOS、visionOS をサポートしました。
 
 - SwiftUI
 - SwiftData
 - CloudKit
+- Xcode Cloud
 
 ### [#お弁当記録 / #obento](./apps/obento/index.html)
+
+ハッシュタグを管理し、SNS などへ効率的に投稿できるようにするアプリケーションを開発しました。
 
 Melos を用いてモノレポで構成することで、効率良く開発できるように構成しました。
 <https://github.com/KoheiKanagu/garage>
@@ -79,6 +86,8 @@ Melos を用いてモノレポで構成することで、効率良く開発で�
 - Google Mobile Ads
 
 ### [場所で音楽 / Locamusic](./apps/locamusic/index.html)
+
+ジオフェンスを用いて、特定の場所にいるときに音楽を再生するアプリケーションを開発しました。
 
 Melos を用いてモノレポで構成することで、効率良く開発できるように構成しました。
 <https://github.com/KoheiKanagu/garage>
@@ -112,7 +121,23 @@ Melos を用いてモノレポで構成することで、効率良く開発で�
 - Docker
 - PostgreSQL
 
+## 立命館大学にて、防災関連の Android 向けアプリケーションを最新の Android SDK に対応させる作業に従事
+
+Android API Level 21 のアプリケーションを API Level 34 に対応させました。
+
+また、プッシュ通知の仕組みを Firebase Cloud Messaging に変更するにあたり、Cloud Functions を用いて通知の送信行うように改修しました。
+
+- Java
+- Firebase
+  - Cloud Functions
+
 ## ヘルスケア系スタートアップの起業メンバーとして、iOS/Android 向けのアプリケーションの開発・保守・運用などに従事
+
+スマートフォンのカメラ映像からリアルタイムに野菜を検出し、栄養価を算出するアプリケーションを開発しました。
+
+血液検査の結果などを記録するアプリケーションを開発しました。
+
+食べた物を記録することで栄養価を計算するアプリケーションを開発しました。
 
 - Object Detection
   - YOLOX
