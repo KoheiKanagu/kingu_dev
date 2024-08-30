@@ -4,7 +4,7 @@ set -euxo pipefail
 rm -rf public
 mkdir -p public
 
-for file in md/*.md; do
+for file in src/*.md; do
     outFile="public/$(basename "$file" .md).html"
 
     pandoc --standalone \
@@ -20,9 +20,9 @@ for file in md/*.md; do
         "$file" >"$outFile"
 done
 
-for file in md/apps/**/*.md; do
-    # md/apps/hoge/index.md → public/apps/hoge/index.html
-    outFile="$(dirname "$file" | sed 's/md/public/')/index.html"
+for file in src/apps/**/*.md; do
+    # src/apps/hoge/index.md → public/apps/hoge/index.html
+    outFile="$(dirname "$file" | sed 's/src/public/')/index.html"
 
     mkdir -p "$(dirname "$outFile")"
 
@@ -38,3 +38,6 @@ for file in md/apps/**/*.md; do
         --metadata title="$(basename "$(dirname "$file")")" \
         "$file" >"$outFile"
 done
+
+rm -rf public/images
+cp -R src/images public/
