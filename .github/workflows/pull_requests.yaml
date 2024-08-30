@@ -3,45 +3,43 @@ name: Pull Requests
 on:
   pull_request:
     paths-ignore:
-      - "firebase/**"
       - ".devcontainer/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  FLUTTER_VERSION: "beta" # FIXME
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
-      - name: Collect Workflow Telemetry
-        uses: catchpoint/workflow-telemetry-action@v2
-        with:
-          comment_on_pr: false
-
       ### Set up ###
       - uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2.16.0
+      - name: Install Pandoc
+        uses: pandoc/actions/setup@main
         with:
-          channel: ${{ env.FLUTTER_VERSION }}
-          cache: true
-          cache-key: "flutter-:channel:-:version:-:hash:"
+          version: 3.3
 
-      - run: |
-          dart pub get
-          dart pub run build_runner build --delete-conflicting-outputs
-          dart fix --apply lib
-          dart format --set-exit-if-changed .
-          dart analyze --fatal-infos .
-          dart run custom_lint
-          git diff --exit-code
+      - name: Run pandoc
+        run: pandoc --version
+
+      - name: Setup Firebase CLI Dev
+        uses: KoheiKanagu/composite-actions/setup-firebase-cli@main
+        with:
+          workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
+          service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
 
       ### Build ###
       - name: Build
         run: |
-          flutter build web
+          ./convert.sh
+
+      ### Test ###
+      - name: Test
+        run: |
+          ./deploy_alpha.sh
