@@ -4,7 +4,7 @@
 
 `kanagu@kingu.dev` までご連絡ください。
 
-### [技術スタックはこちら](./technology-stack.html)
+## [技術スタックについてはこちら](./technology-stack.html)
 
 ## 開発したもの
 
@@ -22,14 +22,14 @@
 
 <a href="./apps/AcrylicStand/index.html">
   <img id="app_icon"
-    src="../images/apps/AcrylicStand.webp"
+    src="images/apps/AcrylicStand.webp"
     alt="アクスタ / AcrylicStand"
   />
 </a>
 
 <a href="https://apps.apple.com/us/app/acrylicstand/id6535676394?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
-    src="../images/app_store.svg"
+    src="images/app_store.svg"
     alt="App Store"
   />
 </a>
@@ -38,14 +38,14 @@
 
 <a href="./apps/100-Hour Rule/index.html">
   <img id="app_icon"
-    src="../images/apps/100-Hour Rule.webp"
+    src="images/apps/100-Hour Rule.webp"
     alt="100 時間の法則 / 100-Hour Rule"
   />
 </a>
 
 <a href="https://apps.apple.com/us/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
-    src="../images/app_store.svg"
+    src="images/app_store.svg"
     alt="App Store"
   />
 </a>
@@ -54,21 +54,21 @@
 
 <a href="./apps/obento/index.html">
   <img id="app_icon"
-    src="../images/apps/obento.webp"
+    src="images/apps/obento.webp"
     alt="#お弁当記録 / #obento"
   />
 </a>
 
 <a href="https://apps.apple.com/us/app/obento/id6499041461?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
-    src="../images/app_store.svg"
+    src="images/app_store.svg"
     alt="App Store"
   />
 </a>
 
 <a href="https://play.google.com/store/apps/details?id=dev.kingu.obento">
   <img id="google_play_badge"
-    src="../images/google_play.webp"
+    src="images/google_play.webp"
     alt="Google Play"
   />
 </a>
@@ -79,14 +79,14 @@
 
 <a href="./apps/locamusic/index.html">
   <img id="app_icon"
-    src="../images/apps/locamusic.webp"
+    src="images/apps/locamusic.webp"
     alt="場所で音楽 / Locamusic"
   />
 </a>
 
 <a href="https://apps.apple.com/us/app/locamusic/id6471416156?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
-    src="../images/app_store.svg"
+    src="images/app_store.svg"
     alt="App Store"
   />
 </a>
@@ -109,7 +109,7 @@
 
 <a href="https://s.team/y22/dngcjfm">
   <img
-    src="../images/steam_replay_2022.webp"
+    src="images/steam_replay_2022.webp"
     width="420px"
     alt="steam replay 2022"
   />
@@ -117,7 +117,7 @@
 
 <a href="https://s.team/y23/dngcjfm">
   <img
-    src="../images/steam_replay_2023.webp"
+    src="images/steam_replay_2023.webp"
     width="420px"
     alt="steam replay 2023"
   />
