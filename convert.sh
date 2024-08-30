@@ -35,7 +35,6 @@ for file in src/apps/**/*.md; do
         --toc-depth=3 \
         --shift-heading-level-by=-1 \
         --fail-if-warnings \
-        --metadata title="$(basename "$(dirname "$file")")" \
         "$file" >"$outFile"
 done
 
