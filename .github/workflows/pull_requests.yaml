@@ -15,6 +15,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       ### Set up ###
@@ -27,6 +30,12 @@ jobs:
 
       - name: Run pandoc
         run: pandoc --version
+
+      - name: Setup Firebase CLI Dev
+        uses: KoheiKanagu/composite-actions/setup-firebase-cli@main
+        with:
+          workload_identity_provider: "projects/939401085199/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider"
+          service_account: "github-actions@kingu-42.iam.gserviceaccount.com"
 
       ### Build ###
       - name: Build
