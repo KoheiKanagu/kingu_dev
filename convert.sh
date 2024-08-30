@@ -52,3 +52,5 @@ cp -R src/images public/
 
 rm -rf public/css
 cp -R src/css public/
+
+cp src/app-ads.txt public/
