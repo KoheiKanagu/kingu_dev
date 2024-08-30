@@ -3,34 +3,65 @@
   height: 128px;
   border-radius: 22%;
 }
+#app_icon_big {
+  width: 192px;
+  height: 192px;
+  border-radius: 22%;
+}
+
 #app_store_badge {
   display: inline-block;
   overflow: hidden;
   height: 42px;
 }
+#app_store_badge_big {
+  display: inline-block;
+  overflow: hidden;
+  height: 64px;
+}
+
 #google_play_badge {
   display: inline-block;
   overflow: hidden;
   height: 42px;
 }
+#google_play_badge_big {
+  display: inline-block;
+  overflow: hidden;
+  height: 64px;
+}
 
+footer {
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
 #about_developer {
-  display: block;
+  display: inline-block;
   text-align: center;
   background: #039be5;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   border-radius: 8px;
+  margin: 4px;
 }
+
 #other_apps {
-  display: block;
+  display: inline-block;
   text-align: center;
   background: #4caf50;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   border-radius: 8px;
+  margin: 4px;
 }
