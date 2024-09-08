@@ -32,7 +32,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-<a href="https://apps.apple.com/us/app/acrylicstand/id6535676394?itsct=apps_box_link&itscg=30200">
+<a href="https://apps.apple.com/app/acrylicstand/id6535676394?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
     src="images/app_store.svg"
     alt="App Store"
@@ -48,7 +48,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-<a href="https://apps.apple.com/us/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200">
+<a href="https://apps.apple.com/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
     src="images/app_store.svg"
     alt="App Store"
@@ -64,7 +64,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-<a href="https://apps.apple.com/us/app/obento/id6499041461?itsct=apps_box_link&itscg=30200">
+<a href="https://apps.apple.com/app/obento/id6499041461?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
     src="images/app_store.svg"
     alt="App Store"
@@ -89,7 +89,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-<a href="https://apps.apple.com/us/app/locamusic/id6471416156?itsct=apps_box_link&itscg=30200">
+<a href="https://apps.apple.com/app/locamusic/id6471416156?itsct=apps_box_link&itscg=30200">
   <img id="app_store_badge"
     src="images/app_store.svg"
     alt="App Store"
