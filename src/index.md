@@ -9,7 +9,7 @@ og_image: https://kingu.dev/images/ogp.webp
 
 `kanagu@kingu.dev` までご連絡ください。
 
-## [技術スタックについてはこちら](./technology-stack.html)
+## [技術スタックについてはこちら](./technology-stack)
 
 ## 開発したもの
 
@@ -23,9 +23,9 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ### 個人開発のアプリ
 
-#### [アクスタ / AcrylicStand](./apps/AcrylicStand/index.html)
+#### [アクスタ / AcrylicStand](./apps/AcrylicStand)
 
-<a href="./apps/AcrylicStand/index.html">
+<a href="./apps/AcrylicStand">
   <img id="app_icon"
     src="images/apps/AcrylicStand.webp"
     alt="アクスタ / AcrylicStand"
@@ -39,9 +39,9 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-#### [100 時間の法則 / 100-Hour Rule](./apps/100-Hour%20Rule/index.html)
+#### [100 時間の法則 / 100-Hour Rule](./apps/100-Hour%20Rule)
 
-<a href="./apps/100-Hour Rule/index.html">
+<a href="./apps/100-Hour Rule">
   <img id="app_icon"
     src="images/apps/100-Hour Rule.webp"
     alt="100 時間の法則 / 100-Hour Rule"
@@ -55,9 +55,9 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-#### [#お弁当記録 / #obento](./apps/obento/index.html)
+#### [#お弁当記録 / #obento](./apps/obento)
 
-<a href="./apps/obento/index.html">
+<a href="./apps/obento">
   <img id="app_icon"
     src="images/apps/obento.webp"
     alt="#お弁当記録 / #obento"
@@ -80,9 +80,9 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ソースコード <https://github.com/KoheiKanagu/garage/tree/main/packages/obento>
 
-#### [場所で音楽 / Locamusic](./apps/locamusic/index.html)
+#### [場所で音楽 / Locamusic](./apps/locamusic)
 
-<a href="./apps/locamusic/index.html">
+<a href="./apps/locamusic">
   <img id="app_icon"
     src="images/apps/locamusic.webp"
     alt="場所で音楽 / Locamusic"

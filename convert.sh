@@ -38,12 +38,34 @@ for file in src/apps/**/*.md; do
         "$file" >"$outFile"
 done
 
-for file in src/apps/*.md; do
-    outFile="public/apps/$(basename "$file" .md).html"
+for file in src/privacy_policy/*.md src/terms_of_service/*.md; do
+    # src/apps/hoge/index.md → public/apps/hoge/index.html
+    outFile="$(dirname "$file" | sed 's/src/public/')/index.html"
+
+    mkdir -p "$(dirname "$outFile")"
 
     pandoc --standalone \
         --from markdown \
         --to html \
+        "$file" >"$outFile"
+done
+
+for file in src/technology-stack/*.md; do
+    # src/apps/hoge/index.md → public/apps/hoge/index.html
+    outFile="$(dirname "$file" | sed 's/src/public/')/index.html"
+
+    mkdir -p "$(dirname "$outFile")"
+
+    pandoc --standalone \
+        --from markdown \
+        --to html \
+        --template .pandoc/templates/uikit.html \
+        --css ../css/styles.css \
+        --toc \
+        --toc-depth=3 \
+        --shift-heading-level-by=-1 \
+        --fail-if-warnings \
+        --metadata title="kingu.dev" \
         "$file" >"$outFile"
 done
 
