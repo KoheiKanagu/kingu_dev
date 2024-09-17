@@ -23,6 +23,22 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ### 個人開発のアプリ
 
+#### [ExternalVision](./apps/ExternalVision)
+
+<a href="./apps/ExternalVision">
+  <img id="app_icon"
+    src="images/apps/ExternalVision.webp"
+    alt="ExternalVision"
+  />
+</a>
+
+<a href="https://apps.apple.com/app/externalvision/id6670433678?itsct=apps_box_link&itscg=30200">
+  <img id="app_store_badge"
+    src="images/app_store.svg"
+    alt="App Store"
+  />
+</a>
+
 #### [アクスタ / AcrylicStand](./apps/AcrylicStand)
 
 <a href="./apps/AcrylicStand">
