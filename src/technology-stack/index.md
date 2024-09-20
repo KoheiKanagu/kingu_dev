@@ -9,6 +9,19 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ## 個人開発等
 
+### [ExternalVision](../apps/ExternalVision)
+
+Apple Vision Pro ならではのアプリケーションとして、パススルーを使用して実世界を見ながら紙に書かれたテキストや QR コードを読み取ることができるアプリケーションを開発しました。
+
+Apple Vision Pro のアプリは、通常の用途ではメインカメラにアクセスすることができないため、iPhone または iPad のカメラからの映像を Apple Vision Pro に送信し、テキストや QR コードを検出しています。
+
+- SwiftUI
+- SwiftData
+- StoreKit
+- Multipeer Connectivity
+- VisionKit
+- Xcode Cloud
+
 ### 雨雲ウォッチ mini / Rainfall Watch mini
 
 Apple Vision Pro ならではのアプリケーションとして、地図上に降雨量の表示を試みました。
