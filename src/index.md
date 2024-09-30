@@ -39,6 +39,8 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
+<a href="https://appsforapplevision.com/apps-directory/externalvision"><img src='https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png' alt='Apps For Apple Vision Badge' width=256></img></a>
+
 #### [アクスタ / AcrylicStand](./apps/AcrylicStand)
 
 <a href="./apps/AcrylicStand">
@@ -54,6 +56,8 @@ og_image: https://kingu.dev/images/ogp.webp
     alt="App Store"
   />
 </a>
+
+<a href="https://appsforapplevision.com/apps-directory/acrylicstand"><img src='https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png' alt='Apps For Apple Vision Badge' width=256></img></a>
 
 #### [100 時間の法則 / 100-Hour Rule](./apps/100-Hour%20Rule)
 
