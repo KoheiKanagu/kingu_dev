@@ -11,6 +11,8 @@
         <meta property="og:image" content="$og_image$"/>
         <meta property="og:url" content="$og_url$" />
 
+        $if(apple-itunes-app-id)$<meta name="apple-itunes-app" content="app-id=$apple-itunes-app-id$">$endif$
+
         <title>$if(title)$$title$$endif$</title>
         <link rel="shortcut icon" href="../../images/favicon.webp" type="image/x-icon">
         <link rel="apple-touch-icon-precomposed" href="../../images/apple-touch-icon.png">

@@ -4,4 +4,5 @@ og_url: https://kingu.dev/apps/100-Hour%20Rule
 og_image: https://kingu.dev/images/apps/100-Hour%20Rule.webp
 app_icon: https://kingu.dev/images/apps/100-Hour%20Rule.webp
 app_store_url: https://apps.apple.com/app/100-hour-rule/id6517349655?itsct=apps_box_link&itscg=30200
+apple-itunes-app-id: 6517349655
 ---
