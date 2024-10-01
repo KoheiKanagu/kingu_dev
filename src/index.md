@@ -98,7 +98,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-ソースコード <https://github.com/KoheiKanagu/garage/tree/main/packages/obento>
+[ソースコード](https://github.com/KoheiKanagu/garage/tree/main/packages/obento)
 
 #### [場所で音楽 / Locamusic](./apps/locamusic)
 
@@ -116,7 +116,7 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
-ソースコード <https://github.com/KoheiKanagu/garage/tree/main/packages/listen_to_music_by_location>
+[ソースコード](https://github.com/KoheiKanagu/garage/tree/main/packages/listen_to_music_by_location)
 
 ## SNS
 
