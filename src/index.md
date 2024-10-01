@@ -41,6 +41,8 @@ og_image: https://kingu.dev/images/ogp.webp
 
 <a href="https://appsforapplevision.com/apps-directory/externalvision"><img src='https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png' alt='Apps For Apple Vision Badge' width=256></img></a>
 
+<a href="https://www.producthunt.com/posts/externalvision?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-externalvision" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=493450&theme=light" alt="ExternalVision - Copy&#0032;text&#0032;from&#0032;the&#0032;real&#0032;world&#0032;with&#0032;Apple&#0032;Vision&#0032;Pro | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 #### [アクスタ / AcrylicStand](./apps/AcrylicStand)
 
 <a href="./apps/AcrylicStand">
@@ -58,6 +60,8 @@ og_image: https://kingu.dev/images/ogp.webp
 </a>
 
 <a href="https://appsforapplevision.com/apps-directory/acrylicstand"><img src='https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png' alt='Apps For Apple Vision Badge' width=256></img></a>
+
+<a href="https://www.producthunt.com/posts/acrylicstand?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-acrylicstand" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=493413&theme=light" alt="AcrylicStand - New&#0032;way&#0032;to&#0032;show&#0032;photos | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 #### [100 時間の法則 / 100-Hour Rule](./apps/100-Hour%20Rule)
 

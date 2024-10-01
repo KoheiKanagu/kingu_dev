@@ -101,11 +101,6 @@ $endif$
                     <a href="$google_play_url$"><img id="google_play_badge_big" src="https://kingu.dev/images/google_play.webp" alt="Google Play" /></a>
                     $endif$
                 </p>
-                <p>
-                    $if(appsforapplevision_url)$
-                    <a href="$appsforapplevision_url$"><img src="https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png" alt="Apps For Apple Vision Badge" width="300"/></a>
-                    $endif$
-                </p>
                 </div>
             </div>
         </div>
@@ -116,6 +111,16 @@ $endif$
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
         <div class="uk-grid" data-uk-grid-margin style="text-align: center">
         <div class="uk-width-1-1">
+            $if(appsforapplevision_url)$
+            <p>
+                <a href="$appsforapplevision_url$"><img src="https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png" alt="Apps For Apple Vision Badge" width="300"/></a>
+            </p>
+            $endif$
+
+            $if(product_hunt_badge)$
+            <p>$product_hunt_badge$</p>
+            $endif$
+
             <p>
             アプリに関するお問い合わせは、アプリ内のフィードバック、
             <a href="mailto:support@kingu.dev">メール</a>
