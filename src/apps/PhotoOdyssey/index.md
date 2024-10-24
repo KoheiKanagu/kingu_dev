@@ -1,5 +1,5 @@
 ---
-title: PhotoOdyssey
+title: PhotoOdyssey - Compare photos
 og_url: https://kingu.dev/apps/PhotoOdyssey
 og_image: https://kingu.dev/images/apps/PhotoOdyssey.webp
 app_icon: https://kingu.dev/images/apps/PhotoOdyssey.webp
