@@ -23,6 +23,25 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ### 個人開発のアプリ
 
+#### [PhotoOdyssey](./apps/PhotoOdyssey)
+
+<a href="./apps/PhotoOdyssey">
+  <img id="app_icon"
+    src="images/apps/PhotoOdyssey.webp"
+    alt="PhotoOdyssey"
+  />
+</a>
+
+<a href="https://apps.apple.com/app/photoodyssey-compare-photos/id6736382597?itsct=apps_box_link&itscg=30200">
+  <img id="app_store_badge"
+    src="images/app_store.svg"
+    alt="App Store"
+  />
+</a>
+
+<!-- TODO: apps for apple vision -->
+<!-- TODO: producthunt -->
+
 #### [ExternalVision](./apps/ExternalVision)
 
 <a href="./apps/ExternalVision">
