@@ -9,6 +9,20 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ## 個人開発等
 
+### [PhotoOdyssey - Compare photos](../apps/PhotoOdyssey)
+
+Apple Vision Pro ならではのアプリケーションとして、イマーシブな空間に大量の写真を並べ、比較することができるアプリケーションを開発しました。
+
+写真ライブラリからの写真の読み込み、ユーザが選択した写真を所定のアルバムに追加する機能があります。
+
+また、 Vision フレームワークの[ImageAestheticsScoresObservation](https://developer.apple.com/documentation/vision/imageaestheticsscoresobservation)を利用して写真の美的スコアを可視化することで、より良い写真の選択をサポートします。
+
+- SwiftUI
+- SwiftData
+- StoreKit
+- Vision
+- Xcode Cloud
+
 ### [ExternalVision](../apps/ExternalVision)
 
 Apple Vision Pro ならではのアプリケーションとして、パススルーを使用して実世界を見ながら紙に書かれたテキストや QR コードを読み取ることができるアプリケーションを開発しました。
