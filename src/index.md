@@ -172,6 +172,14 @@ og_image: https://kingu.dev/images/ogp.webp
   />
 </a>
 
+<a href="https://s.team/y24/dngcjfm">
+  <img
+    src="images/steam_replay_2024.webp"
+    width="420px"
+    alt="steam replay 2024"
+  />
+</a>
+
 ## 執筆
 
 - Zenn <https://zenn.dev/kingu>
