@@ -23,6 +23,22 @@ og_image: https://kingu.dev/images/ogp.webp
 
 ### 個人開発のアプリ
 
+#### [BLOOMS - 見つめてみよう。妊婦のあなたの日々の体調](./apps/BLOOMS)
+
+<a href="./apps/BLOOMS">
+  <img id="app_icon"
+    src="images/apps/BLOOMS.webp"
+    alt="BLOOMS - 見つめてみよう。妊婦のあなたの日々の体調"
+  />
+</a>
+
+<a href="https://apps.apple.com/app/blooms/id6740260241?itsct=apps_box_link&itscg=30200">
+  <img id="app_store_badge"
+    src="images/app_store.svg"
+    alt="App Store"
+  />
+</a>
+
 #### [PhotoOdyssey - Compare photos](./apps/PhotoOdyssey)
 
 <a href="./apps/PhotoOdyssey">
