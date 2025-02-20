@@ -7,9 +7,58 @@ og_image: https://kingu.dev/images/ogp.webp
 
 お仕事のご相談は `kanagu@kingu.dev` までご連絡ください。
 
-## 個人開発等
+各年代はプロジェクト開始時期を示しています。
 
-### [PhotoOdyssey - Compare photos](../apps/PhotoOdyssey)
+## 2025 年
+
+### [個人開発] [BLOOMS](../apps/BLOOMS)
+
+妊婦の方が体調や日々の出来事を記録すると生成 AI が感想を述べたり、関連情報が得られるであろう Google での検索キーワードを提案したり、一定の期間にどのような記録があったのかを要約することができる iOS/Web 向けのアプリケーションを開発しました。
+
+[【Zenn 初開催】AI エージェント開発に挑戦！初心者歓迎ハッカソン](https://zenn.dev/hackathons/2024-google-cloud-japan-ai-hackathon) に向けて開発しました。
+
+- Flutter
+- Riverpod
+- go_router
+- freezed
+- Firebase Authentication
+- Cloud Functions
+- Firestore
+- Firebase Hosting
+- Crashlytics
+- GitHub Actions
+
+### 関連記事
+
+- [BLOOMS \- 見つめてみよう。妊婦のあなたの日々の体調](https://zenn.dev/kingu/articles/a36196c5c66171)
+- [Flutter と Firebase を使ってアプリを作る上でのテクニックあれこれ](https://zenn.dev/kingu/articles/f122c06a9cc360)
+
+## 2024 年
+
+### 研究データ収集を目的とした、位置情報の記録ととアンケートを実施する iOS/Android 向けアプリケーションの開発に従事
+
+大学様よりの委託を受けて開発しました。
+
+- Flutter
+- Riverpod
+- go_router
+- freezed
+- Firebase Authentication
+- Crashlytics
+
+### 宅配弁当の比較サイトのバックエンドの開発に従事
+
+企業様より委託を受けて開発しました。
+
+API およびデータベースの設計・開発・保守・運用を行いました。
+
+- Cloud Functions
+- TypeScript
+- Prisma
+- Cloud SQL for PostgreSQL
+- GitHub Actions
+
+### [個人開発] [PhotoOdyssey - Compare photos](../apps/PhotoOdyssey)
 
 Apple Vision Pro ならではのアプリケーションとして、イマーシブな空間に大量の写真を並べ、比較することができるアプリケーションを開発しました。
 
@@ -32,7 +81,7 @@ Apple Vision Pro の特徴の一つとして、イマーシブな空間があり
 
 そこで、"大きくコンテンツを閲覧できる"という点に着目し、写真の閲覧と選定が行えるアプリケーションを開発しました。
 
-### [ExternalVision](../apps/ExternalVision)
+### [個人開発] [ExternalVision](../apps/ExternalVision)
 
 Apple Vision Pro ならではのアプリケーションとして、パススルーを使用して実世界を見ながら紙に書かれたテキストや QR コードを読み取ることができるアプリケーションを開発しました。
 
@@ -56,7 +105,7 @@ Apple Vision Pro のハードウェア、ソフトウェアはメインカメラ
 
 ですが前述のようにメインカメラへのアクセスは制限されているため、ワークアラウンドとして iPhone のカメラを使う方法で問題解決にアプローチしました。
 
-### 雨雲ウォッチ mini / Rainfall Watch mini
+### [個人開発] 雨雲ウォッチ mini / Rainfall Watch mini
 
 Apple Vision Pro ならではのアプリケーションとして、地図上に降雨量の表示を試みました。
 
@@ -72,7 +121,7 @@ Apple Vision Pro ならではのアプリケーションとして、地図上に
   - Cloud Functions
 - Xcode Cloud
 
-### MolcarTracking
+### [個人開発] MolcarTracking
 
 Apple Vision Pro を用いてキャラクターのフィギュアを検出し、空間上に情報の表示やハンドトラッキング、物理シミュレーションするデモアプリケーションを開発しました。
 
@@ -87,7 +136,7 @@ Apple Vision Pro を用いてキャラクターのフィギュアを検出し、
 - Create ML
 - Object Tracking
 
-### [アクスタ / AcrylicStand](../apps/AcrylicStand)
+### [個人開発] [アクスタ / AcrylicStand](../apps/AcrylicStand)
 
 Apple Vision Pro ならではのアプリケーションとして、アクリルスタンドのように空間上に写真を配置できるアプリケーションを開発しました。
 
@@ -106,7 +155,7 @@ Apple Vision Pro を用いて配置できるコンテンツは物理的な制限
 
 また、パススルーを用いると実世界の適した場所に配置できるため、よりリアルな体験ができると考えました。
 
-### [100 時間の法則 / 100-Hour Rule](../apps/100-Hour%20Rule)
+### [個人開発] [100 時間の法則 / 100-Hour Rule](../apps/100-Hour%20Rule)
 
 経過時間を記録するアプリケーションを開発しました。
 
@@ -117,7 +166,7 @@ SwiftUI を用いたアプリケーションとして、iOS、iPadOS、watchOS�
 - CloudKit
 - Xcode Cloud
 
-### [#お弁当記録 / #obento](../apps/obento)
+### [個人開発] [#お弁当記録 / #obento](../apps/obento)
 
 ハッシュタグを管理し、SNS などへ効率的に投稿できるようにするアプリケーションを開発しました。
 
@@ -140,7 +189,30 @@ Melos を用いてモノレポで構成することで、効率良く開発で�
 - Melos
 - Google Mobile Ads
 
-### [場所で音楽 / Locamusic](../apps/locamusic)
+### チェックインアプリとビル OS の連携におけるゲートウェイアプリケーションの開発に従事
+
+立命館大学様より委託を受けて開発しました。
+
+- TypeScript
+- Node.js
+
+### Wi-Fi・BLE ビーコン・位置情報などのセンサデータ収集システムと Android 向けクライアントアプリケーション開発に従事
+
+立命館大学様より委託を受けて開発しました。
+
+- Flutter
+  - Riverpod
+  - go_router
+- Firebase Authentication
+- Kotlin
+- AltBeacon
+- GitHub Actions
+- Go
+- Python
+- Docker
+- PostgreSQL
+
+### [個人開発] [場所で音楽 / Locamusic](../apps/locamusic)
 
 ジオフェンスを用いて、特定の場所にいるときに音楽を再生するアプリケーションを開発しました。
 
@@ -162,21 +234,9 @@ Melos を用いてモノレポで構成することで、効率良く開発で�
 - Melos
 - Google Mobile Ads
 
-## 立命館大学にて、Wi-Fi・BLE ビーコン・位置情報などのセンサデータ収集システムと Android 向けクライアントアプリケーション開発に従事
+### 防災関連の Android 向けアプリケーションを最新の Android SDK に対応させる作業に従事
 
-- Flutter
-  - Riverpod
-  - go_router
-- Firebase Authentication
-- Kotlin
-- AltBeacon
-- GitHub Actions
-- Go
-- Python
-- Docker
-- PostgreSQL
-
-## 立命館大学にて、防災関連の Android 向けアプリケーションを最新の Android SDK に対応させる作業に従事
+立命館大学様より委託を受けて開発しました。
 
 Android API Level 21 のアプリケーションを API Level 34 に対応させました。
 
@@ -186,7 +246,9 @@ Android API Level 21 のアプリケーションを API Level 34 に対応させ
 - Firebase
   - Cloud Functions
 
-## ヘルスケア系スタートアップの起業メンバーとして、iOS/Android 向けのアプリケーションの開発・保守・運用などに従事
+## 2022 年
+
+### ヘルスケア系スタートアップの起業メンバーとして、iOS/Android 向けのアプリケーションの開発・保守・運用などに従事
 
 スマートフォンのカメラ映像からリアルタイムに野菜を検出し、栄養価を算出するアプリケーションを開発しました。
 
@@ -219,14 +281,26 @@ Android API Level 21 のアプリケーションを API Level 34 に対応させ
 - RevenueCat
 - GitHub Actions
 
-## 立命館大学にて、チェックインアプリの移植・保守・運用に従事
+### チェックインアプリの移植・保守・運用に従事
+
+立命館大学様より委託を受けて開発しました。
 
 - Flutter
 - Firebase Authentication
 - Python
 - PostgreSQL
 
-## IoT デバイス系のベンチャー企業にて、iOS/Android 向けのアプリケーションの開発・保守・運用に従事
+## 2021 年
+
+### キャリア SNS の iOS/Android 向けアプリケーションの開発に従事
+
+企業様より委託を受けて開発しました。
+
+- Flutter
+
+## 2019 年
+
+### IoT デバイス系のベンチャー企業にて、iOS/Android 向けのアプリケーションの開発・保守・運用に従事
 
 - Flutter
   - Provider
@@ -241,12 +315,16 @@ Android API Level 21 のアプリケーションを API Level 34 に対応させ
 - BigQuery
 - GitHub Actions
 
-## ヤフー株式会社にて、広告入稿 API の開発・保守・運用に従事
+## 2018 年
+
+### ヤフー株式会社にて、広告入稿 API の開発・保守・運用に従事
 
 - Java
 - Spring Boot
 
-## 立命館大学にて、屋内測位・Wi-Fi ログの収集・ナビゲーションシステムの構築と iOS/Android 向けアプリケーション開発に従事
+### 屋内測位・Wi-Fi ログの収集・ナビゲーションシステムの構築と iOS/Android 向けアプリケーション開発に従事
+
+自身の研究用データ収集ツールとして開発しました。
 
 - Java
   - Spring Boot
