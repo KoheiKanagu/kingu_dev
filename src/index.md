@@ -9,7 +9,56 @@ og_image: https://kingu.dev/images/ogp.webp
 
 `kanagu@kingu.dev` までご連絡ください。
 
-## [技術スタックについてはこちら](./technology-stack)
+## [過去の開発事例と技術スタック](./technology-stack)
+
+## 受賞歴等
+
+### 2025 年
+
+#### AI Agent Hackathon with Google Cloud
+
+Zenn が主催するハッカソンにて、[BLOOMS](./technology-stack/#%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA-blooms)が **Firebase 賞**を受賞しました。
+
+- [【Zenn 初開催】AI エージェント開発に挑戦！初心者歓迎ハッカソン](https://zenn.dev/hackathons/2024-google-cloud-japan-ai-hackathon)
+
+### 2016 年
+
+#### 東京駅周辺の魅力向上サービス創造ハッカソン — 高精度測位社会を目指して
+
+国土交通省が主催するハッカソンにて、**慶應義塾大学大学院 SDM 研究科委員長賞**と**高精度測位社会プロジェクト賞**を受賞しました。
+
+- [東京駅周辺の魅力向上を目指すハッカソン、国交省が開催｜関連ニュース｜みちびき（準天頂衛星システム：QZSS）公式サイト \- 内閣府](https://qzss.go.jp/info/archive/tokyo_160208.html)
+
+### 2015 年
+
+#### UWW2015
+
+ワークショップにて、**ベストプレゼンテーション賞**を受賞しました。
+
+- 金具 浩平，望月 祐洋，村尾 和哉，西尾 信彦: "Fireman Dead Reckoning: 屋内における消防士向け自律航法の検討" ユビキタス・ウェアラブルワークショップ, （UWW2015）予稿集, p.37, 2015 年 12 月 19 日, ベストプレゼンテーション賞
+
+#### DICOMO 2015
+
+学会にて、**ヤングリサーチャー賞**を受賞しました。
+
+- [表彰 « DICOMO](https://www.dicomo.org/2015/2015/commendation/index.html)
+- 吉見 駿, 金具 浩平, 望月 祐洋, 村尾 和哉, 西尾 信彦: "実環境における歩行空間制約を活用した PDR 軌跡推定" 情報処理学会, マルチメディア, 分散, 協調とモバイル(DICOMO 2015) シンポジウム論文集, pp.310-318, 2015 年 7 月 8 日, ヤングリサーチャー賞
+
+### 2012 年
+
+#### ICT Challenge+R 2012
+
+立命館大学が主催するプログラミングコンテストにて、**最優秀賞**を受賞しました。
+
+- [金具浩平さん\(情報理工学部 2 回生\)/ICT Challenge\+R 2011 で ISID イノラボ賞、ICTChallenge\+R NEXT 2012 で最優秀賞を受賞！\| \+R な人｜立命館大学](https://www.ritsumei.ac.jp/rs/category/r_na_hito/entry/?param=474)
+
+### 2011 年
+
+#### ICT Challenge+R 2011
+
+立命館大学が主催するプログラミングコンテストにて、**ISID イノラボ賞**を受賞しました。
+
+- [金具浩平さん\(情報理工学部 2 回生\)/ICT Challenge\+R 2011 で ISID イノラボ賞、ICTChallenge\+R NEXT 2012 で最優秀賞を受賞！\| \+R な人｜立命館大学](https://www.ritsumei.ac.jp/rs/category/r_na_hito/entry/?param=474)
 
 ## 開発したもの
 
@@ -21,7 +70,7 @@ og_image: https://kingu.dev/images/ogp.webp
 
 - pub.dev <https://pub.dev/publishers/kingu.dev/packages>
 
-### 個人開発のアプリ
+### 個人開発のアプリ（公開中のもののみ）
 
 #### [BLOOMS - 見つめてみよう。妊婦のあなたの日々の体調](./apps/BLOOMS)
 
