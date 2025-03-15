@@ -44,6 +44,15 @@ Zenn が主催するハッカソンにて、[BLOOMS](./technology-stack/#%E5%80%
 - [表彰 « DICOMO](https://www.dicomo.org/2015/2015/commendation/index.html)
 - 吉見 駿, 金具 浩平, 望月 祐洋, 村尾 和哉, 西尾 信彦: "実環境における歩行空間制約を活用した PDR 軌跡推定" 情報処理学会, マルチメディア, 分散, 協調とモバイル(DICOMO 2015) シンポジウム論文集, pp.310-318, 2015 年 7 月 8 日, ヤングリサーチャー賞
 
+### 2013 年
+
+#### 京都まゆまろ杯 第１回スマホアプリコンテスト
+
+スマートフォン向けアプリ開発コンテストにて、**ピー･シー･フェーズ賞**を受賞しました。
+
+- [京都まゆまろ杯 第 1 回スマホアプリコンテスト](https://web.archive.org/web/20130702073500/http://cts-1.sakura.ne.jp/client/mayumaro/index.html)
+- [京都まゆまろ杯 第 1 回スマホアプリコンテスト \| 受賞作品結果一覧](https://web.archive.org/web/20130702073456/http://cts-1.sakura.ne.jp:80/client/mayumaro/award.html)
+
 ### 2012 年
 
 #### ICT Challenge+R 2012
