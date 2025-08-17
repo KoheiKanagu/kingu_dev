@@ -19,7 +19,7 @@ jobs:
 
     steps:
       ### Set up ###
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install Pandoc
         uses: pandoc/actions/setup@main
