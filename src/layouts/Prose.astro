@@ -1,0 +1,89 @@
+---
+import Base from "./Base.astro";
+
+type Props = {
+  frontmatter: { title: string };
+};
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title}>
+  <main class="wrap">
+    <article class="prose">
+      <slot />
+    </article>
+  </main>
+</Base>
+
+<style>
+  main {
+    padding-top: 64px;
+  }
+
+  .prose {
+    max-width: 720px;
+    overflow-wrap: anywhere;
+  }
+
+  .prose :global(h1) {
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0 0 24px;
+  }
+
+  .prose :global(h2) {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 64px 0 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .prose :global(h3) {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 40px 0 8px;
+  }
+
+  .prose :global(h4) {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 24px 0 8px;
+  }
+
+  .prose :global(p),
+  .prose :global(li) {
+    color: var(--text-secondary);
+  }
+
+  .prose :global(strong) {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .prose :global(ul) {
+    padding-left: 20px;
+  }
+
+  .prose :global(code) {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background: var(--raised);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 800px) {
+    main {
+      padding-top: 32px;
+    }
+  }
+</style>

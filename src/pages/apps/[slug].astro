@@ -1,0 +1,130 @@
+---
+import Base from "../../layouts/Base.astro";
+import FeaturedBadges from "../../components/FeaturedBadges.astro";
+import { apps, appTitle, type App } from "../../data/apps";
+
+export function getStaticPaths() {
+  return apps.map((app) => ({ params: { slug: app.slug }, props: { app } }));
+}
+
+const { app } = Astro.props as { app: App };
+const title = appTitle(app);
+---
+
+<Base title={title} ogImage={app.ogImage} appStoreId={app.appStoreId}>
+  <main class="wrap">
+    <div class="hero">
+      <img class="icon" src={app.icon} alt={title} />
+      <h1>{app.name}</h1>
+      {app.tagline && <p class="tagline">{app.tagline}</p>}
+      <div class="stores">
+        <a href={app.appStoreUrl}><img src="/images/app_store.svg" alt="App Store" /></a>
+        {
+          app.googlePlayUrl && (
+            <a href={app.googlePlayUrl}>
+              <img src="/images/google_play.webp" alt="Google Play" />
+            </a>
+          )
+        }
+      </div>
+      {
+        (app.appsForAppleVisionUrl || app.productHunt) && (
+          <div class="badges">
+            <FeaturedBadges app={app} />
+          </div>
+        )
+      }
+    </div>
+
+    <div class="contact">
+      <p>
+        アプリに関するお問い合わせは、アプリ内のフィードバック、<a href="mailto:support@kingu.dev">メール</a>、<a
+          target="_blank"
+          href="https://github.com/KoheiKanagu/garage/issues/new/choose"
+          rel="noopener">GitHub Issues</a
+        >からお願いします
+      </p>
+      <p class="muted">
+        Please contact us via the app's feedback, <a href="mailto:support@kingu.dev">email</a>, or <a
+          target="_blank"
+          href="https://github.com/KoheiKanagu/garage/issues/new/choose"
+          rel="noopener">GitHub Issues</a
+        >
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">アプリの開発者について / About the app's developer</a>
+        <a class="btn btn-secondary" href="/#個人開発のアプリ">その他のアプリ / Other apps</a>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0 48px;
+  }
+
+  .icon {
+    width: 160px;
+    height: 160px;
+    border-radius: 22%;
+    box-shadow: 0 8px 24px var(--shadow);
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 8px 0 0;
+  }
+
+  .stores {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .stores img {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+
+  .hero .badges {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .contact {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 0 0;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .contact p {
+    margin: 0 0 8px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+</style>

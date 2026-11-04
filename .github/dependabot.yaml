@@ -8,3 +8,10 @@ updates:
       day: "monday"
       time: "04:00"
       timezone: "Asia/Tokyo"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Tokyo"

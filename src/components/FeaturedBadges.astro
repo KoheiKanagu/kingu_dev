@@ -1,0 +1,34 @@
+---
+import type { App } from "../data/apps";
+
+type Props = { app: App };
+
+const { app } = Astro.props;
+const productHuntImage = (theme: "light" | "dark") =>
+  `https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=${app.productHunt?.postId}&theme=${theme}`;
+---
+
+{
+  app.appsForAppleVisionUrl && (
+    <a href={app.appsForAppleVisionUrl}>
+      <img
+        class="only-light"
+        src="https://appsforapplevision.com/images/badges/a4avp-featured-badge-light.png"
+        alt="Apps For Apple Vision Badge"
+      />
+      <img
+        class="only-dark"
+        src="https://appsforapplevision.com/images/badges/a4avp-featured-badge-dark.png"
+        alt="Apps For Apple Vision Badge"
+      />
+    </a>
+  )
+}
+{
+  app.productHunt && (
+    <a href={app.productHunt.url} target="_blank">
+      <img class="only-light" src={productHuntImage("light")} alt={app.productHunt.alt} />
+      <img class="only-dark" src={productHuntImage("dark")} alt={app.productHunt.alt} />
+    </a>
+  )
+}

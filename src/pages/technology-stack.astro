@@ -1,0 +1,232 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { apps, appPath } from "../data/apps";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id),
+);
+const years = [...new Set(projects.map((project) => project.data.year))];
+
+const rendered = await Promise.all(
+  projects.map(async (project) => ({
+    project,
+    app: apps.find((app) => app.slug === project.data.app),
+    Content: (await render(project)).Content,
+  })),
+);
+---
+
+<Base title="過去の開発事例と技術スタック">
+  <main class="wrap">
+    <div class="intro">
+      <h1>過去の開発事例と技術スタック</h1>
+      <p>
+        お仕事のご相談は <a href="mailto:kanagu@kingu.dev">kanagu@kingu.dev</a> までご連絡ください。
+      </p>
+      <p class="muted small">各年代はプロジェクト開始時期を示しています。</p>
+    </div>
+
+    {
+      years.map((year) => (
+        <section class="year-group" id={`${year}`}>
+          <div class="year">{year}</div>
+          <div class="projects">
+            {rendered
+              .filter(({ project }) => project.data.year === year)
+              .map(({ project, app, Content }) => (
+                <article class="project" id={project.id}>
+                  <header>
+                    {app && (
+                      <a href={appPath(app)}>
+                        <img class="icon" src={app.icon} alt="" />
+                      </a>
+                    )}
+                    <div>
+                      {project.data.personal && <span class="tag">個人開発</span>}
+                      <h2>{app ? <a href={appPath(app)}>{project.data.title}</a> : project.data.title}</h2>
+                    </div>
+                  </header>
+                  <div class="body">
+                    <Content />
+                  </div>
+                  <ul class="stack">
+                    {project.data.stack.map((item) =>
+                      typeof item === "string" ? (
+                        <li>{item}</li>
+                      ) : (
+                        <li>
+                          {item.name}
+                          <span class="sub">{item.items.join(" · ")}</span>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </article>
+              ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</Base>
+
+<style>
+  .intro {
+    padding: 64px 0 48px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0 0 16px;
+  }
+
+  .intro p {
+    margin: 0 0 4px;
+    color: var(--text-secondary);
+  }
+
+  .year-group {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .year {
+    position: sticky;
+    top: 88px;
+    align-self: start;
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .projects {
+    display: grid;
+    gap: 16px;
+  }
+
+  .project {
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 22%;
+    display: block;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+
+  h2 {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  h2 a {
+    color: var(--text);
+  }
+
+  h2 a:hover {
+    color: var(--accent);
+  }
+
+  .body :global(p) {
+    margin: 0 0 8px;
+    color: var(--text-secondary);
+  }
+
+  .body :global(ul) {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-secondary);
+  }
+
+  .body :global(details) {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .body :global(summary) {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .body :global(details[open] summary) {
+    margin-bottom: 8px;
+  }
+
+  .body :global(.twitter-tweet) {
+    margin: 12px 0;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+
+  .stack li {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 8px;
+    background: var(--raised);
+    border-radius: 6px;
+    color: var(--text-secondary);
+  }
+
+  .sub {
+    color: var(--text-muted);
+    margin-left: 4px;
+  }
+
+  @media (max-width: 800px) {
+    .intro {
+      padding: 32px 0 24px;
+    }
+
+    .year-group {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    .year {
+      position: static;
+    }
+
+    .project {
+      padding: 20px;
+    }
+  }
+</style>
