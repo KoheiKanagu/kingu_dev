@@ -152,6 +152,11 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
         <h1>金具 浩平</h1>
         <p class="latin">KANAGU Kohei</p>
         <p class="lead">
+          業務委託で、法人や大学と契約して開発しています。業務でも個人開発でも、<a
+            href="/technology-stack/#2026-01-ai-development">AI エージェントと改善のループを回しています</a
+          >。
+        </p>
+        <p class="lead">
           お仕事のご相談は <a href="mailto:kanagu@kingu.dev">kanagu@kingu.dev</a> までご連絡ください。
         </p>
         <div class="actions">
@@ -337,6 +342,10 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
     color: var(--text-secondary);
     margin: 0 0 32px;
     max-width: 30rem;
+  }
+
+  .lead:not(:last-of-type) {
+    margin-bottom: 12px;
   }
 
   .actions {

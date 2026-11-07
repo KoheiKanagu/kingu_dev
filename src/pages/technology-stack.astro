@@ -184,6 +184,128 @@ const rendered = await Promise.all(
     margin-bottom: 8px;
   }
 
+  .body :global(.toolkit) {
+    margin: 16px 0 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .body :global(.toolkit span) {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  .body :global(.toolkit ul) {
+    margin: 0;
+    padding-left: 16px;
+    color: var(--text);
+  }
+
+  .body :global(.toolkit li + li) {
+    margin-top: 4px;
+  }
+
+  .body :global(.toolkit code) {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .body :global(.toolkit .tk-snapshot) {
+    margin: 0 0 8px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .body :global(.tk-repo) {
+    padding: 16px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+  }
+
+  .body :global(.toolkit .tk-title) {
+    margin: 0 0 12px;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .body :global(.tk-cols) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "rules dev improve"
+      "hooks dev improve";
+    gap: 12px;
+  }
+
+  .body :global(.tk-cols > :nth-child(1)) {
+    grid-area: rules;
+  }
+
+  .body :global(.tk-cols > :nth-child(2)) {
+    grid-area: dev;
+  }
+
+  .body :global(.tk-cols > :nth-child(3)) {
+    grid-area: improve;
+  }
+
+  .body :global(.tk-cols > :nth-child(4)) {
+    grid-area: hooks;
+  }
+
+  .body :global(.tk-cols > div) {
+    padding: 12px;
+    background: var(--raised);
+    border-radius: 8px;
+  }
+
+  .body :global(.toolkit .tk-link) {
+    margin: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .body :global(.tk-steps) {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .body :global(.tk-steps li) {
+    position: relative;
+    margin: 0;
+    padding: 12px;
+    background: var(--raised);
+    border-radius: 8px;
+    color: var(--text);
+  }
+
+  .body :global(.tk-back li) {
+    background: none;
+    border: 1px dashed var(--accent);
+  }
+
+  .body :global(.tk-steps li:not(:last-child)::after) {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+  }
+
   .body :global(.twitter-tweet) {
     margin: 12px 0;
   }
@@ -227,6 +349,25 @@ const rendered = await Promise.all(
 
     .project {
       padding: 20px;
+    }
+
+    .body :global(.tk-cols) {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "rules" "dev" "improve" "hooks";
+    }
+
+    .body :global(.tk-steps) {
+      grid-auto-flow: row;
+      gap: 24px;
+    }
+
+    .body :global(.tk-steps li:not(:last-child)::after) {
+      content: "↓";
+      top: auto;
+      right: auto;
+      left: 50%;
+      bottom: -22px;
+      transform: translateX(-50%);
     }
   }
 </style>
