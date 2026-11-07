@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T15:48:49.453252+00:00",
+  "title": "Design System: kingu.dev",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Workbench Green",
+        "canonical": "#2f6b5f",
+        "tonalRamp": [
+          "#0e201d",
+          "#183630",
+          "#214b42",
+          "#2a6056",
+          "#59897f",
+          "#8daea7",
+          "#c1d3cf",
+          "#eaf0ef"
+        ]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Workbench Green（ダーク）",
+        "canonical": "#6fb3a3",
+        "tonalRamp": [
+          "#213631",
+          "#385a52",
+          "#4e7d72",
+          "#64a193",
+          "#8cc2b5",
+          "#b0d5cc",
+          "#d4e8e3",
+          "#f1f7f6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fafafa",
+        "tonalRamp": [
+          "#4b4b4b",
+          "#7d7d7d",
+          "#afafaf",
+          "#e1e1e1",
+          "#fbfbfb",
+          "#fcfcfc",
+          "#fefefe",
+          "#fefefe"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#4d4d4d",
+          "#808080",
+          "#b2b2b2",
+          "#e6e6e6",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised",
+        "canonical": "#f4f4f5",
+        "tonalRamp": [
+          "#49494a",
+          "#7a7a7a",
+          "#ababac",
+          "#dcdcdc",
+          "#f6f6f7",
+          "#f9f9fa",
+          "#fcfcfc",
+          "#fefefe"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#171717",
+        "tonalRamp": [
+          "#070707",
+          "#0c0c0c",
+          "#101010",
+          "#151515",
+          "#454545",
+          "#7f7f7f",
+          "#b9b9b9",
+          "#e8e8e8"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#525252",
+        "tonalRamp": [
+          "#191919",
+          "#292929",
+          "#393939",
+          "#4a4a4a",
+          "#757575",
+          "#a0a0a0",
+          "#cbcbcb",
+          "#eeeeee"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#6b6b6b",
+        "tonalRamp": [
+          "#202020",
+          "#363636",
+          "#4b4b4b",
+          "#606060",
+          "#898989",
+          "#aeaeae",
+          "#d3d3d3",
+          "#f0f0f0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "トップの名前と各ページの見出し"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "トップのセクション見出し"
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "事例のカードの見出し"
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "トップの自己紹介"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "本文"
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "キャプション、タグ、チップ"
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "年、コード、スキル名だけ"
+      }
+    },
+    "shadows": [
+      {
+        "name": "shelf",
+        "value": "0 8px 24px rgba(0, 0, 0, 0.06)",
+        "purpose": "トップのアプリの棚（ダークは rgba(0, 0, 0, 0.3)）"
+      },
+      {
+        "name": "icon",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.08)",
+        "purpose": "アプリのアイコン"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "色と位置の変化。150ms で使う"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "1画面に1つの主な行動（メールで相談する）",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">メールで相談する</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:44px;padding:8px 20px;border-radius:10px;background:var(--text,#171717);color:var(--card,#fff);font:500 15px/1.4 -apple-system, BlinkMacSystemFont, \"Hiragino Sans\", \"Noto Sans JP\", sans-serif;text-decoration:none;transition:background-color 150ms cubic-bezier(0.22,1,0.36,1),transform 120ms cubic-bezier(0.22,1,0.36,1)}.ds-btn-primary:hover{background:var(--primary-hover,#333)}.ds-btn-primary:active{transform:scale(0.98)}.ds-btn-primary:focus-visible{outline:2px solid var(--accent,#2f6b5f);outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "ほかのページへの行動",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">過去の開発事例と技術スタック</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-height:44px;padding:8px 20px;border-radius:10px;background:var(--card,#fff);color:var(--text,#171717);border:1px solid var(--hairline,rgba(23,23,23,0.08));font:500 15px/1.4 -apple-system, BlinkMacSystemFont, \"Hiragino Sans\", \"Noto Sans JP\", sans-serif;text-decoration:none;transition:background-color 150ms cubic-bezier(0.22,1,0.36,1)}.ds-btn-secondary:hover{background:var(--raised,#f4f4f5)}.ds-btn-secondary:focus-visible{outline:2px solid var(--accent,#2f6b5f);outline-offset:2px}"
+    },
+    {
+      "name": "Stack Chip",
+      "kind": "chip",
+      "refersTo": "stack-chip",
+      "description": "technology-stack の技術スタック",
+      "html": "<ul class=\"ds-stack\"><li>Flutter</li><li>Mac Studio<span>M5 Ultra</span></li></ul>",
+      "css": ".ds-stack{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}.ds-stack li{font:12px/16px -apple-system, BlinkMacSystemFont, \"Hiragino Sans\", \"Noto Sans JP\", sans-serif;padding:4px 8px;background:var(--raised,#f4f4f5);border-radius:6px;color:var(--text-secondary,#525252)}.ds-stack span{color:var(--text-muted,#737373);margin-left:4px}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "technology-stack の事例",
+      "html": "<article class=\"ds-card\"><span class=\"ds-tag\">個人開発</span><h2>BLOOMS</h2><p>妊婦の方が体調や日々の出来事を記録するアプリを開発しました。</p></article>",
+      "css": ".ds-card{padding:24px;background:var(--card,#fff);border:1px solid var(--hairline,rgba(23,23,23,0.08));border-radius:16px;font:15px/1.7 -apple-system, BlinkMacSystemFont, \"Hiragino Sans\", \"Noto Sans JP\", sans-serif;color:var(--text,#171717)}.ds-card h2{font-size:17px;font-weight:500;line-height:1.5;margin:0 0 8px}.ds-card p{margin:0;color:var(--text-secondary,#525252)}.ds-tag{font-size:12px;color:var(--accent,#2f6b5f)}"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "description": "追従するヘッダーとテーマの切り替え",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\">kingu.dev</a><nav><a href=\"#\">お仕事</a><a href=\"#\">受賞歴</a><a href=\"#\">開発したもの</a></nav></header>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 16px;background:var(--bg,#fafafa);border-bottom:1px solid var(--hairline,rgba(23,23,23,0.08));font-family:-apple-system, BlinkMacSystemFont, \"Hiragino Sans\", \"Noto Sans JP\", sans-serif}.ds-wordmark{font-weight:600;font-size:16px;color:var(--text,#171717);text-decoration:none}.ds-header nav{display:flex;gap:24px;font-size:14px}.ds-header nav a{color:var(--text-secondary,#525252);text-decoration:none}.ds-header nav a:hover{color:var(--text,#171717);text-decoration:underline;text-underline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Builder's Workbench（開発者の作業台）",
+    "overview": "作ったもの（アプリ、事例、図）が主役で、周りは道具のように控えめにする。作業台の上に並べた成果物を、正確な配置と静かな面で見せる設計で、飾りで目を引くことはしない。中立のグレーの面に、深い緑のアクセントを1色だけ置く。\n\n情報は落ち着いていて正確に見せる。年やコードのように数えたり読み比べたりするものだけを等幅で書き、ほかはシステムフォントで統一する。面の区切りは細い線と背景の濃淡で付け、影は物として置くもの（アプリのアイコンと、それを並べた棚）だけに使う。ライトとダークは同じ構造のまま、トークンの値だけを入れ替える。",
+    "keyCharacteristics": [
+      "中立のグレーとアクセント1色。グラデーションや光彩は使わない",
+      "システムフォントの日本語と、年・コードだけの等幅",
+      "細い線と背景の濃淡で面を分ける平らな画面",
+      "影は物として置くものだけ",
+      "ライトとダークで同じ構造"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "アクセントは Workbench Green の1色だけにする。2色目が要りそうなときは、グレーの濃淡で分けられないかを先に試す。",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Token Rule",
+        "body": "色は必ずライトとダークの対で足す。片方だけの色を書かない。",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Weights Rule",
+        "body": "太さは 400 と 500 だけにする（ヘッダーの「kingu.dev」の文字だけ 600）。強調は太さより位置と大きさで付ける。",
+        "section": "typography"
+      },
+      {
+        "name": "The Counted Things Rule",
+        "body": "等幅は年、コード、スキル名のように数えるか読み比べるものだけに使う。",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Only Rule",
+        "body": "影は手に取れる物として置くもの（アイコンとその棚）にだけ付ける。カード、ボタン、図の箱には付けない。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do 新しい色はライトとダークの対で `global.css` のトークンに足す。",
+      "Do 面の区切りは Hairline の線か、Paper・Card・Raised の濃淡で付ける。",
+      "Do 角は入れ子の深さに合わせて、外側ほど大きくする。",
+      "Do 幅 375px とデスクトップ幅、ライトとダークの4通りで表示を確かめる。"
+    ],
+    "donts": [
+      "Don't グラデーション、光彩、すりガラス（backdrop-filter）を使う。",
+      "Don't Workbench Green 以外のアクセント色を足す。",
+      "Don't 事例のカード、ボタン、図の箱に影を付ける。",
+      "Don't ヘッダーの「kingu.dev」の文字以外で太さ 600 以上を使ったり、字間を広げた大文字のラベルを使ったりする。"
+    ]
+  }
+}
