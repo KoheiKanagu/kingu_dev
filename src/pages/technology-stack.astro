@@ -50,18 +50,20 @@ const rendered = await Promise.all(
                   <div class="body">
                     <Content />
                   </div>
-                  <ul class="stack">
-                    {project.data.stack.map((item) =>
-                      typeof item === "string" ? (
-                        <li>{item}</li>
-                      ) : (
-                        <li>
-                          {item.name}
-                          <span class="sub">{item.items.join(" · ")}</span>
-                        </li>
-                      ),
-                    )}
-                  </ul>
+                  {project.data.stack.length > 0 && (
+                    <ul class="stack">
+                      {project.data.stack.map((item) =>
+                        typeof item === "string" ? (
+                          <li>{item}</li>
+                        ) : (
+                          <li>
+                            {item.name}
+                            <span class="sub">{item.items.join(" · ")}</span>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  )}
                 </article>
               ))}
           </div>
