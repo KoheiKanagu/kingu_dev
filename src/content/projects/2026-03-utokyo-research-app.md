@@ -1,5 +1,7 @@
 ---
 year: 2026
+current: true
+role: "アプリとバックエンドの開発"
 title: "東京大学の研究用アプリ"
 stack: []
 ---

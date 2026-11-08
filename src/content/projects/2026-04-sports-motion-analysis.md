@@ -1,5 +1,7 @@
 ---
 year: 2026
+current: true
+role: "アプリとバックエンドの開発"
 title: "スポーツテック企業の法人向けアプリ"
 stack: []
 ---

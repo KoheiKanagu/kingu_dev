@@ -6,7 +6,15 @@ import { apps, appPath } from "../data/apps";
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id),
 );
-const years = [...new Set(projects.map((project) => project.data.year))];
+const pastYears = [...new Set(projects.filter((project) => !project.data.current).map((project) => project.data.year))];
+const groups = [
+  { id: "current", label: "現在", includes: (project: (typeof projects)[number]) => project.data.current },
+  ...pastYears.map((year) => ({
+    id: `${year}`,
+    label: `${year}`,
+    includes: (project: (typeof projects)[number]) => !project.data.current && project.data.year === year,
+  })),
+];
 
 const rendered = await Promise.all(
   projects.map(async (project) => ({
@@ -17,23 +25,23 @@ const rendered = await Promise.all(
 );
 ---
 
-<Base title="過去の開発事例と技術スタック">
+<Base title="開発事例と技術スタック">
   <main class="wrap">
     <div class="intro">
-      <h1>過去の開発事例と技術スタック</h1>
+      <h1>開発事例と技術スタック</h1>
       <p>
         お仕事のご相談は <a href="mailto:kanagu@kingu.dev">kanagu@kingu.dev</a> までご連絡ください。
       </p>
-      <p class="muted small">各年代はプロジェクト開始時期を示しています。</p>
+      <p class="muted small">各年はプロジェクトの開始時期を示しています。</p>
     </div>
 
     {
-      years.map((year) => (
-        <section class="year-group" id={`${year}`}>
-          <div class="year">{year}</div>
+      groups.map((group) => (
+        <section class="year-group" id={group.id}>
+          <div class="year">{group.label}</div>
           <div class="projects">
             {rendered
-              .filter(({ project }) => project.data.year === year)
+              .filter(({ project }) => group.includes(project))
               .map(({ project, app, Content }) => (
                 <article class="project" id={project.id}>
                   <header>

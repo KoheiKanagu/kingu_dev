@@ -4,29 +4,25 @@ import FeaturedBadges from "../components/FeaturedBadges.astro";
 import { apps, appPath, type App } from "../data/apps";
 import { getCollection } from "astro:content";
 
-const featuredProjectId = "2026-01-ai-development";
+const aiProjectId = "2026-01-ai-development";
 const recentProjects = (await getCollection("projects"))
-  .filter((project) => project.id !== featuredProjectId)
+  .filter((project) => project.id !== aiProjectId)
   .sort((a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id))
   .slice(0, 4);
-const stackLabel = (item: string | { name: string }) => (typeof item === "string" ? item : item.name);
 const summary = (body = "") =>
   (body.trim().split(/\n\s*\n/)[0] ?? "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split("。")[0] + "。";
 
 const workflowSteps = [
-  { label: "着手前", body: "仕様を質問でそろえ、完了条件をコマンドで決めます。" },
-  { label: "実装", body: "作業ごとに worktree を切り、Claude Code で実装します。" },
-  { label: "セルフレビュー", body: "文脈を持つ Claude と、持たない Claude・Grok が差分を読みます。" },
-  { label: "draft PR", body: "CI が落ちたら自動で直します。" },
-  { label: "人の判断", body: "金具が確認し、マージするかを判断します。" },
-  { label: "振り返り", body: "失敗や繰り返しをルールとスキルの改善案にし、次の作業から効かせます。" },
+  { label: "仕様の確認", body: "着手する前に、仕様と完了条件を明確にします。" },
+  { label: "実装とレビュー", body: "AI エージェントが実装し、複数のモデルでレビューします。" },
+  { label: "人の確認と振り返り", body: "AI エージェントが実装した変更は金具が確認し、取り込むかを判断します。作業の振り返りは次の開発に活かします。" },
 ];
 
 const services = [
-  { title: "アプリ開発", body: "iOS・Android・Web のアプリを開発します。内容は要相談です。" },
-  { title: "Firebase と Google Cloud", body: "Firebase と Google Cloud の開発に加え、GitHub Actions での自動デプロイや運用も引き受けます。" },
-  { title: "研究用のアプリ", body: "研究のデータを集めるアプリを開発します。内容は要相談です。" },
-  { title: "AI エージェントの導入", body: "自分の開発で使っているルールとスキルの仕組みをもとに、チームの開発に AI エージェントを取り入れる手伝いをします。" },
+  { title: "アプリ開発", body: "iOS・Android・Web のアプリを開発します。内容は要相談です。", caseId: "2026-04-sports-motion-analysis" },
+  { title: "Firebase と Google Cloud", body: "Firebase と Google Cloud を用いた開発に加え、GitHub Actions を用いた自動デプロイや運用も引き受けます。", caseId: "2026-05-kidney-care-apps" },
+  { title: "研究用のアプリ", body: "研究用のアプリやシステムを開発します。内容は要相談です。", caseId: "2026-03-utokyo-research-app" },
+  { title: "AI エージェントの導入", body: "自分の開発で使っているルールとスキルの仕組みをもとに、チームの開発に AI エージェントを取り入れる手伝いをします。", caseId: aiProjectId },
 ];
 
 const awards = [
@@ -181,8 +177,8 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
         <h1>金具 浩平</h1>
         <p class="latin">KANAGU Kohei</p>
         <p class="lead">
-          業務委託で、法人や大学と契約して開発しています。業務でも個人開発でも、<a
-            href="/technology-stack/#2026-01-ai-development">AI エージェントと改善のループを回しています</a
+          iOS・Android・Web のアプリとバックエンドを、業務委託で開発しています。2026 年は法人 2&nbsp;社と大学 2&nbsp;校と契約しています。業務でも個人開発でも、<a
+            href="/technology-stack/#2026-01-ai-development">AI エージェントを使い、進め方を改善しながら開発しています</a
           >。
         </p>
         <p class="lead">
@@ -190,7 +186,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:kanagu@kingu.dev">メールで相談する</a>
-          <a class="btn btn-secondary" href="/technology-stack/">過去の開発事例と技術スタック</a>
+          <a class="btn btn-secondary" href="/technology-stack/">開発事例と技術スタック</a>
         </div>
       </div>
       <div class="icon-shelf">
@@ -205,12 +201,28 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
       </div>
     </div>
 
-    <section id="featured">
+    <section id="work">
       <div class="section-head">
-        <h2>代表作</h2>
+        <h2>頼める仕事</h2>
+        <div class="services">
+          {
+            services.map((service) => (
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.body}</p>
+                <a class="service-case" href={`/technology-stack/#${service.caseId}`}>関連する事例を見る</a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-head">
+        <h2>開発の進め方</h2>
         <div>
-          <h3 class="featured-title">AI エージェントでの開発</h3>
-          <p class="featured-lead">業務でも個人開発でも AI エージェントで開発し、品質を保つ手順をルールとスキルにまとめています。</p>
+          <p class="process-lead">業務でも個人開発でも AI エージェントで開発し、品質を保つ手順をルールとスキルにまとめています。</p>
           <ol class="steps">
             {
               workflowSteps.map((step) => (
@@ -221,23 +233,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
               ))
             }
           </ol>
-          <a class="more" href={`/technology-stack/#${featuredProjectId}`}>ルールとスキルの構成を見る</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-head">
-        <h2>頼める仕事</h2>
-        <div class="services">
-          {
-            services.map((service) => (
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.body}</p>
-              </div>
-            ))
-          }
+          <a class="more" href={`/technology-stack/#${aiProjectId}`}>ルールとスキルの構成を見る</a>
         </div>
       </div>
     </section>
@@ -251,20 +247,24 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
               recentProjects.map((project) => (
                 <li>
                   <a href={`/technology-stack/#${project.id}`}>
-                    <span class="case-year">{project.data.year}</span>
                     <span class="case-body">
                       <span class="case-title">{project.data.title}</span>
                       <span class="case-summary">{summary(project.body)}</span>
-                      {project.data.stack.length > 0 && (
-                        <span class="case-stack">{project.data.stack.slice(0, 5).map(stackLabel).join(" · ")}</span>
-                      )}
+                      {project.data.role && <span class="case-role">{project.data.role}</span>}
                     </span>
+                    <svg class="case-chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                      <path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                   </a>
                 </li>
               ))
             }
           </ol>
-          <a class="more" href="/technology-stack/">過去の開発事例と技術スタック</a>
+          <a class="more" href="/technology-stack/">開発事例と技術スタック</a>
+          <div class="cases-contact">
+            <p>開発のご相談は、メールでお受けしています。</p>
+            <a class="btn btn-primary" href="mailto:kanagu@kingu.dev">メールで相談する</a>
+          </div>
         </div>
       </div>
     </section>
@@ -283,7 +283,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
             {
               apps.map((app) => (
                 <div class="app" id={appAnchor(app)}>
-                  <a href={appPath(app)}>
+                  <a href={appPath(app)} aria-hidden="true" tabindex="-1">
                     <img src={app.icon} alt="" />
                   </a>
                   <div>
@@ -348,7 +348,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
       </div>
     </section>
 
-    <section id="writing">
+    <section id="writing" class="quiet">
       <div class="section-head">
         <h2>執筆</h2>
         <div>
@@ -371,7 +371,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
       </div>
     </section>
 
-    <section id="sns">
+    <section id="sns" class="quiet">
       <div class="section-head">
         <h2>SNS</h2>
         <div>
@@ -388,7 +388,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
       </div>
     </section>
 
-    <section id="games">
+    <section id="games" class="quiet">
       <div class="section-head">
         <h2>ゲーム</h2>
         <div>
@@ -633,7 +633,8 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
 
   .cases a {
     display: grid;
-    grid-template-columns: 56px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 16px;
+    align-items: center;
     gap: 16px;
     padding: 16px;
     background: var(--card);
@@ -643,14 +644,6 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
   .cases a:hover {
     background: var(--raised);
     text-decoration: none;
-  }
-
-  .case-year {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text-muted);
-    padding-top: 2px;
-    font-variant-numeric: tabular-nums;
   }
 
   .case-body {
@@ -663,15 +656,52 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
   }
 
   .case-summary {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
     font-size: 14px;
     color: var(--text-secondary);
   }
 
-  .case-stack {
+  .case-role {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .case-chevron {
+    color: var(--text-muted);
+  }
+
+  .cases-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .cases-contact p {
+    margin: 0;
+  }
+
+  .service-case {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  section.quiet {
+    padding: 40px 0;
+  }
+
+  .quiet h2 {
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+
+  .quiet .steam {
+    max-width: 480px;
+  }
+
+  .quiet .papers li {
     font-size: 13px;
     color: var(--text-muted);
   }
@@ -682,12 +712,7 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
     font-size: 14px;
   }
 
-  .featured-title {
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-
-  .featured-lead {
+  .process-lead {
     margin: 0 0 24px;
     color: var(--text-secondary);
   }
@@ -835,7 +860,6 @@ const appAnchor = (app: App) => `app-${app.slug.replaceAll(" ", "-")}`;
       grid-template-columns: 1fr;
     }
 
-    .cases a,
     .steps li {
       grid-template-columns: minmax(0, 1fr);
       gap: 4px;

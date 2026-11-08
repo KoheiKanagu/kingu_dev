@@ -14,6 +14,8 @@ const projects = defineCollection({
     year: z.number().int(),
     title: z.string(),
     personal: z.boolean().default(false),
+    current: z.boolean().default(false),
+    role: z.string().optional(),
     app: z
       .string()
       .refine((slug) => apps.some((app) => app.slug === slug), "src/data/apps.ts に無いアプリ")

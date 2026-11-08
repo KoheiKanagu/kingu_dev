@@ -21,7 +21,7 @@ web
 
 ## Operating Context
 
-- トップ: 自己紹介、代表作（AI エージェントでの開発）、頼める仕事、最近の開発事例、開発したもの、受賞歴、執筆、SNS、ゲーム
+- トップ: 自己紹介、頼める仕事、開発の進め方（AI エージェントでの手順）、最近の開発事例、開発したもの、受賞歴、執筆、SNS、ゲーム
 - `/technology-stack/`: 年ごとの開発事例と技術スタック。案件ごとの md（`src/content/projects/`）から作る
 - `/apps/<名前>/`: 各アプリの紹介、ストアへのリンク、問い合わせ先
 - `/privacy_policy/` と `/terms_of_service/`: アプリから参照される規約
@@ -33,7 +33,7 @@ web
 - 公開中の URL（各ページ、画像、`app-ads.txt`）は変えない。アプリが規約の URL を参照しているため
 - 日本語を主にする。アプリのページは日本語と英語を併記する
 - ライトとダークの配色を持ち、ヘッダーのボタンで切り替える
-- technology-stack の AI のカードの図は、`.agents/skills/update-ai-diagram` で agent-toolkit の構成に合わせて書き直す。トップの代表作の手順（`src/pages/index.astro` の `workflowSteps`）も同時にそろえる
+- technology-stack の AI のカードの図は、`.agents/skills/update-ai-diagram` で agent-toolkit の構成に合わせて書き直す
 
 ## Evidence on Hand
 

@@ -1,5 +1,6 @@
 ---
 year: 2026
+current: true
 title: "AI エージェントと進める開発"
 stack:
   - "Claude Code"
@@ -14,7 +15,7 @@ stack:
   - "Apple Watch"
 ---
 
-2026 年は業務委託で法人 2 社と大学 2 校と契約し、業務でも個人開発でも AI エージェントを使って開発しています。エージェントのルールとスキルは agent-toolkit というリポジトリにまとめ、作業の振り返りから直し続けています。
+2026 年は業務委託で法人 2 社と大学 2 校と契約し、業務でも個人開発でも AI エージェントを使って開発しています。エージェントのルールとスキルは agent-toolkit というリポジトリにまとめ、作業の振り返りをもとに直し続けています。
 
 <div class="toolkit">
   <p class="tk-snapshot">2026 年 11 月時点</p>
@@ -59,12 +60,12 @@ stack:
       </div>
     </div>
   </div>
-  <p class="tk-link">↓ Claude Code と Grok の設定にリンクして配る</p>
+  <p class="tk-link">↓ 各エージェントの設定にリンクして配る</p>
   <ol class="tk-steps">
-    <li><span>着手前</span>仕様を質問でそろえ、完了条件をコマンドで決める</li>
-    <li><span>Claude Code</span>worktree を切って実装する</li>
-    <li><span>セルフレビュー</span>文脈を持つ Claude と、持たない Claude・Grok が読む</li>
-    <li><span>draft PR</span>CI が落ちたら自動で直す</li>
+    <li><span>着手前</span>質問して仕様をそろえ、完了条件をコマンドで決める</li>
+    <li><span>実装</span>worktree を切り、AI エージェントが実装する</li>
+    <li><span>セルフレビュー</span>実装の経緯を知っているエージェントと、知らないエージェントが、複数のモデルで読む</li>
+    <li><span>draft PR</span>CI が失敗したら自動で直す</li>
     <li><span>金具</span>確認してマージを判断する</li>
   </ol>
   <p class="tk-link">↓ 作業を終えたら</p>
@@ -72,6 +73,6 @@ stack:
     <li><span>振り返り</span>失敗や繰り返しを、ルールとスキルの改善案にする</li>
     <li><span>issue</span>採用した案を retrospect ラベルで立てる</li>
     <li><span>PR</span>リポジトリごとに 1 本にまとめる</li>
-    <li><span>↺ agent-toolkit</span>マージして次の作業から効かせる</li>
+    <li><span>↺ agent-toolkit</span>マージして次の作業に反映する</li>
   </ol>
 </div>
