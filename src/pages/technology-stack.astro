@@ -6,7 +6,15 @@ import { apps, appPath } from "../data/apps";
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id),
 );
-const years = [...new Set(projects.map((project) => project.data.year))];
+const pastYears = [...new Set(projects.filter((project) => !project.data.current).map((project) => project.data.year))];
+const groups = [
+  { id: "current", label: "現在", includes: (project: (typeof projects)[number]) => project.data.current },
+  ...pastYears.map((year) => ({
+    id: `${year}`,
+    label: `${year}`,
+    includes: (project: (typeof projects)[number]) => !project.data.current && project.data.year === year,
+  })),
+];
 
 const rendered = await Promise.all(
   projects.map(async (project) => ({
@@ -17,23 +25,23 @@ const rendered = await Promise.all(
 );
 ---
 
-<Base title="過去の開発事例と技術スタック">
+<Base title="開発事例と技術スタック">
   <main class="wrap">
     <div class="intro">
-      <h1>過去の開発事例と技術スタック</h1>
+      <h1>開発事例と技術スタック</h1>
       <p>
         お仕事のご相談は <a href="mailto:kanagu@kingu.dev">kanagu@kingu.dev</a> までご連絡ください。
       </p>
-      <p class="muted small">各年代はプロジェクト開始時期を示しています。</p>
+      <p class="muted small">各年はプロジェクトの開始時期を示しています。</p>
     </div>
 
     {
-      years.map((year) => (
-        <section class="year-group" id={`${year}`}>
-          <div class="year">{year}</div>
+      groups.map((group) => (
+        <section class="year-group" id={group.id}>
+          <div class="year">{group.label}</div>
           <div class="projects">
             {rendered
-              .filter(({ project }) => project.data.year === year)
+              .filter(({ project }) => group.includes(project))
               .map(({ project, app, Content }) => (
                 <article class="project" id={project.id}>
                   <header>
@@ -50,18 +58,20 @@ const rendered = await Promise.all(
                   <div class="body">
                     <Content />
                   </div>
-                  <ul class="stack">
-                    {project.data.stack.map((item) =>
-                      typeof item === "string" ? (
-                        <li>{item}</li>
-                      ) : (
-                        <li>
-                          {item.name}
-                          <span class="sub">{item.items.join(" · ")}</span>
-                        </li>
-                      ),
-                    )}
-                  </ul>
+                  {project.data.stack.length > 0 && (
+                    <ul class="stack">
+                      {project.data.stack.map((item) =>
+                        typeof item === "string" ? (
+                          <li>{item}</li>
+                        ) : (
+                          <li>
+                            {item.name}
+                            <span class="sub">{item.items.join(" · ")}</span>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  )}
                 </article>
               ))}
           </div>
@@ -184,6 +194,128 @@ const rendered = await Promise.all(
     margin-bottom: 8px;
   }
 
+  .body :global(.toolkit) {
+    margin: 16px 0 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .body :global(.toolkit span) {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  .body :global(.toolkit ul) {
+    margin: 0;
+    padding-left: 16px;
+    color: var(--text);
+  }
+
+  .body :global(.toolkit ul li + li) {
+    margin-top: 4px;
+  }
+
+  .body :global(.toolkit code) {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .body :global(.toolkit .tk-snapshot) {
+    margin: 0 0 8px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .body :global(.tk-repo) {
+    padding: 16px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+  }
+
+  .body :global(.toolkit .tk-title) {
+    margin: 0 0 12px;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .body :global(.tk-cols) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "rules dev improve"
+      "hooks dev improve";
+    gap: 12px;
+  }
+
+  .body :global(.tk-cols > :nth-child(1)) {
+    grid-area: rules;
+  }
+
+  .body :global(.tk-cols > :nth-child(2)) {
+    grid-area: dev;
+  }
+
+  .body :global(.tk-cols > :nth-child(3)) {
+    grid-area: improve;
+  }
+
+  .body :global(.tk-cols > :nth-child(4)) {
+    grid-area: hooks;
+  }
+
+  .body :global(.tk-cols > div) {
+    padding: 12px;
+    background: var(--raised);
+    border-radius: 8px;
+  }
+
+  .body :global(.toolkit .tk-link) {
+    margin: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .body :global(.tk-steps) {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .body :global(.tk-steps li) {
+    position: relative;
+    margin: 0;
+    padding: 12px;
+    background: var(--raised);
+    border-radius: 8px;
+    color: var(--text);
+  }
+
+  .body :global(.tk-back li) {
+    background: none;
+    border: 1px dashed var(--accent);
+  }
+
+  .body :global(.tk-steps li:not(:last-child)::after) {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+  }
+
   .body :global(.twitter-tweet) {
     margin: 12px 0;
   }
@@ -227,6 +359,25 @@ const rendered = await Promise.all(
 
     .project {
       padding: 20px;
+    }
+
+    .body :global(.tk-cols) {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "rules" "dev" "improve" "hooks";
+    }
+
+    .body :global(.tk-steps) {
+      grid-auto-flow: row;
+      gap: 24px;
+    }
+
+    .body :global(.tk-steps li:not(:last-child)::after) {
+      content: "↓";
+      top: auto;
+      right: auto;
+      left: 50%;
+      bottom: -22px;
+      transform: translateX(-50%);
     }
   }
 </style>

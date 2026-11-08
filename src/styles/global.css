@@ -5,7 +5,7 @@
   --raised: light-dark(#f4f4f5, #232325);
   --text: light-dark(#171717, #ededed);
   --text-secondary: light-dark(#525252, #a1a1a6);
-  --text-muted: light-dark(#737373, #85858b);
+  --text-muted: light-dark(#6b6b6b, #8e8e94);
   --hairline: light-dark(rgba(23, 23, 23, 0.08), rgba(237, 237, 237, 0.08));
   --accent: light-dark(#2f6b5f, #6fb3a3);
   --primary-hover: light-dark(#333333, #d4d4d4);
@@ -50,6 +50,12 @@ a {
 a:hover {
   color: var(--text);
   text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+p a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
   text-underline-offset: 3px;
 }
 
@@ -130,6 +136,10 @@ a:focus-visible {
 }
 
 @media (max-width: 800px) {
+  html {
+    scroll-padding-top: 104px;
+  }
+
   .wrap {
     padding: 0 16px;
   }
