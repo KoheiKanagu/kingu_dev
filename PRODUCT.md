@@ -22,7 +22,7 @@ web
 ## Operating Context
 
 - トップ: 自己紹介、頼める仕事、開発の進め方（AI エージェントでの手順）、最近の開発事例、開発したもの、受賞歴、執筆、SNS、ゲーム
-- `/technology-stack/`: 年ごとの開発事例と技術スタック。案件ごとの md（`src/content/projects/`）から作る
+- `/technology-stack/`: 進行中の案件を「現在」に、終わった案件を年ごとに並べた開発事例と技術スタック。案件ごとの md（`src/content/projects/`）から作る
 - `/apps/<名前>/`: 各アプリの紹介、ストアへのリンク、問い合わせ先
 - `/privacy_policy/` と `/terms_of_service/`: アプリから参照される規約
 - 問い合わせは、受託は `kanagu@kingu.dev`、アプリは `support@kingu.dev` と GitHub Issues

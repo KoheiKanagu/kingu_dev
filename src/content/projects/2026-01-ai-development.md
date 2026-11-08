@@ -35,8 +35,8 @@ stack:
           <li><code>grill-me</code> 着手前に質問して仕様をそろえる</li>
           <li><code>mode</code> 実装の原則を場面ごとに当てる</li>
           <li><code>git-workflow</code> コミットと push の規約</li>
-          <li><code>create-pr</code> draft PR とセルフレビュー</li>
           <li><code>code-review</code> レビューの観点</li>
+          <li><code>create-pr</code> draft PR とセルフレビュー</li>
           <li><code>create-issue</code> 受け入れ条件つきの issue</li>
         </ul>
       </div>
