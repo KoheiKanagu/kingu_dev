@@ -12,4 +12,4 @@ stack:
 
 Android API Level 21 のアプリケーションを API Level 34 に対応させました。
 
-また、プッシュ通知の仕組みを Firebase Cloud Messaging に変更するにあたり、Cloud Functions を用いて通知の送信行うように改修しました。
+また、プッシュ通知の仕組みを Firebase Cloud Messaging に変更するにあたり、Cloud Functions を用いて通知の送信を行うように改修しました。
